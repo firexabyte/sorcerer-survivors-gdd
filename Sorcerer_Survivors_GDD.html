@@ -6907,100 +6907,274 @@
           </table>
 
           <h3>Branches (≈90 nodes per faction at launch)</h3>
-          <div class="meta-tree">
-            <div class="meta-branch">
-              <div class="mb-title" style="color: var(--teal)">
-                Vessel (Body)
-              </div>
-              <p class="mb-desc">
-                Universal survivability and feel. Diminishing tiers — meta never
-                replaces skill.
-              </p>
-              <div class="mb-nodes">
-                <span class="mb-node">+Vitality I–V</span
-                ><span class="mb-node">+Swiftness I–III</span
-                ><span class="mb-node">+Reach I–III</span
-                ><span class="mb-node">+1 Revive</span
-                ><span class="mb-node">Dash i-frames +0.1s</span>
-              </div>
-            </div>
-            <div class="meta-branch">
-              <div class="mb-title el-arcane">Codex (Spells)</div>
-              <p class="mb-desc">
-                Unlocks spells 13–32 (first 12 free) and draft quality.
-              </p>
-              <div class="mb-nodes">
-                <span class="mb-node">Unlock spell tiers II–V</span
-                ><span class="mb-node">Chosen school starts +1 Lv</span
-                ><span class="mb-node">4th level-up offer</span
-                ><span class="mb-node">Banish charge</span
-                ><span class="mb-node">Reroll charge</span>
-              </div>
-            </div>
-            <div class="meta-branch">
-              <div class="mb-title" style="color: var(--gold)">
-                Loom (The Web)
-              </div>
-              <p class="mb-desc">
-                Build-craft depth: see more, move once, start resonant.
-              </p>
-              <div class="mb-nodes">
-                <span class="mb-node">Resonance hints visible</span
-                ><span class="mb-node">+1 reposition per run</span
-                ><span class="mb-node">Start with 1 random Harmonic</span
-                ><span class="mb-node">Guaranteed fusion altar</span>
-              </div>
-            </div>
-            <div class="meta-branch">
-              <div class="mb-title" style="color: var(--crimson-bright)">
-                Fate (Run Shaping)
-              </div>
-              <p class="mb-desc">
-                More story per run, and the doors to new content.
-              </p>
-              <div class="mb-nodes">
-                <span class="mb-node">+1 Pact altar</span
-                ><span class="mb-node">+1 Cleansing Well</span
-                ><span class="mb-node">Mutator codex (map icons)</span
-                ><span class="mb-node">Unlock Zones 2–5</span
-                ><span class="mb-node">Unlock Afterlight</span
-                ><span class="mb-node">+1 Omen per run</span>
-              </div>
-            </div>
-            <div class="meta-branch">
-              <div class="mb-title" style="color: var(--radiant)">
-                Order / Covenant (Faction Deep Branch)
-              </div>
-              <p class="mb-desc">The branch that makes your side yours.</p>
-              <div class="mb-nodes">
-                <span class="mb-node">☀ Radiance spends −20%</span
-                ><span class="mb-node">☀ Unlock Vigil</span
-                ><span class="mb-node">☀ Stage V sear slowed</span
-                ><span class="mb-node">☀ Unlock Oracle / Lantern-Bearer</span
-                ><span class="mb-node">☾ Curse/hit −1</span
-                ><span class="mb-node">☾ Unlock Final Payment</span
-                ><span class="mb-node">☾ Minion cap +1</span
-                ><span class="mb-node"
-                  >☾ Unlock Hollow Saint / Pale Weaver</span
-                >
-              </div>
-            </div>
-            <div class="meta-branch">
-              <div class="mb-title" style="color: var(--gold-bright)">
-                The Penumbra (Shared · Eclipse Shards)
-              </div>
-              <p class="mb-desc">
-                Co-op prestige. Visible from both halls; built by playing
-                together.
-              </p>
-              <div class="mb-nodes">
-                <span class="mb-node">Eclipse recipes 5–8</span
-                ><span class="mb-node">+1 shared revive (duos)</span
-                ><span class="mb-node">Cross-faction emotes</span
-                ><span class="mb-node">The unlabeled 9th recipe</span>
-              </div>
-            </div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Each branch grows as a honeycomb from its first node. Unlocking a node makes all its direct children available. Hover any node to see its effect, cost, and dependency.</p>
+
+          <!-- Research Tree Legend -->
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:12px;color:var(--text-muted);align-items:center">
+            <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:16px;height:14px;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);background:#4A3A9A"></span>Unlocked</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:16px;height:14px;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);background:#1A8C5E"></span>Available</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:16px;height:14px;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);background:var(--bg-card);outline:0.5px solid var(--border)"></span>Locked</span>
           </div>
+
+          <!-- Branch tab bar -->
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px" id="rtabs"></div>
+
+          <!-- Tree SVG container -->
+          <div style="position:relative">
+            <svg id="rtree" style="display:block;width:100%;max-width:680px"></svg>
+            <div id="rttip" style="position:absolute;background:var(--bg-card);border:0.5px solid var(--border);border-radius:6px;padding:8px 11px;font-size:12px;pointer-events:none;max-width:210px;z-index:20;display:none;line-height:1.5;color:var(--text-primary)"></div>
+          </div>
+
+          <script>
+          (function(){
+            var BRANCHES=[
+              {id:'vessel',label:'Vessel',sub:'Body & Survival',cur:'Dawnmotes',col:'#4A3A9A',nodes:[
+                {id:'v0',n:'+Vitality I',   d:'Max HP +8%. The foundation of every build.',  c:3, u:1,p:null},
+                {id:'v1',n:'+Vitality II',  d:'Max HP +8%.',                                  c:5, u:1,p:'v0'},
+                {id:'v2',n:'+Swiftness I',  d:'Move speed +4%.',                              c:4, u:1,p:'v0'},
+                {id:'v3',n:'+Reach I',      d:'Spell radius +5%.',                            c:6, u:0,p:'v0'},
+                {id:'v4',n:'+Vitality III', d:'Max HP +6%.',                                  c:7, u:0,p:'v1'},
+                {id:'v5',n:'+Swiftness II', d:'Move speed +4%.',                              c:8, u:0,p:'v2'},
+                {id:'v6',n:'+Reach II',     d:'Spell radius +5%.',                            c:10,u:0,p:'v3'},
+                {id:'v7',n:'Dash i-frames', d:'+0.1s invincibility on dash.',                 c:12,u:0,p:'v5'},
+                {id:'v8',n:'+Swiftness III',d:'Move speed +4%.',                              c:11,u:0,p:'v5'},
+                {id:'v9',n:'+Reach III',    d:'Spell radius +5%.',                            c:13,u:0,p:'v6'},
+                {id:'v10',n:'+Vitality IV', d:'Max HP +4%.',                                  c:9, u:0,p:'v4'},
+                {id:'v11',n:'+Vitality V',  d:'Max HP +2%.',                                  c:15,u:0,p:'v10'},
+                {id:'v12',n:'+1 Revive',    d:'Extra life per run.',                          c:18,u:0,p:'v11'},
+              ]},
+              {id:'codex',label:'Codex',sub:'Spells & Drafting',cur:'Dawnmotes',col:'#185FA5',nodes:[
+                {id:'c0',n:'Spell tier II', d:'Spells 13–20 enter the draft pool.',           c:4, u:1,p:null},
+                {id:'c1',n:'4th offer',     d:'Draft sees 4 choices instead of 3.',           c:5, u:1,p:'c0'},
+                {id:'c2',n:'Banish charge', d:'Banish one spell offer per draft.',            c:6, u:0,p:'c0'},
+                {id:'c3',n:'Reroll charge', d:'Reroll all offers once per draft.',            c:7, u:0,p:'c0'},
+                {id:'c4',n:'Spell tier III',d:'Spells 21–26 enter pool.',                    c:9, u:0,p:'c1'},
+                {id:'c5',n:'School +1 Lv', d:'Starting school begins at level 2.',           c:8, u:0,p:'c1'},
+                {id:'c6',n:'2nd Banish',    d:'Second banish charge per draft.',             c:14,u:0,p:'c2'},
+                {id:'c7',n:'2nd Reroll',    d:'Second reroll charge per draft.',             c:14,u:0,p:'c3'},
+                {id:'c8',n:'Spell tier IV', d:'Spells 27–30.',                               c:12,u:0,p:'c4'},
+                {id:'c9',n:'5th offer',     d:'Draft sees 5 choices.',                       c:16,u:0,p:'c5'},
+                {id:'c10',n:'Spell tier V', d:'Spells 31–32. Run-defining.',                 c:18,u:0,p:'c8'},
+              ]},
+              {id:'loom',label:'Loom',sub:'The Web',cur:'Dawnmotes',col:'#854F0B',nodes:[
+                {id:'l0',n:'Resonance hints', d:'Web shows resonance preview before placement.',c:3,u:1,p:null},
+                {id:'l1',n:'+1 reposition',   d:'Move one placed spell once per run.',        c:6,u:1,p:'l0'},
+                {id:'l2',n:'Fusion altar',    d:'Guaranteed fusion altar in stage 2.',        c:7,u:0,p:'l0'},
+                {id:'l3',n:'Resonance chain', d:'Preview full resonance chain before placing.',c:9,u:0,p:'l0'},
+                {id:'l4',n:'+2nd reposition', d:'Two repositions per run.',                  c:12,u:0,p:'l1'},
+                {id:'l5',n:'Start w/ Harmonic',d:'Begin each run with a random Harmonic.',   c:10,u:0,p:'l2'},
+                {id:'l6',n:'Seam vision',     d:'Seam resonance lines always visible.',      c:12,u:0,p:'l2'},
+                {id:'l7',n:'Web pulse VFX',   d:'Resonance pulse shows live damage numbers.',c:14,u:0,p:'l3'},
+                {id:'l8',n:'+3rd reposition', d:'Three repositions per run.',                c:16,u:0,p:'l4'},
+              ]},
+              {id:'fate',label:'Fate',sub:'Run Shaping',cur:'Dawnmotes',col:'#8B2500',nodes:[
+                {id:'f0',n:'+1 Pact altar',  d:'One extra Pact altar per run.',              c:4, u:1,p:null},
+                {id:'f1',n:'+1 Well',        d:'One extra Cleansing Well per run.',          c:4, u:1,p:'f0'},
+                {id:'f2',n:'Mutator codex',  d:'Map shows Mutator icons before entering zones.',c:6,u:0,p:'f0'},
+                {id:'f3',n:'+1 Omen',        d:'One extra Omen event per run.',              c:7, u:0,p:'f0'},
+                {id:'f4',n:'Unlock Zone 2',  d:'Desert Shelf zone unlocked.',                c:8, u:0,p:'f1'},
+                {id:'f5',n:'+2nd Omen',      d:'Second extra Omen per run.',                 c:12,u:0,p:'f3'},
+                {id:'f6',n:'Unlock Zone 3',  d:'Umbral Fen zone unlocked.',                  c:10,u:0,p:'f4'},
+                {id:'f7',n:'Unlock Zone 4',  d:'The Wound zone unlocked.',                   c:14,u:0,p:'f6'},
+                {id:'f8',n:'Afterlight',     d:'Post-30min Afterlight mode accessible.',     c:16,u:0,p:'f6'},
+                {id:'f9',n:'Unlock Zone 5',  d:'The Eye — final area.',                      c:18,u:0,p:'f7'},
+              ]},
+              {id:'order',label:'Order',sub:'Radiant Faction',cur:'Dawnmotes',col:'#9A6B00',nodes:[
+                {id:'or0',n:'Radiance −20%', d:'Radiance ability costs reduced by 20%.',     c:5, u:1,p:null},
+                {id:'or1',n:'Sear slowed',   d:'Stage V sear meter fills 25% slower.',       c:7, u:1,p:'or0'},
+                {id:'or2',n:'Radiance −10%', d:'Stacks with Radiance −20% node.',            c:9, u:0,p:'or0'},
+                {id:'or3',n:'Unlock Vigil',  d:'Vigil class unlocked.',                      c:10,u:0,p:'or1'},
+                {id:'or4',n:'Vigil passive', d:'Vigil: Radiance pulses slow enemies briefly.',c:12,u:0,p:'or3'},
+                {id:'or5',n:'Unlock Oracle', d:'Oracle class unlocked.',                     c:14,u:0,p:'or3'},
+                {id:'or6',n:'Lantern-Bearer',d:'Lantern-Bearer support class unlocked.',     c:14,u:0,p:'or5'},
+                {id:'or7',n:'Oracle mastery',d:'Oracle: 4th school slot unlocked.',          c:18,u:0,p:'or5'},
+              ]},
+              {id:'covenant',label:'Covenant',sub:'Umbral Faction',cur:'Nightdrops',col:'#5A2D82',nodes:[
+                {id:'co0',n:'Curse/hit −1',  d:'Each hit reduces active curse count by 1.',  c:5, u:1,p:null},
+                {id:'co1',n:'Minion cap +1', d:'Maximum active minions increased by 1.',     c:8, u:1,p:'co0'},
+                {id:'co2',n:'Final Payment', d:'Final Payment Pact unlocked.',               c:12,u:0,p:'co0'},
+                {id:'co3',n:'Curse/hit −2',  d:'Stacks with Curse/hit −1 node.',             c:10,u:0,p:'co0'},
+                {id:'co4',n:'Minion cap +2', d:'Second minion cap increase.',                c:14,u:0,p:'co1'},
+                {id:'co5',n:'Hollow Saint',  d:'Hollow Saint class unlocked.',               c:16,u:0,p:'co2'},
+                {id:'co6',n:'Pale Weaver',   d:'Pale Weaver class — Web specialist.',        c:16,u:0,p:'co2'},
+                {id:'co7',n:'Weaver mastery',d:'Seam cells count as own cells.',             c:20,u:0,p:'co6'},
+              ]},
+              {id:'penumbra',label:'Penumbra',sub:'Eclipse Shards',cur:'Eclipse Shards',col:'#6A5FCC',nodes:[
+                {id:'p0',n:'Eclipse 5–8',          d:'Four new Eclipse fusion recipes unlocked.',c:6, u:1,p:null},
+                {id:'p1',n:'+1 shared revive',     d:'Duo runs get one extra shared revive.',   c:8, u:1,p:'p0'},
+                {id:'p2',n:'Eclipse 9–12',         d:'Advanced Eclipse fusion recipes.',        c:12,u:0,p:'p0'},
+                {id:'p3',n:'Cross-faction emotes', d:'Emotes visible across faction boundary.', c:5, u:0,p:'p1'},
+                {id:'p4',n:'+2nd shared revive',   d:'Second shared revive per session.',       c:14,u:0,p:'p1'},
+                {id:'p5',n:'The unlabeled 9th',    d:'Unknown. Discovered only through play.',  c:20,u:0,p:'p2'},
+              ]},
+            ];
+
+            var R=28;
+            function axialToPixel(q,r){return{x:R*1.5*q,y:R*Math.sqrt(3)*(r+q*0.5)};}
+            var DIRS=[{dq:0,dr:-1},{dq:1,dr:-1},{dq:-1,dr:0},{dq:1,dr:0},{dq:-1,dr:1},{dq:0,dr:1}];
+
+            function flatHex(cx,cy){
+              var p=[];
+              for(var i=0;i<6;i++){var a=Math.PI/3*i;p.push((cx+R*Math.cos(a)).toFixed(1)+','+(cy+R*Math.sin(a)).toFixed(1));}
+              return p.join(' ');
+            }
+
+            function computeStates(nodes){
+              var byId={};nodes.forEach(function(n){byId[n.id]=n;});
+              nodes.forEach(function(n){
+                if(n.u===1){n.s='unlocked';return;}
+                var par=n.p?byId[n.p]:null;
+                n.s=(par&&par.u===1)?'available':'locked';
+              });
+            }
+
+            function layoutTree(nodes){
+              var children={};
+              nodes.forEach(function(n){if(n.p){if(!children[n.p])children[n.p]=[];children[n.p].push(n.id);}});
+              var pos={},occ=new Set();
+              function key(q,r){return q+','+r;}
+              var root=nodes.find(function(n){return!n.p;});
+              pos[root.id]={q:0,r:0};occ.add(key(0,0));
+              function place(pid){
+                var kids=children[pid]||[];if(!kids.length)return;
+                var pq=pos[pid].q,pr=pos[pid].r,placed=0;
+                for(var di=0;di<DIRS.length&&placed<kids.length;di++){
+                  var nq=pq+DIRS[di].dq,nr=pr+DIRS[di].dr,k=key(nq,nr);
+                  if(!occ.has(k)){pos[kids[placed]]={q:nq,r:nr};occ.add(k);placed++;}
+                }
+                for(var ring=2;placed<kids.length&&ring<8;ring++){
+                  for(var dq=-ring;dq<=ring&&placed<kids.length;dq++){
+                    for(var dr=-ring;dr<=ring&&placed<kids.length;dr++){
+                      if(Math.abs(dq)+Math.abs(dr)+Math.abs(-dq-dr)>ring*2)continue;
+                      var nq2=pq+dq,nr2=pr+dr,k2=key(nq2,nr2);
+                      if(!occ.has(k2)){pos[kids[placed]]={q:nq2,r:nr2};occ.add(k2);placed++;}
+                    }
+                  }
+                }
+              }
+              var q=[root.id],seen=new Set([root.id]);
+              while(q.length){var id=q.shift();place(id);(children[id]||[]).forEach(function(c){if(!seen.has(c)){seen.add(c);q.push(c);}});}
+              var pix={};
+              Object.keys(pos).forEach(function(id){var p=pos[id],xy=axialToPixel(p.q,p.r);pix[id]={cx:xy.x,cy:xy.y};});
+              return pix;
+            }
+
+            function stateColor(s,col){
+              if(s==='unlocked')return col;
+              if(s==='available')return'#1A8C5E';
+              return'var(--bg-card)';
+            }
+
+            function build(b){
+              computeStates(b.nodes);
+              var svg=document.getElementById('rtree');
+              svg.innerHTML='';
+              var ns='http://www.w3.org/2000/svg';
+              var pix=layoutTree(b.nodes);
+              var byId={};b.nodes.forEach(function(n){byId[n.id]=n;});
+              var xs=Object.values(pix).map(function(p){return p.cx;});
+              var ys=Object.values(pix).map(function(p){return p.cy;});
+              var pad=R+8,x0=Math.min.apply(null,xs)-pad,x1=Math.max.apply(null,xs)+pad;
+              var y0=Math.min.apply(null,ys)-pad-24,y1=Math.max.apply(null,ys)+pad;
+              var vw=x1-x0,vh=y1-y0;
+              svg.setAttribute('viewBox',x0+' '+y0+' '+vw+' '+vh);
+              svg.style.height=Math.min(560,Math.round(vh/vw*660))+'px';
+
+              var ti=document.createElementNS(ns,'text');
+              ti.setAttribute('x',(x0+x1)/2);ti.setAttribute('y',y0+17);
+              ti.setAttribute('text-anchor','middle');ti.setAttribute('font-size','12');
+              ti.setAttribute('font-weight','500');ti.setAttribute('fill','var(--text-primary)');
+              ti.setAttribute('font-family','var(--font-body,sans-serif)');
+              ti.textContent=b.label+' — '+b.sub;svg.appendChild(ti);
+
+              b.nodes.forEach(function(n){
+                if(!n.p)return;
+                var pp=pix[n.p],cp=pix[n.id];if(!pp||!cp)return;
+                var l=document.createElementNS(ns,'line');
+                l.setAttribute('x1',pp.cx);l.setAttribute('y1',pp.cy);
+                l.setAttribute('x2',cp.cx);l.setAttribute('y2',cp.cy);
+                var active=n.s==='unlocked'||n.s==='available';
+                l.setAttribute('stroke',active?b.col:'var(--border)');
+                l.setAttribute('stroke-width',active?'1.5':'0.5');
+                l.setAttribute('stroke-opacity','0.5');
+                svg.appendChild(l);
+              });
+
+              b.nodes.forEach(function(n){
+                var p=pix[n.id];if(!p)return;
+                var isRoot=!n.p;
+                var g=document.createElementNS(ns,'g');g.style.cursor='pointer';
+                var fill=stateColor(n.s,b.col);
+                var stroke=n.s==='locked'?'var(--border)':'none';
+                var sw=n.s==='locked'?0.5:0;
+
+                if(isRoot){
+                  var ring=document.createElementNS(ns,'polygon');
+                  var rp=[];
+                  for(var i=0;i<6;i++){var a=Math.PI/3*i,rr=R+4;rp.push((p.cx+rr*Math.cos(a)).toFixed(1)+','+(p.cy+rr*Math.sin(a)).toFixed(1));}
+                  ring.setAttribute('points',rp.join(' '));ring.setAttribute('fill','none');
+                  ring.setAttribute('stroke',b.col);ring.setAttribute('stroke-width','2');
+                  svg.appendChild(ring);
+                }
+
+                var hex=document.createElementNS(ns,'polygon');
+                hex.setAttribute('points',flatHex(p.cx,p.cy));
+                hex.setAttribute('fill',fill);hex.setAttribute('stroke',stroke);hex.setAttribute('stroke-width',sw);
+                g.appendChild(hex);
+
+                var words=n.n.split(' '),lines=[],cur='';
+                words.forEach(function(w){var t=cur?cur+' '+w:w;if(t.length>11&&cur){lines.push(cur);cur=w;}else cur=t;});
+                if(cur)lines.push(cur);
+                var lh=9,fc=n.s==='locked'?'var(--text-muted)':'#fff';
+                var bY=p.cy-(lines.length-1)*lh/2;
+                lines.forEach(function(l,li){
+                  var t=document.createElementNS(ns,'text');
+                  t.setAttribute('x',p.cx);t.setAttribute('y',bY+li*lh+3);
+                  t.setAttribute('text-anchor','middle');t.setAttribute('font-size','8');
+                  t.setAttribute('fill',fc);t.setAttribute('font-family','var(--font-body,sans-serif)');
+                  t.textContent=l;g.appendChild(t);
+                });
+
+                var ct=document.createElementNS(ns,'text');
+                ct.setAttribute('x',p.cx);ct.setAttribute('y',p.cy+R-5);
+                ct.setAttribute('text-anchor','middle');ct.setAttribute('font-size','7');
+                ct.setAttribute('fill',n.s==='locked'?'var(--text-muted)':'rgba(255,255,255,0.75)');
+                ct.setAttribute('font-family','var(--font-body,sans-serif)');
+                ct.textContent=n.c+'◆';g.appendChild(ct);
+
+                g.addEventListener('mouseenter',function(){
+                  var tip=document.getElementById('rttip');
+                  var depName=n.p?byId[n.p].n:null;
+                  var depHtml=depName?'<div style="font-size:11px;color:var(--text-muted);margin-top:4px;border-top:0.5px solid var(--border);padding-top:4px">Requires: '+depName+'</div>':'<div style="font-size:11px;color:var(--text-muted);margin-top:4px;border-top:0.5px solid var(--border);padding-top:4px">Starting node</div>';
+                  var stLabel=n.s==='unlocked'?'Unlocked':n.s==='available'?'Available':'Locked';
+                  tip.innerHTML='<strong style="font-size:13px;display:block;margin-bottom:3px">'+n.n+'</strong>'+n.d+'<div style="font-size:11px;color:var(--text-muted);margin-top:2px">'+n.c+' '+b.cur+' · '+stLabel+'</div>'+depHtml;
+                  tip.style.display='block';
+                });
+                g.addEventListener('mousemove',function(e){
+                  var tip=document.getElementById('rttip');
+                  var pr=tip.parentElement.getBoundingClientRect();
+                  tip.style.left=(e.clientX-pr.left+14)+'px';
+                  tip.style.top=(e.clientY-pr.top-10)+'px';
+                });
+                g.addEventListener('mouseleave',function(){document.getElementById('rttip').style.display='none';});
+                svg.appendChild(g);
+              });
+            }
+
+            var cur=0;
+            function renderTabs(){
+              var el=document.getElementById('rtabs');el.innerHTML='';
+              BRANCHES.forEach(function(b,i){
+                var btn=document.createElement('button');
+                btn.style.cssText='font-size:12px;padding:5px 13px;border-radius:999px;border:'+(i===cur?'1.5px':'0.5px')+' solid '+(i===cur?b.col:'var(--border)')+';background:transparent;color:'+(i===cur?b.col:'var(--text-muted)')+';cursor:pointer;font-weight:'+(i===cur?'500':'400');
+                btn.textContent=b.label;
+                btn.onclick=function(){cur=i;renderTabs();build(BRANCHES[i]);};
+                el.appendChild(btn);
+              });
+            }
+            renderTabs();build(BRANCHES[0]);
+          })();
+          </script>
 
           <div class="infobox ib-gold" style="margin-top: 18px">
             <div class="ib-title">Research Philosophy</div>
