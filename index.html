@@ -618,6 +618,11 @@
         color: var(--crimson-bright);
         border: 1px solid rgba(192, 57, 43, 0.25);
       }
+      .badge-buy {
+        background: rgba(157, 78, 221, 0.14);
+        color: #ce93d8;
+        border: 1px solid rgba(157, 78, 221, 0.3);
+      }
       .class-name {
         font-family: "Cinzel", serif;
         font-size: 17px;
@@ -2231,11 +2236,13 @@
           <div class="sec-eye">07 — The Player</div>
           <h2 class="sec-title">Sorcerer Classes</h2>
           <p class="sec-sub">
-            Eight classes — four per faction. Classes are chassis, not school
+            Twelve classes — six per faction. Classes are chassis, not school
             locks: any class may learn all six shared schools plus its faction's
             special school (seven total). Each defines a starting spell,
-            passive, dash, Web shape, and meter modifier. Two per faction are
-            free; two unlock through research.
+            passive, dash, Web shape, and meter modifier. Per faction: two are
+            free, two unlock through research, and two are
+            <strong>Charter classes</strong> bought outright with the in-game
+            currency you earn from runs — never real money.
           </p>
 
           <h3 style="color: var(--radiant)">☀ Radiant Order Classes</h3>
@@ -2387,6 +2394,87 @@
                 Start: <span class="el-holy">Consecrated Ground</span> · Dash:
                 <span>Lamplight Glide</span> (leaves a 3s light trail allies can
                 follow) · Web: 6 cells, capacity <strong>8</strong>
+              </div>
+            </div>
+            <div class="class-card">
+              <div class="class-badge badge-buy">Buyable · Charter</div>
+              <div class="class-name el-holy">Gilded Martyr</div>
+              <div class="class-epithet">
+                "Strike me. I will make a sunrise of it."
+              </div>
+              <p class="class-passive">
+                <strong>Reliquary of Wounds</strong> — 25% of damage you take
+                radiates back as Holy damage in a 6-stud aura; at Radiance Stage
+                III+ every hit you take also looses a retaliation spark at the
+                attacker. Turns Radiance's "everything hunts you" into a weapon
+                — a meter modifier, not a stat boost.
+              </p>
+              <div class="stat-row">
+                <span class="stat-label">Vitality</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-crimson" style="width: 82%"></div>
+                </div>
+                <span class="stat-val">★★★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Potency</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-violet" style="width: 50%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Swiftness</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-gold" style="width: 42%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="class-start">
+                Start: <span class="el-holy">Sunray Lance</span> · Dash:
+                <span>Martyr's Step</span> (the first hit taken after dashing is
+                absorbed and reflected) · Web: 6
+              </div>
+            </div>
+            <div class="class-card">
+              <div class="class-badge badge-buy">Buyable · Charter</div>
+              <div class="class-name el-holy">Carillon Saint</div>
+              <div class="class-epithet">
+                "Keep time, and the night keeps you."
+              </div>
+              <p class="class-passive">
+                <strong>Antiphon</strong> — plants a stationary bell-beacon every
+                12s; allies near it gain +12% Tempo, and rhythm spells (Judgement
+                Bell, Avalanche Echo) ring one extra toll. Radiance you spend also
+                refunds 10% of allies' cooldowns. A tempo support — Web shape and
+                meter modifier, not raw power.
+              </p>
+              <div class="stat-row">
+                <span class="stat-label">Vitality</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-crimson" style="width: 50%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Potency</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-violet" style="width: 55%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Swiftness</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-gold" style="width: 65%"></div>
+                </div>
+                <span class="stat-val">★★★</span>
+              </div>
+              <div class="class-start">
+                Start: <span class="el-holy">Judgement Bell</span> · Dash:
+                <span>Grace Note</span> (drops a bell-beacon at the dash origin) ·
+                Web: 6 — <em>Antiphon row</em>: rhythm spells sharing a row gain
+                an extra toll
               </div>
             </div>
           </div>
@@ -2543,7 +2631,145 @@
                 0.6s) · Web: 6 cells, capacity <strong>8</strong>
               </div>
             </div>
+            <div class="class-card">
+              <div class="class-badge badge-buy">Buyable · Charter</div>
+              <div class="class-name el-void">Ashen Usurer</div>
+              <div class="class-epithet">
+                "Every debt is collected — with interest."
+              </div>
+              <p class="class-passive">
+                <strong>Foreclosure</strong> — gives Curse the spend it normally
+                lacks: at Stage III+ you may dump 40 Curse to erupt a withering
+                nova that spreads your hexes to everything caught (long cooldown).
+                Curse you gain also bleeds onto nearby enemies as Blight. The only
+                Curse release valve in the game — a brand-new meter modifier.
+              </p>
+              <div class="stat-row">
+                <span class="stat-label">Vitality</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-crimson" style="width: 60%"></div>
+                </div>
+                <span class="stat-val">★★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Potency</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-violet" style="width: 78%"></div>
+                </div>
+                <span class="stat-val">★★★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Swiftness</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-gold" style="width: 48%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="class-start">
+                Start: <span class="el-void">Star-Eater Maw</span> · Dash:
+                <span>Collector's Lurch</span> (spends 5 Curse to leave a short
+                hex trail) · Web: 6
+              </div>
+            </div>
+            <div class="class-card">
+              <div class="class-badge badge-buy">Buyable · Charter</div>
+              <div class="class-name el-void">Voidshepherd</div>
+              <div class="class-epithet">
+                "I do not chase. I decide where you may stand."
+              </div>
+              <p class="class-passive">
+                <strong>Tending the Dark</strong> — your Void and Zone spells
+                linger 30% longer and slowly pull enemies toward their centers;
+                in dark zones you see farther. Higher Curse stages
+                <em>widen</em> your zones rather than only adding damage. An
+                area-denial controller — Web shape and meter modifier, not power.
+              </p>
+              <div class="stat-row">
+                <span class="stat-label">Vitality</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-crimson" style="width: 62%"></div>
+                </div>
+                <span class="stat-val">★★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Potency</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-violet" style="width: 60%"></div>
+                </div>
+                <span class="stat-val">★★★</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Swiftness</span>
+                <div class="stat-bar">
+                  <div class="stat-fill sf-gold" style="width: 50%"></div>
+                </div>
+                <span class="stat-val">★★</span>
+              </div>
+              <div class="class-start">
+                Start: <span class="el-void">Event Horizon</span> · Dash:
+                <span>Umbral Drift</span> (dash drops a brief slowing void pool) ·
+                Web: 6 — <em>Maelstrom spiral</em>: Zone spells beside the Heart
+                Gap gain area
+              </div>
+            </div>
           </div>
+
+          <h3>Buying Classes — the Charter Roster</h3>
+          <p>
+            Beyond the four free and research-unlocked classes, each faction has
+            a <strong>Charter Roster</strong> of two classes bought outright with
+            the currency you already earn from runs. They are deliberate
+            sidegrades — new meter modifiers, Web shapes, and roles — never raw
+            power, so they stay entirely off the real-money store and hold the
+            no-pay-to-win line the rest of the game keeps.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Charter Class</th>
+                <th>Faction</th>
+                <th>Price (tuning target)</th>
+                <th>Bought at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-muted">Gilded Martyr · Carillon Saint</td>
+                <td><span style="color: var(--radiant)">☀ Radiant</span></td>
+                <td class="td-muted">4,000 Dawnmotes each</td>
+                <td class="td-muted">Heliarium roster board</td>
+              </tr>
+              <tr>
+                <td class="td-muted">Ashen Usurer · Voidshepherd</td>
+                <td><span style="color: var(--umbral)">☾ Umbral</span></td>
+                <td class="td-muted">4,000 Nightdrops each</td>
+                <td class="td-muted">Athenaeum roster board</td>
+              </tr>
+              <tr>
+                <td class="td-muted">Any Charter class (cross-faction alt)</td>
+                <td class="td-gold">Either</td>
+                <td class="td-muted">or 90 Eclipse Shards</td>
+                <td class="td-muted">Threshold roster — skip the faction grind</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="st">
+            <li>
+              <strong>One-time unlock per faction profile.</strong> Once bought,
+              the class is permanently available in that profile's pre-run select
+            </li>
+            <li>
+              <strong>A goal, not a wall.</strong> A full clear banks ~230–300
+              faction currency, so a Charter class is a handful of good runs.
+              Faction currency ties the buy to playing that faction; the
+              account-wide <strong>Eclipse Shard</strong> option lets dedicated
+              co-op players unlock across factions without re-grinding
+            </li>
+            <li>
+              <strong>Never purchasable with Robux.</strong> Cosmetics remain the
+              only real-money line — Charter classes are earned, not paid for
+            </li>
+          </ul>
 
           <div class="infobox ib-violet" style="margin-top: 18px">
             <div class="ib-title">Class Philosophy</div>
@@ -8440,6 +8666,13 @@
               and Afterlight's "vertical" scaling now has explicit Surge math
               (§Power Scaling)
             </li>
+            <li>
+              <strong>Charter classes added:</strong> two buyable classes per
+              faction (Gilded Martyr, Carillon Saint · Ashen Usurer,
+              Voidshepherd), purchased with in-game faction currency or Eclipse
+              Shards — never Robux. Each is a sidegrade (new meter modifier / Web
+              shape), holding the no-pay-to-win line (§7)
+            </li>
           </ul>
 
           <h3>Design Changelog — v3.1 Web Redesign</h3>
@@ -8979,10 +9212,12 @@
                 <td class="td-violet">Monetization</td>
                 <td class="td-muted">
                   <strong>Cosmetics only</strong>: vestments, spell VFX
-                  palettes, halo/shadow trails, hub pets; starter class bundles
-                  also earnable by play; optional research
-                  <em>parallelization</em> (queue 2 nodes) — never raw power. In
-                  a clone-saturated platform, the genre's trust is the product
+                  palettes, halo/shadow trails, hub pets. <strong>Every class —
+                  free, research, and the buyable Charter Roster (§7) — is
+                  unlocked with in-game currency only, never Robux.</strong>
+                  Optional research <em>parallelization</em> (queue 2 nodes) —
+                  never raw power. In a clone-saturated platform, the genre's
+                  trust is the product
                 </td>
               </tr>
               <tr>
@@ -9083,8 +9318,8 @@
             &nbsp;&nbsp;codex: { "riftbolt": { lvlSeen: 10, talentsSeen: [1,3],
             fusionsSeen: ["proof"] }, ... },<br />
             &nbsp;&nbsp;relics: ["quiet_compass", "ledger_signed"],<br />
-            &nbsp;&nbsp;classes: ["riftwalker", "whisperbinder",
-            "hollowsaint"],<br />
+            &nbsp;&nbsp;classes: ["riftwalker", "whisperbinder", "hollowsaint",
+            "ashenusurer"], // last one a bought Charter class<br />
             &nbsp;&nbsp;pactMemory: { "mother_of_teeth": { accepts: 11,
             refusals: 2 } }, // drives evolving dialogue<br />
             &nbsp;&nbsp;stats: { runs: 61, sovereigns: 9, bestAfterlight: 432
