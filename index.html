@@ -1463,6 +1463,9 @@
         <a class="sb-link" href="#roblox"
           ><span class="n">27</span>Roblox Implementation</a
         >
+        <a class="sb-link" href="#hardcore"
+          ><span class="n">28</span>Hardcore Mode</a
+        >
       </div>
     </nav>
 
@@ -9059,7 +9062,9 @@
             &nbsp;&nbsp;pactMemory: { "mother_of_teeth": { accepts: 11,
             refusals: 2 } }, // drives evolving dialogue<br />
             &nbsp;&nbsp;stats: { runs: 61, sovereigns: 9, bestAfterlight: 432
-            }<br />
+            },<br />
+            &nbsp;&nbsp;hardcore: { unlocked: true, sovereigns: 2, bestSurge:
+            7, embers: 340, seals: ["umbral"] } // §28 — prestige only<br />
             }<br />
             // + one shared doc: { eclipseShards, cosmetics[], settings } — the
             only cross-faction data
@@ -9109,6 +9114,260 @@
               by default
             </li>
           </ul>
+
+        </section>
+
+        <!-- ──────────────── 28 HARDCORE ──────────────── -->
+        <section class="section" id="hardcore">
+          <div class="sec-eye">28 — Meta & Feel</div>
+          <h2 class="sec-title">Hardcore Mode — The Unbroken Night</h2>
+          <p class="sec-sub">
+            One life, no nets. An opt-in challenge layer that adds no new
+            content to learn and no power to grind — it takes every system the
+            game already has and turns the safety off. Rewards are prestige
+            only.
+          </p>
+
+          <p>
+            The standard run is built around recovery: auto-revives, cleansing
+            wells, rerolls, the Last Light pause. Hardcore is the same night
+            with the recovery removed. The twin risk meters were designed for
+            exactly this — Curse that can only spiral and Radiance that paints
+            you for the whole map finally have nowhere to hide. You light the
+            <strong>Unbroken flame</strong> at the Threshold; if it goes out,
+            the run is over for good.
+          </p>
+
+          <h3>The Hardcore System — what changes</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Standard → Hardcore</th>
+                <th>Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-violet">Lives</td>
+                <td class="td-muted">
+                  Bleed-out auto-revive (90s) →
+                  <strong>no auto-revive; bleed-out ends in death</strong>
+                </td>
+                <td class="td-muted">
+                  The net is the whole point — removing it is the mode
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Solo down</td>
+                <td class="td-muted">
+                  Ends run unless a revive source is held →
+                  <strong>ends the run, period</strong> (relic / Phoenix
+                  self-revive disabled)
+                </td>
+                <td class="td-muted">
+                  Solo hardcore is tuned around never being touched
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Co-op revives</td>
+                <td class="td-muted">
+                  Unlimited ally channels →
+                  <strong>one revive per player per run</strong> (a second down
+                  is final for that player)
+                </td>
+                <td class="td-muted">
+                  Keeps co-op a team game without making death cosmetic
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Last Light</td>
+                <td class="td-muted">
+                  Undertow pauses for the last player up →
+                  <strong>removed</strong>
+                </td>
+                <td class="td-muted">
+                  No mercy window; the spiral never stops
+                </td>
+              </tr>
+              <tr>
+                <td class="td-gold">Cleansing Wells</td>
+                <td class="td-muted">
+                  2 base +1 per two players →
+                  <strong>1 base +1 per three players</strong> (Penitent wisps
+                  unchanged)
+                </td>
+                <td class="td-muted">
+                  Curse becomes a true spiral; cleansing is now a fought-over
+                  lifeline
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Level-up safety</td>
+                <td class="td-muted">
+                  Reroll ×2 / Banish ×2 → <strong>both removed</strong> (Skip
+                  still grants 15 motes)
+                </td>
+                <td class="td-muted">
+                  Every offer is a real, unrepeatable decision
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Enemy scaling</td>
+                <td class="td-muted">
+                  Baseline curves →
+                  <strong>+25% HP and +15% spawn from minute 0; the Undertow
+                  begins at 11:00 (not 13:00)</strong>
+                </td>
+                <td class="td-muted">
+                  Compresses the run — the Drown comes for you sooner
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Elites</td>
+                <td class="td-muted">
+                  Standard rate, one mutator →
+                  <strong>+50% elite rate; paired mutators (Crowned-style) from
+                  Warden II onward</strong>
+                </td>
+                <td class="td-muted">
+                  Reading two threats on one silhouette is the skill ceiling
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Telegraph floor</td>
+                <td class="td-muted">
+                  Heavy hits wind up 0.8–1.2s →
+                  <strong>tightened to the 0.8s safety floor</strong> (never
+                  below)
+                </td>
+                <td class="td-muted">
+                  Hardcore tests your reads, never your ping — the fairness
+                  floor is sacred
+                </td>
+              </tr>
+              <tr>
+                <td class="td-gold">Pacts</td>
+                <td class="td-muted">
+                  It That Waits at Stage V; full refusal blessings →
+                  <strong>It That Waits at Stage IV; refusal blessings halved;
+                  harsher variants weighted</strong>
+                </td>
+                <td class="td-muted">
+                  The greedy deals get louder when the stakes are absolute
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Loadout</td>
+                <td class="td-muted">
+                  Relics chosen pre-run →
+                  <strong>locked at run start; no mid-run swaps</strong>
+                </td>
+                <td class="td-muted">
+                  You commit to a plan and live or die by it
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Entry & Eligibility</h3>
+          <ul class="st">
+            <li>
+              <strong>Unlocked per faction</strong> after your first Sovereign
+              kill on that faction — never the new-player experience
+            </li>
+            <li>
+              <strong>Opt-in per run</strong> at a black-glass brazier in the
+              Threshold; the choice is made before the run, never mid-run
+            </li>
+            <li>
+              <strong>Co-op is all-or-nothing:</strong> every player in the
+              lobby must light the flame. Hardcore matchmaking pools separately
+              — no mixed safe/unsafe parties
+            </li>
+            <li>
+              <strong>Your meta-progress still counts.</strong> Research,
+              classes, and unlocked relics carry in — hardcore isn't a fresh
+              save, it's the same power against a harder night. The variable is
+              danger, not grind
+            </li>
+            <li>
+              All five zones and Afterlight support hardcore;
+              <strong>Unbroken Afterlight</strong> is the game's apex board
+            </li>
+          </ul>
+
+          <h3>Death, Downs & the Party</h3>
+          <ul class="st">
+            <li>
+              The tethered spirit still drifts with the party, but bleed-out is
+              <strong>45s, −15s per subsequent down (min 20s)</strong>, and it
+              <strong>never auto-revives</strong>
+            </li>
+            <li>
+              Each player gets <strong>one second wind</strong> (revive) per
+              run; after that, a down is permanent — they keep contributing
+              motes and can still ping, but they spectate as a Hollow spirit
+            </li>
+            <li>
+              <strong>Full party down at once = run over</strong>, with no Last
+              Light reprieve. Solo: the first down ends it
+            </li>
+            <li>
+              <strong>Death still pays.</strong> Hardcore banks prestige at the
+              depth you reached — pushing a doomed Unbroken run is always worth
+              it, the same death-as-income philosophy as the standard mode
+            </li>
+          </ul>
+
+          <h3>The Seal of the Unbroken — rewards &amp; prestige</h3>
+          <ul class="st">
+            <li>
+              <strong>Currency:</strong> hardcore pays standard
+              Dawnmotes / Nightdrops at <strong>×1.5</strong>, plus a
+              prestige-only token — <strong>Embers of the Unbroken</strong>
+            </li>
+            <li>
+              <strong>Embers buy cosmetics only</strong> — a black-flame
+              halo / shadow-trail, the Unbroken vestment, and a hub brazier that
+              lights one ring per zone cleared hardcore. Never power. This is
+              the same cosmetics-only line the whole economy holds: in a
+              clone-saturated platform, trust is the product
+            </li>
+            <li>
+              <strong>Separate leaderboards</strong> per zone / class / party
+              size, plus the single apex <strong>Unbroken Afterlight</strong>
+              (Surges survived in hardcore overtime)
+            </li>
+            <li>
+              <strong>Profile Seals:</strong> a first hardcore Sovereign kill
+              stamps a permanent seal on that faction's codex. Earn both faction
+              seals to unlock <strong>Eclipse Unbroken</strong> — the soloist
+              phantom-seam of the Locket of the Other Side, re-lit in black
+              flame. The game's ultimate flex, and still purely cosmetic
+            </li>
+            <li>
+              Run scorecards mark hardcore clears with a
+              <strong>cracked-moon</strong> seal, distinct from standard clears
+            </li>
+          </ul>
+
+          <div class="infobox ib-crimson">
+            <div class="ib-title">
+              Design Intent: Sharpen the Dials, Add Nothing
+            </div>
+            <p>
+              Hardcore deliberately introduces zero new spells, enemies, or
+              power. It only re-tunes the existing balance dials to their
+              sharpest setting and removes the recovery systems — which is why
+              it can ship the day the game does and never fragments the design.
+              Keeping its rewards cosmetic-only is load-bearing: the moment
+              hardcore grants power, it becomes a treadmill and the genre-trust
+              thesis breaks. The mode exists for mastery and bragging rights,
+              full stop — and it is the truest test of the two risk meters the
+              whole game is built around.
+            </p>
+          </div>
 
           <hr class="divider" />
 
