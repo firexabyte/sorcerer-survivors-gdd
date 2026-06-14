@@ -2447,8 +2447,8 @@
                 absorbed and reflected) · Web: 6
               </div>
               <div class="class-price">
-                ⊙ 4,000 Dawnmotes
-                <span style="color: var(--text-dim)">· or 90 Eclipse Shards</span>
+                ⊙ 200 Dawnmotes
+                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
               </div>
             </div>
             <div class="class-card">
@@ -2492,8 +2492,8 @@
                 an extra toll
               </div>
               <div class="class-price">
-                ⊙ 4,000 Dawnmotes
-                <span style="color: var(--text-dim)">· or 90 Eclipse Shards</span>
+                ⊙ 200 Dawnmotes
+                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
               </div>
             </div>
           </div>
@@ -2690,8 +2690,8 @@
                 hex trail) · Web: 6
               </div>
               <div class="class-price">
-                ⊙ 4,000 Nightdrops
-                <span style="color: var(--text-dim)">· or 90 Eclipse Shards</span>
+                ⊙ 200 Nightdrops
+                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
               </div>
             </div>
             <div class="class-card">
@@ -2735,8 +2735,8 @@
                 Gap gain area
               </div>
               <div class="class-price">
-                ⊙ 4,000 Nightdrops
-                <span style="color: var(--text-dim)">· or 90 Eclipse Shards</span>
+                ⊙ 200 Nightdrops
+                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
               </div>
             </div>
           </div>
@@ -2764,19 +2764,19 @@
               <tr>
                 <td class="td-muted">Gilded Martyr · Carillon Saint</td>
                 <td><span style="color: var(--radiant)">☀ Radiant</span></td>
-                <td class="td-muted">4,000 Dawnmotes each</td>
+                <td class="td-muted">200 Dawnmotes each</td>
                 <td class="td-muted">Heliarium roster board</td>
               </tr>
               <tr>
                 <td class="td-muted">Ashen Usurer · Voidshepherd</td>
                 <td><span style="color: var(--umbral)">☾ Umbral</span></td>
-                <td class="td-muted">4,000 Nightdrops each</td>
+                <td class="td-muted">200 Nightdrops each</td>
                 <td class="td-muted">Athenaeum roster board</td>
               </tr>
               <tr>
                 <td class="td-muted">Any Charter class (cross-faction alt)</td>
                 <td class="td-gold">Either</td>
-                <td class="td-muted">or 90 Eclipse Shards</td>
+                <td class="td-muted">or 120 Eclipse Shards</td>
                 <td class="td-muted">Threshold roster — skip the faction grind</td>
               </tr>
             </tbody>
@@ -2787,8 +2787,8 @@
               the class is permanently available in that profile's pre-run select
             </li>
             <li>
-              <strong>A goal, not a wall.</strong> A full clear banks ~230–300
-              faction currency, so a Charter class is a handful of good runs.
+              <strong>A goal, not a wall.</strong> A full clear banks ~12–17 ◆,
+              so a 200 ◆ Charter class is ~15 good runs.
               Faction currency ties the buy to playing that faction; the
               account-wide <strong>Eclipse Shard</strong> option lets dedicated
               co-op players unlock across factions without re-grinding
@@ -6404,16 +6404,75 @@
 
           <h3>End-of-Run Currency</h3>
           <div class="formula">
-            Dawnmotes / Nightdrops = (2 × minutes + 0.4 × level + 25 × Wardens +
-            100 × Sovereign + 15 × Omens) × partyBonus<br />
+            Dawnmotes / Nightdrops = ⌈ 0.6 × minutes + 1 × Wardens + 2 × Sovereign + 0.5 × Omens ⌉ × partyBonus<br />
             partyBonus = 1 + 0.1 × (players − 1) // bring friends, earn more<br />
-            Eclipse Shards: 5 per Eclipse fusion · 1 per cross-faction
-            cleanse/save (cap 10/run) · 20 per mixed-party Sovereign
+            // full 20-min clear ≈ 17 ◆ · a 14:00 death ≈ 10 ◆ (~60%) — same scale as research-node costs (3–18 ◆)<br />
+            Eclipse Shards (◇): 5 per Eclipse fusion · 1 per cross-faction cleanse/save (cap 10/run) · 20 per mixed-party Sovereign
           </div>
           <p>
             Dying at 14:00 still pays ~60% of a full clear — pushing a doomed
             run is always worth it, mirroring Magic Survival's death-as-income
             philosophy.
+          </p>
+
+          <h3>Economy at a Glance — currencies balanced across systems</h3>
+          <p>
+            Every sink is priced against one yardstick: a full faction research
+            tree (≈90 nodes) costs about <strong>1,000 ◆</strong>, and a healthy
+            run earns <strong>~8–17 ◆</strong>, making full research the
+            80–120-hour spine of progression. Class prices, prestige costs, and
+            the Robux cap all read off that spine.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Typical earn</th>
+                <th>Spent on (cost)</th>
+                <th>Pacing target</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span style="color: var(--radiant)">Dawnmotes</span> /
+                  <span style="color: var(--umbral)">Nightdrops</span> (◆)
+                </td>
+                <td class="td-muted">
+                  ~8–17 / run; + Robux top-up (cap 250 ◆/week)
+                </td>
+                <td class="td-muted">
+                  Research nodes (3–18 ea; tree ≈ 1,000) · Charter class (200)
+                </td>
+                <td class="td-muted">Tree ≈ 80–120 hrs; a class ≈ 15 good runs</td>
+              </tr>
+              <tr>
+                <td class="td-gold">Eclipse Shards (◇)</td>
+                <td class="td-muted">~30–40 / strong mixed co-op run</td>
+                <td class="td-muted">
+                  Penumbra branch · prestige cosmetics · Charter class (120)
+                </td>
+                <td class="td-muted">
+                  A class ≈ 3–4 mixed clears — the co-op fast lane
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Embers of the Unbroken</td>
+                <td class="td-muted">
+                  ~6–10 / hardcore clear (+1 per Afterlight Surge)
+                </td>
+                <td class="td-muted">Hardcore-only prestige cosmetics (40–150 ea)</td>
+                <td class="td-muted">
+                  A cosmetic ≈ several Unbroken clears; never Robux
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="td-muted" style="font-size: 12.5px">
+            Guardrail: the only Robux path into ◆ is the weekly-capped top-up
+            (§27). Because research is a finite ceiling, the cap buys catch-up
+            speed, not a higher ceiling — and Embers and Eclipse Shards have no
+            Robux path at all, so prestige and co-op feats stay earned.
           </p>
         </section>
 
@@ -7272,7 +7331,7 @@
                   End-of-run score: time survived, kills, Wardens, Sovereign,
                   Omens — longer survival pays more, so doomed runs are still
                   worth pushing. Can also be <strong>topped up with Robux</strong>
-                  (capped weekly) — catch-up convenience, never a Robux-exclusive
+                  (cap 250 ◆/week) — catch-up convenience, never a Robux-exclusive
                   (§27)
                 </td>
                 <td class="td-muted">Faction research nodes</td>
@@ -8713,6 +8772,15 @@
               not power, and Hardcore / Afterlight boards stay skill-based (§7,
               §27)
             </li>
+            <li>
+              <strong>Economy balanced across systems:</strong> every sink now
+              reads off one yardstick — full research tree ≈ 1,000 ◆, a run earns
+              ~8–17 ◆. Charter class 4,000 → <strong>200 ◆</strong> (or 120 ◇),
+              the end-of-run formula was rescaled to match node costs (3–18) and
+              its own ~60% death payout, Embers earn/spend are defined, and the
+              Robux top-up is capped at 250 ◆/week. New "Economy at a Glance"
+              table (§15)
+            </li>
           </ul>
 
           <h3>Design Changelog — v3.1 Web Redesign</h3>
@@ -9256,7 +9324,7 @@
                   <strong>Two real-money lines, no exclusives.</strong>
                   (1) Cosmetics — vestments, spell VFX palettes, halo/shadow
                   trails, hub pets. (2) A <strong>Dawnmotes / Nightdrops top-up</strong>
-                  for Robux, <strong>capped weekly</strong> — pure catch-up
+                  for Robux, <strong>capped at 250 ◆/week</strong> — pure catch-up
                   convenience. Everything currency buys (research, the Charter
                   classes) is <em>also</em> fully earnable by play, so there is
                   <strong>no Robux-exclusive power</strong>. Research is a finite
@@ -9361,7 +9429,7 @@
             {<br />
             &nbsp;&nbsp;version: 3,<br />
             &nbsp;&nbsp;faction: "umbral",<br />
-            &nbsp;&nbsp;currency: 1480, // Nightdrops<br />
+            &nbsp;&nbsp;currency: 310, // Nightdrops<br />
             &nbsp;&nbsp;research: { "vessel_hp_2": 1, "codex_t2": 1, ... },<br />
             &nbsp;&nbsp;codex: { "riftbolt": { lvlSeen: 10, talentsSeen: [1,3],
             fusionsSeen: ["proof"] }, ... },<br />
@@ -9373,7 +9441,7 @@
             &nbsp;&nbsp;stats: { runs: 61, sovereigns: 9, bestAfterlight: 432
             },<br />
             &nbsp;&nbsp;hardcore: { unlocked: true, sovereigns: 2, bestSurge:
-            7, embers: 340, seals: ["umbral"] } // §28 — prestige only<br />
+            7, embers: 95, seals: ["umbral"] } // §28 — prestige only<br />
             }<br />
             // + one shared doc: { eclipseShards, cosmetics[], settings } — the
             only cross-faction data
@@ -9642,13 +9710,15 @@
               <strong>Currency:</strong> hardcore pays standard
               Dawnmotes / Nightdrops at <strong>×1.5</strong>, plus a
               prestige-only token — <strong>Embers of the Unbroken</strong>
+              (~6–10 per Unbroken clear, +1 per Afterlight Surge)
             </li>
             <li>
               <strong>Embers buy cosmetics only</strong> — a black-flame
               halo / shadow-trail, the Unbroken vestment, and a hub brazier that
-              lights one ring per zone cleared hardcore. Never power. This is
-              the same cosmetics-only line the whole economy holds: in a
-              clone-saturated platform, trust is the product
+              lights one ring per zone cleared hardcore — 40–150 Embers each.
+              Never power, and <strong>never buyable with Robux</strong>: prestige
+              must be earned. The same cosmetics-only line the whole economy
+              holds — in a clone-saturated platform, trust is the product
             </li>
             <li>
               <strong>Separate leaderboards</strong> per zone / class / party
