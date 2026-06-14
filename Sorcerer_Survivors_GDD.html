@@ -5351,14 +5351,221 @@
             The crown of the system and the literal core fantasy —
             <strong>no competitor has a cross-player build mechanic.</strong> A
             Radiant and an Umbral player who each hold a Mastered spell from a
-            valid recipe whose Mastered spells sit
-            <strong>adjacent across a Web seam</strong> may fuse them at a Pact
-            altar or Warden kill. Both pay one slot; the fused spell occupies
-            the seam, belonging to both regions at once, and casts from both
-            sorcerers simultaneously on one shared cooldown — and if both halves
-            hit the same target within 0.5s, the second hit deals 50% (the
-            Eclipse is the best spell in the game, not twice the best spell).
+            valid recipe, sitting <strong>adjacent across the Web seam</strong>,
+            may fuse them at a Pact altar or Warden kill. Each player's source
+            spell slot is <strong>replaced</strong> by their own copy of the
+            Eclipse spell — neither player loses a slot. Both copies fire
+            simultaneously on one shared cooldown, and if both hit the same
+            target within 0.5 s the second hit deals 50% (the Eclipse is the
+            best spell in the game, not twice the best spell).
           </p>
+
+          <!-- Eclipse attunement diagram -->
+          <div style="margin:22px 0 8px">
+            <canvas id="eclipseCanvas" style="display:block;width:100%;max-width:640px;margin:0 auto;border-radius:8px"></canvas>
+          </div>
+          <script>
+          (function(){
+            var cv=document.getElementById('eclipseCanvas');
+            var W=640,H=860;
+            cv.width=W;cv.height=H;
+            var ctx=cv.getContext('2d');
+
+            var R=32;
+            var S3=R*Math.sqrt(3);
+            var RING=[
+              [ R*1.5, -S3/2 ],
+              [ 0,     -S3   ],
+              [-R*1.5, -S3/2 ],
+              [-R*1.5,  S3/2 ],
+              [ 0,      S3   ],
+              [ R*1.5,  S3/2 ],
+            ];
+            var OFFSET_X=R*4.5;
+            var OFFSET_Y=S3/2;
+            var cx1=W/2-OFFSET_X/2-R*0.5;
+
+            function hexPts(cx,cy){
+              var p=[];
+              for(var i=0;i<6;i++){var a=Math.PI/3*i;p.push([cx+R*Math.cos(a),cy+R*Math.sin(a)]);}
+              return p;
+            }
+
+            function hex(cx,cy,o){
+              o=o||{};
+              var fill=o.fill||'#111',stroke=o.stroke||'#555',sw=o.sw||2,
+                  label=o.label||'',sub=o.sub||'',lc=o.lc||'#ccc',sc=o.sc||'#888',
+                  glow=o.glow||null,eclipse=o.eclipse||false;
+              var p=hexPts(cx,cy);
+              ctx.save();
+              if(glow){ctx.shadowColor=glow;ctx.shadowBlur=16;}
+              ctx.beginPath();ctx.moveTo(p[0][0],p[0][1]);
+              for(var i=1;i<6;i++)ctx.lineTo(p[i][0],p[i][1]);
+              ctx.closePath();ctx.fillStyle=fill;ctx.fill();
+              ctx.shadowBlur=0;
+              ctx.strokeStyle=stroke;ctx.lineWidth=sw;ctx.stroke();
+              if(eclipse){
+                var p2=hexPts(cx,cy).map(function(v){var dx=v[0]-cx,dy=v[1]-cy,l=Math.sqrt(dx*dx+dy*dy);return[cx+dx/l*(R+5),cy+dy/l*(R+5)];});
+                ctx.beginPath();ctx.moveTo(p2[0][0],p2[0][1]);
+                for(var i=1;i<6;i++)ctx.lineTo(p2[i][0],p2[i][1]);
+                ctx.closePath();ctx.strokeStyle='rgba(200,168,75,0.55)';ctx.lineWidth=3;ctx.stroke();
+              }
+              if(label){
+                var ls=label.split('\n');
+                ctx.font='600 '+(ls.length>1?9:10)+'px var(--font-body,system-ui,sans-serif)';
+                ctx.textAlign='center';ctx.fillStyle=lc;
+                var by=cy-(ls.length-1)*6+4;
+                ls.forEach(function(l,i){ctx.fillText(l,cx,by+i*12);});
+              }
+              if(sub){
+                ctx.font='7px var(--font-body,system-ui,sans-serif)';
+                ctx.textAlign='center';ctx.fillStyle=sc;
+                ctx.fillText(sub,cx,cy+R-4);
+              }
+              ctx.restore();
+            }
+
+            function lbl(x,y,t,c,sz,align,it,bold){
+              ctx.save();ctx.fillStyle=c;
+              ctx.font=(it?'italic ':'')+' '+(bold?'bold ':'')+sz+'px var(--font-body,system-ui,sans-serif)';
+              ctx.textAlign=align||'center';ctx.fillText(t,x,y);ctx.restore();
+            }
+
+            function pill(x,y,t,bg,tc,sz){
+              ctx.save();ctx.font=sz+'px var(--font-body,system-ui,sans-serif)';
+              var w=ctx.measureText(t).width+14;
+              ctx.fillStyle=bg;ctx.beginPath();ctx.roundRect(x-w/2,y-sz,w,sz+6,3);ctx.fill();
+              ctx.fillStyle=tc;ctx.textAlign='center';ctx.fillText(t,x,y);ctx.restore();
+            }
+
+            function hgap(cx,cy,col){
+              ctx.save();ctx.fillStyle=col+'33';
+              ctx.font='6.5px var(--font-body,system-ui,sans-serif)';
+              ctx.textAlign='center';ctx.fillText('heart gap',cx,cy+5);ctx.restore();
+            }
+
+            function flowerBounds(cx,cy){
+              var minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+              RING.forEach(function(r){
+                minX=Math.min(minX,cx+r[0]-R);maxX=Math.max(maxX,cx+r[0]+R);
+                minY=Math.min(minY,cy+r[1]-S3/2);maxY=Math.max(maxY,cy+r[1]+S3/2);
+              });
+              return{left:minX,right:maxX,top:minY,bottom:maxY};
+            }
+
+            var GS='#E8A020',GD='#1b1200',GL='#FFD080',G='#C8A84B';
+            var PS='#AA77EE',PD='#0d0818',PL='#CC99FF';
+            var ED='#130f00';
+
+            function p1B(){return[
+              {i:5,o:{fill:'#1e1400',stroke:GL,sw:2.5,label:'Sunray\nLance',lc:GL,sub:'★ Mastered',sc:G,glow:GL}},
+              {i:0,o:{fill:GD,stroke:GS,sw:2,label:'Thermal\nShock',lc:GL}},
+              {i:1,o:{fill:GD,stroke:GS,sw:2,label:'Pyre\nRing',lc:GS}},
+              {i:2,o:{fill:GD,stroke:GS,sw:2,label:'Chain\nArc',lc:GS}},
+              {i:3,o:{fill:GD,stroke:GS,sw:2,label:'Aegis\nof Dawn',lc:GS}},
+              {i:4,o:{fill:GD,stroke:GS,sw:2,label:'Consecrated\nGround',lc:GS}},
+            ];}
+            function p2B(){return[
+              {i:2,o:{fill:'#0b0118',stroke:PL,sw:2.5,label:'Event\nHorizon',lc:PL,sub:'★ Mastered',sc:PS,glow:PL}},
+              {i:1,o:{fill:PD,stroke:PS,sw:2,label:'Singularity',lc:PS}},
+              {i:0,o:{fill:PD,stroke:PS,sw:2,label:'Riftbolt',lc:PL}},
+              {i:5,o:{fill:PD,stroke:PS,sw:2,label:'Doom\nClock',lc:PS}},
+              {i:4,o:{fill:PD,stroke:PS,sw:2,label:'Swarm\nof Teeth',lc:PS}},
+              {i:3,o:{fill:PD,stroke:PS,sw:2,label:'Shade\nHound',lc:PS}},
+            ];}
+            function p1A(){return[
+              {i:5,o:{fill:ED,stroke:G,sw:2.5,label:'TOTAL\nECLIPSE',lc:GL,sub:'⊙ Eclipse',sc:G,glow:G,eclipse:true}},
+              {i:0,o:{fill:GD,stroke:GS,sw:2,label:'Thermal\nShock',lc:GL}},
+              {i:1,o:{fill:GD,stroke:GS,sw:2,label:'Pyre\nRing',lc:GS}},
+              {i:2,o:{fill:GD,stroke:GS,sw:2,label:'Chain\nArc',lc:GS}},
+              {i:3,o:{fill:GD,stroke:GS,sw:2,label:'Aegis\nof Dawn',lc:GS}},
+              {i:4,o:{fill:GD,stroke:GS,sw:2,label:'Consecrated\nGround',lc:GS}},
+            ];}
+            function p2A(){return[
+              {i:2,o:{fill:ED,stroke:G,sw:2.5,label:'TOTAL\nECLIPSE',lc:GL,sub:'⊙ Eclipse',sc:G,glow:G,eclipse:true}},
+              {i:1,o:{fill:PD,stroke:PS,sw:2,label:'Singularity',lc:PS}},
+              {i:0,o:{fill:PD,stroke:PS,sw:2,label:'Riftbolt',lc:PL}},
+              {i:5,o:{fill:PD,stroke:PS,sw:2,label:'Doom\nClock',lc:PS}},
+              {i:4,o:{fill:PD,stroke:PS,sw:2,label:'Swarm\nof Teeth',lc:PS}},
+              {i:3,o:{fill:PD,stroke:PS,sw:2,label:'Shade\nHound',lc:PS}},
+            ];}
+
+            function flower(cx,cy,defs){defs.forEach(function(d){hex(cx+RING[d.i][0],cy+RING[d.i][1],d.o);});}
+
+            function scene(yOff,phase){
+              var c1x=cx1,c1y=yOff,c2x=cx1+OFFSET_X,c2y=yOff+OFFSET_Y;
+              var b1=flowerBounds(c1x,c1y),b2=flowerBounds(c2x,c2y);
+              lbl(b1.left+2,b1.top-12,'PLAYER 1 — RADIANT',GS,10,'left',true);
+              lbl(b2.right-2,b2.bottom+16,'PLAYER 2 — UMBRAL',PS,10,'right',true);
+              pill(b1.left+36,b1.bottom+14,phase==='before'?'6 spells':'6 spells ✓','#1a1500',GS+'cc',8);
+              pill(b2.right-36,b2.top-8,phase==='before'?'6 spells':'6 spells ✓','#100820',PS+'cc',8);
+              var s1x=c1x+RING[5][0],s1y=c1y+RING[5][1];
+              var s2x=c2x+RING[2][0],s2y=c2y+RING[2][1];
+              var smx=(s1x+s2x)/2,smy=(s1y+s2y)/2;
+              ctx.save();ctx.strokeStyle='rgba(140,80,210,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+              ctx.beginPath();ctx.moveTo(smx-R*0.45,smy-R*0.55);ctx.lineTo(smx+R*0.45,smy+R*0.55);ctx.stroke();
+              ctx.setLineDash([]);ctx.restore();
+              lbl(smx+R*1.2,smy+4,'seam','rgba(160,100,230,0.6)',8,'left');
+              hgap(c1x,c1y,GS);hgap(c2x,c2y,PS);
+              if(phase==='before'){flower(c1x,c1y,p1B());flower(c2x,c2y,p2B());}
+              else{
+                flower(c1x,c1y,p1A());flower(c2x,c2y,p2A());
+                var cpx=smx+R*2.6,cpy=smy-R*2.2;
+                ctx.save();ctx.strokeStyle=G;ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+                ctx.beginPath();ctx.moveTo(s1x+R*0.5,s1y-R*0.6);
+                ctx.quadraticCurveTo(cpx,cpy,s2x+R*0.5,s2y-R*0.6);
+                ctx.stroke();ctx.setLineDash([]);
+                ctx.fillStyle=G;
+                var adx=s2x+R*0.5-cpx,ady=s2y-R*0.6-cpy,al=Math.sqrt(adx*adx+ady*ady);
+                var ax=adx/al,ay=ady/al;
+                ctx.beginPath();ctx.moveTo(s2x+R*0.5,s2y-R*0.6);
+                ctx.lineTo(s2x+R*0.5-ax*9+ay*4,s2y-R*0.6-ay*9-ax*4);
+                ctx.lineTo(s2x+R*0.5-ax*9-ay*4,s2y-R*0.6-ay*9+ax*4);
+                ctx.fill();ctx.restore();
+                pill(cpx,cpy-8,'same Eclipse spell · own slot each',ED,G,8);
+              }
+            }
+
+            var sceneH=OFFSET_Y+S3+R+28;
+
+            // background
+            ctx.fillStyle='#0e0b1a';ctx.fillRect(0,0,W,H);
+
+            // BEFORE
+            var byOff=155;
+            ctx.save();ctx.strokeStyle='#232030';ctx.lineWidth=1;
+            ctx.beginPath();ctx.moveTo(40,byOff-32);ctx.lineTo(W-40,byOff-32);ctx.stroke();ctx.restore();
+            pill(W/2,byOff-20,'BEFORE FUSION','#0e0b1a','#666',10);
+            scene(byOff,'before');
+
+            // Arrow
+            var arrY=byOff+sceneH+22;
+            ctx.save();ctx.strokeStyle=G;ctx.lineWidth=2;
+            ctx.beginPath();ctx.moveTo(W/2,arrY);ctx.lineTo(W/2,arrY+30);ctx.stroke();
+            ctx.fillStyle=G;ctx.beginPath();ctx.moveTo(W/2-7,arrY+20);ctx.lineTo(W/2,arrY+36);ctx.lineTo(W/2+7,arrY+20);ctx.fill();
+            ctx.restore();
+            lbl(W/2,arrY-8,'ECLIPSE FUSION',G,11,'center',true,true);
+            lbl(W/2,arrY+6,'Hold confirm together · Pact altar or Warden kill','#555',8.5);
+
+            // AFTER
+            var ayOff=arrY+54;
+            ctx.save();ctx.strokeStyle='#232030';ctx.lineWidth=1;
+            ctx.beginPath();ctx.moveTo(40,ayOff-14);ctx.lineTo(W-40,ayOff-14);ctx.stroke();ctx.restore();
+            pill(W/2,ayOff-2,'AFTER FUSION','#0e0b1a','#666',10);
+            scene(ayOff+16,'after');
+
+            // Rules box
+            var rY=ayOff+16+sceneH+18;
+            ctx.save();ctx.fillStyle='#0c0b18';ctx.strokeStyle='#2a2540';ctx.lineWidth=1;
+            ctx.beginPath();ctx.roundRect(40,rY,W-80,66,5);ctx.fill();ctx.stroke();ctx.restore();
+            lbl(W/2,rY+15,'ECLIPSE RULES',G,10,'center',false,true);
+            var c1=70,c2=W/2+20,ry2=rY+33;
+            lbl(c1,ry2,'⊙  Source spell replaced — no extra slot cost','#bbb',8.5,'left');
+            lbl(c1,ry2+17,'⊙  Both players end with 6 spells total','#bbb',8.5,'left');
+            lbl(c2,ry2,'⊙  Shared cooldown · both cast simultaneously','#bbb',8.5,'left');
+            lbl(c2,ry2+17,'⊙  Double-hit same target in 0.5 s → 2nd = 50%','#bbb',8.5,'left');
+          })();
+          </script>
           <table>
             <thead>
               <tr>
@@ -6922,7 +7129,7 @@
           <!-- Tree SVG container -->
           <div style="position:relative">
             <svg id="rtree" style="display:block;width:100%;max-width:680px"></svg>
-            <div id="rttip" style="position:absolute;background:var(--bg-card);border:0.5px solid var(--border);border-radius:6px;padding:8px 11px;font-size:12px;pointer-events:none;max-width:210px;z-index:20;display:none;line-height:1.5;color:var(--text-primary)"></div>
+            <div id="rttip" style="position:absolute;background:var(--bg-card,#1e1e2e);border:0.5px solid var(--border);border-radius:6px;padding:8px 11px;font-size:12px;pointer-events:none;max-width:210px;z-index:20;display:none;line-height:1.5;color:var(--text-primary);opacity:1;backdrop-filter:none;box-shadow:0 4px 16px rgba(0,0,0,0.6)"></div>
           </div>
 
           <script>
@@ -7083,7 +7290,7 @@
               var ti=document.createElementNS(ns,'text');
               ti.setAttribute('x',(x0+x1)/2);ti.setAttribute('y',y0+17);
               ti.setAttribute('text-anchor','middle');ti.setAttribute('font-size','12');
-              ti.setAttribute('font-weight','500');ti.setAttribute('fill','var(--text-primary)');
+              ti.setAttribute('font-weight','500');ti.setAttribute('fill',b.col);
               ti.setAttribute('font-family','var(--font-body,sans-serif)');
               ti.textContent=b.label+' — '+b.sub;svg.appendChild(ti);
 
