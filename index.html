@@ -2734,18 +2734,23 @@
               down (min 30s)
             </li>
             <li>
-              <strong>Revives:</strong> ally channel 3s within 6 studs → back at
-              40% HP (two allies channelling the same spirit → 1.5s —
-              coordinated rescues beat the Drown, the run's high-density final
-              stretch detailed in §17). Or: bleed-out expiry
-              auto-revive at 25% HP, Phoenix
-              Sigil's <em>Rebirth Pact</em>, Radiance <em>Vigil</em> (full-speed
-              instant, 50 Radiance)
+              <strong>Revives — the shared pool:</strong> a normal run hands the
+              party a <strong>Revive Pool</strong> equal to the
+              <strong>number of players</strong> (solo 1 · duo 2 · trio 3 · quad
+              4) — the run's entire reserve of extra lives. <em>Every</em>
+              revive spends one charge: an ally channel (3s within 6 studs;
+              1.5s if two allies channel the same spirit → back at 40% HP), a
+              solo bleed-out auto-revive (25% HP at timer expiry), Phoenix
+              Sigil's <em>Rebirth Pact</em>, and Radiance <em>Vigil</em>
+              (instant, 50 Radiance) all draw from it. When the pool is empty,
+              every down is final — no normal run has unlimited lives. (The
+              Drown is the run's high-density final stretch, §17.)
             </li>
             <li>
-              <strong>Solo:</strong> going down ends the run — unless a revive
-              source (relic, Phoenix) is held. Solo is tuned around not getting
-              hit; co-op around recovery
+              <strong>Solo:</strong> with no ally to channel, your single pool
+              charge spends as one bleed-out auto-revive; after that, the next
+              down ends the run (two lives in total). Solo is tuned around not
+              getting hit; co-op around spending the pool wisely
             </li>
             <li>
               <strong>Dash:</strong> 0.3s of dodge i-frames on every class dash
@@ -8395,6 +8400,20 @@
                   trivializing death
                 </td>
               </tr>
+              <tr>
+                <td class="td-crimson">Lives &amp; revives</td>
+                <td class="td-muted">
+                  Unlimited ally revives →
+                  <strong>shared Revive Pool of one charge per player (solo 1 ·
+                  quad 4); every revive source spends a charge; empty = final.
+                  Hardcore: one life, zero revives even in co-op</strong>
+                </td>
+                <td class="td-muted">
+                  Unlimited lives defeats the roguelite stakes; a finite,
+                  party-shared pool keeps co-op recovery meaningful while
+                  hardcore removes the net entirely
+                </td>
+              </tr>
             </tbody>
           </table>
           <ul class="st">
@@ -8596,13 +8615,16 @@
               engine
             </li>
             <li>
-              <strong>Down / Revive</strong> — downed players become a tethered
-              spirit drifting with the party: auto-revive at 90s, ally channel
-              (3s; 1.5s if two allies channel together), Phoenix Sigil's
-              Rebirth Pact, or Radiance Vigil. When only one player is left
-              standing in the Drown, the Undertow's growth pauses for 8s — a
-              <strong>Last Light</strong> window for a clutch revive before the
-              spiral resumes. Death is a co-op event, not a spectator screen
+              <strong>Down / Revive</strong> — a downed player becomes a
+              tethered spirit; an ally channel (3s; 1.5s if two channel
+              together) spends one charge from the party's <strong>Revive
+              Pool</strong> (one charge per player per run; see §8) and restores
+              them at 40% HP. Phoenix Rebirth Pact and Radiance Vigil also draw
+              from the pool. When only one player is left standing in the Drown,
+              the Undertow's growth pauses for 8s — a <strong>Last Light</strong>
+              window for a clutch revive before the spiral resumes. When the
+              pool is empty, downs are final: death is a co-op event with real
+              stakes, never unlimited and never a spectator screen
             </li>
             <li>
               <strong>Pings</strong> — "Cleanse me" · "Altar here" · "Fuse?" ·
@@ -9159,19 +9181,19 @@
               <tr>
                 <td class="td-violet">Lives</td>
                 <td class="td-muted">
-                  Bleed-out auto-revive (90s) →
-                  <strong>no auto-revive; bleed-out ends in death</strong>
+                  Shared Revive Pool (one charge per player) →
+                  <strong>one life each, no Revive Pool at all</strong>
                 </td>
                 <td class="td-muted">
-                  The net is the whole point — removing it is the mode
+                  The pool is the net; hardcore removes it entirely
                 </td>
               </tr>
               <tr>
                 <td class="td-violet">Solo down</td>
                 <td class="td-muted">
-                  Ends run unless a revive source is held →
-                  <strong>ends the run, period</strong> (relic / Phoenix
-                  self-revive disabled)
+                  One pool charge / one auto-revive →
+                  <strong>the first down ends the run, period</strong> (no
+                  charge, no relic, no Phoenix)
                 </td>
                 <td class="td-muted">
                   Solo hardcore is tuned around never being touched
@@ -9180,9 +9202,9 @@
               <tr>
                 <td class="td-violet">Co-op revives</td>
                 <td class="td-muted">
-                  Unlimited ally channels →
-                  <strong>one revive per player per run</strong> (a second down
-                  is final for that player)
+                  Pool-funded ally channels / Phoenix / Vigil →
+                  <strong>no revives of any kind</strong> — a down is permanent
+                  the instant it happens, even in co-op
                 </td>
                 <td class="td-muted">
                   Keeps co-op a team game without making death cosmetic
@@ -9309,18 +9331,20 @@
           <h3>Death, Downs & the Party</h3>
           <ul class="st">
             <li>
-              The tethered spirit still drifts with the party, but bleed-out is
-              <strong>45s, −15s per subsequent down (min 20s)</strong>, and it
-              <strong>never auto-revives</strong>
+              <strong>One life, full stop.</strong> There is no Revive Pool, no
+              ally channel, no auto-revive, no second wind — and Phoenix Rebirth
+              Pact and Radiance Vigil cannot raise the dead here. The instant
+              you go down you are out of the run
             </li>
             <li>
-              Each player gets <strong>one second wind</strong> (revive) per
-              run; after that, a down is permanent — they keep contributing
-              motes and can still ping, but they spectate as a Hollow spirit
+              In co-op a fallen player becomes a pure spectator spirit: they can
+              still <strong>ping</strong> to help the living and the run goes on
+              for whoever remains, but they cannot be brought back by anyone
             </li>
             <li>
-              <strong>Full party down at once = run over</strong>, with no Last
-              Light reprieve. Solo: the first down ends it
+              <strong>When the last player falls, the run is over</strong> — no
+              Last Light reprieve. Solo, that is your first down; in a party, the
+              moment the final survivor drops
             </li>
             <li>
               <strong>Death still pays.</strong> Hardcore banks prestige at the
