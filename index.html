@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SORCERER SURVIVORS — Game Design Document v3.1</title>
+    <title>SORCERER SURVIVORS — Game Design Document v3.2</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -1367,7 +1367,7 @@
     <nav class="sidebar" id="sidebar">
       <div class="sb-logo">
         <div class="sb-logo-title">SORCERER SURVIVORS</div>
-        <div class="sb-logo-sub">Game Design Document · v3.1</div>
+        <div class="sb-logo-sub">Game Design Document · v3.2</div>
       </div>
 
       <div class="sb-section">
@@ -1501,7 +1501,7 @@
           </div>
           <div class="hm-item">
             <span class="hm-label">Version</span
-            ><span class="hm-value">GDD v3.1 — June 2026</span>
+            ><span class="hm-value">GDD v3.2 — June 2026</span>
           </div>
         </div>
       </div>
@@ -2633,9 +2633,12 @@
               <tr>
                 <td class="el-lightning">Shock</td>
                 <td class="td-muted">
-                  Next hit taken +15% damage, then consumed
+                  Each charge: next hit taken +15% damage, then consumed
                 </td>
-                <td class="td-muted">One charge; reapplies freely</td>
+                <td class="td-muted">
+                  Up to 2 charges; each consumed independently (cap +30%);
+                  reapplies freely
+                </td>
                 <td class="td-muted">Full effect</td>
               </tr>
               <tr>
@@ -2692,7 +2695,7 @@
             but every blocked CC effect fills a visible
             <strong>Stagger ring</strong> under their health bar. When full: a
             3-second <strong>Break</strong> (boss stunned, takes +25% damage),
-            then the ring resets and its capacity grows 25%. Control builds stay
+            then the ring resets and its capacity grows 25% (capped at +150% of base after repeated Breaks). If no CC is blocked for 8s the ring decays 5%/s — so Stagger rewards a real control build rather than trickling full over a long fight. Control builds stay
             relevant in boss fights without trivializing them, and the party
             gets a shared burst-window to coordinate around.
           </p>
@@ -2726,7 +2729,9 @@
             </li>
             <li>
               <strong>Revives:</strong> ally channel 3s within 6 studs → back at
-              40% HP. Or: bleed-out expiry auto-revive at 25% HP, Phoenix
+              40% HP (two allies channelling the same spirit → 1.5s —
+              coordinated rescues beat the Drown). Or: bleed-out expiry
+              auto-revive at 25% HP, Phoenix
               Sigil's <em>Rebirth Pact</em>, Radiance <em>Vigil</em> (full-speed
               instant, 50 Radiance)
             </li>
@@ -5450,7 +5455,12 @@
             Only specific actions reduce it: a Radiant ally's
             <em>Dawnbound</em> or <em>Absolution</em>, wisps from
             <em>Penitent</em> elites, one-use Cleansing Wells, specific relics,
-            and one Pact entity who buys it.
+            and one Pact entity who buys it. Because every Curse outlet
+            except Wells and relics is ally-driven, <strong>solo Umbral
+            runs receive a third Cleansing Well and a raised <em>Penitent</em>
+            elite spawn-weight</strong> — so the meter stays a managed
+            debt rather than a one-way ratchet when no Radiant ally is
+            present to cleanse.
           </p>
 
           <div class="corruption-meter">
@@ -5865,7 +5875,7 @@
                 <td class="td-gold">Cleansing Well</td>
                 <td>−25 Curse or +15 Radiance (one use, per player)</td>
                 <td class="td-muted">
-                  2 base +1 per two players; the map's most contested real
+                  2 base +1 per two players (solo runs: 3); the map's most contested real
                   estate
                 </td>
               </tr>
@@ -5982,7 +5992,7 @@
             XP to next level: Need(N) = 6 + 4N + 0.35N² // N = current level<br />
             Mote values: Glimmer 1 · Mote 3 · Core 12 · Heart of Night 40 (+
             full heal)<br />
-            Party XP need: ×1.0 / ×1.6 / ×2.1 / ×2.5 for 1–4 players
+            Party XP need: ×1.0 / ×1.7 / ×2.3 / ×2.8 for 1–4 players (now tracks the spawn-budget curve in §15, so per-player level pace stays constant regardless of party size — shared motes were out-running the old need)
           </div>
           <table>
             <thead>
@@ -6093,7 +6103,7 @@
               </tr>
               <tr>
                 <td class="td-gold">Cleansing Wells</td>
-                <td class="td-muted">2 base, +1 per two players</td>
+                <td class="td-muted">2 base, +1 per two players (solo: 3)</td>
                 <td class="td-muted">
                   −25 Curse or +15 Radiance, once per player
                 </td>
@@ -8043,7 +8053,7 @@
               <tr>
                 <td class="td-violet">Meter stages</td>
                 <td class="td-muted">Curse / Radiance</td>
-                <td>Up to +110%, rented not owned</td>
+                <td>Up to +100%, rented not owned</td>
               </tr>
               <tr>
                 <td class="td-violet">Pacts & Omens</td>
@@ -8169,7 +8179,108 @@
             </li>
           </ul>
 
-          <h3>Design Changelog — v3.1 Web Redesign (this revision)</h3>
+          <h3>Balance & Improvements Changelog — v3.2 (this revision)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Change</th>
+                <th>Before → After</th>
+                <th>Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-crimson">Co-op XP need</td>
+                <td class="td-muted">
+                  ×1.0 / 1.6 / 2.1 / 2.5 →
+                  <strong>×1.0 / 1.7 / 2.3 / 2.8</strong>
+                </td>
+                <td class="td-muted">
+                  Motes are party-shared, so mote income scales with the spawn
+                  budget (×1.7 / 2.3 / 2.8). The old need was lower than income,
+                  letting groups out-level solo; the realignment makes
+                  per-player level pace party-size-independent
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Power-step ceiling</td>
+                <td class="td-muted">
+                  "Meter stages: up to +110%" →
+                  <strong>up to +100%</strong>
+                </td>
+                <td class="td-muted">
+                  Stale number. Stage V has been +100% since v2.1 capped
+                  Anathema; the §11 ladder table now matches the meter spec
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Shock (Lightning)</td>
+                <td class="td-muted">
+                  1 charge, +15% →
+                  <strong>up to 2 charges, +15% each (cap +30%)</strong>
+                </td>
+                <td class="td-muted">
+                  Lightning's signature status had no investment payoff. Charges
+                  are consumed independently and live in the additive Amps
+                  category, so burst stays bounded (Shock+Mark = +45% amp max)
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Stagger ring</td>
+                <td class="td-muted">
+                  Uncapped growth, no decay →
+                  <strong>caps at +150% of base; decays 5%/s after 8s idle</strong>
+                </td>
+                <td class="td-muted">
+                  Keeps Stagger a reward for a real control build, not a passive
+                  timer a non-control party trickles full over a long fight
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Solo Curse outlet</td>
+                <td class="td-muted">
+                  Flat Well count →
+                  <strong>solo runs: +1 Cleansing Well, raised Penitent weight</strong>
+                </td>
+                <td class="td-muted">
+                  Every Curse outlet except Wells/relics is ally-driven. Without
+                  a Radiant ally, solo Umbral was a one-way ratchet; this keeps
+                  the meter a managed debt instead
+                </td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Revive in the Drown</td>
+                <td class="td-muted">
+                  3s channel →
+                  <strong>1.5s if two allies channel; Last Light pauses Undertow 8s when one player remains</strong>
+                </td>
+                <td class="td-muted">
+                  Max-density revives were near-impossible, causing cascade
+                  wipes. Rewards coordination and gives a clutch window without
+                  trivializing death
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="st">
+            <li>
+              <strong>Armor vs DoT clarified:</strong> enemy armor mitigates
+              direct hits only — Burn, Hex, and aura ticks ignore it. Codifies
+              why hexes stay the boss-killer kit (§7, §14)
+            </li>
+            <li>
+              <strong>Last Light:</strong> new comeback window (above) — when a
+              4-player party is reduced to a single survivor in the Drown, the
+              Undertow's creep pauses for 8s, then resumes (§15, §21)
+            </li>
+            <li>
+              <strong>Dial discipline preserved:</strong> every change above
+              touches dials 1–3 (spawn/economy, meter feel, pacing) or codifies
+              an existing rule — no base spell numbers were moved
+            </li>
+          </ul>
+
+          <h3>Design Changelog — v3.1 Web Redesign</h3>
           <ul class="st">
             <li>
               <strong>Interlocking rosettes:</strong> party Webs now tile
@@ -8344,8 +8455,11 @@
             <li>
               <strong>Down / Revive</strong> — downed players become a tethered
               spirit drifting with the party: auto-revive at 90s, ally channel
-              (3s), Phoenix Sigil's Rebirth Pact, or Radiance Vigil. Death is a
-              co-op event, not a spectator screen
+              (3s; 1.5s if two allies channel together), Phoenix Sigil's
+              Rebirth Pact, or Radiance Vigil. When only one player is left
+              standing in the Drown, the Undertow's growth pauses for 8s — a
+              <strong>Last Light</strong> window for a clutch revive before the
+              spiral resumes. Death is a co-op event, not a spectator screen
             </li>
             <li>
               <strong>Pings</strong> — "Cleanse me" · "Altar here" · "Fuse?" ·
@@ -8873,7 +8987,7 @@
             "
           >
             SORCERER SURVIVORS · SORCERERS OF THE SHADOW AND THE RADIANT · GDD
-            v3.1 · JUNE 2026<br />ALL CONTENT ORIGINAL · INSPIRED BY MAGIC
+            v3.2 · JUNE 2026<br />ALL CONTENT ORIGINAL · INSPIRED BY MAGIC
             SURVIVAL (LEME) AND THE BULLET-HEAVEN GENRE<br /><span
               style="letter-spacing: 1px"
               >"Stand together. Be the eclipse."</span
@@ -8905,4 +9019,4 @@
     </script>
   </body>
 </html>
-<!-- v3.1 -->
+<!-- v3.2 -->
