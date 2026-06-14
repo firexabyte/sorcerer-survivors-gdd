@@ -6360,12 +6360,60 @@
                 <td class="td-muted">Stationary; summons Murmurs every 2s</td>
                 <td>Highest-priority target; piercing spells best</td>
               </tr>
+              <tr>
+                <td class="td-crimson">Hunter</td>
+                <td class="td-muted">
+                  Locks one target and ignores distance falloff; drawn by
+                  Radiance Stage IV+ and the Ledger relic
+                </td>
+                <td>Peel for the target; dash to break line, kite into ally fire — silhouette = long-limbed, low stance</td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Splitting</td>
+                <td class="td-muted">
+                  On death splits into two ~40%-HP copies (copies never re-split)
+                </td>
+                <td>AoE/overkill to clear both halves at once; piercing — silhouette = bulbous, segmented</td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Veiled</td>
+                <td class="td-muted">
+                  Translucent and untargetable by seekers until within ~10
+                  studs or until it attacks
+                </td>
+                <td>AoE flush; a Mark reveals it; don't lean on auto-aim — silhouette = heat-haze shimmer</td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Clockbound</td>
+                <td class="td-muted">
+                  Freezes itself ~1s (taking +50% damage), then lunges at +150%
+                  speed — fully telegraphed
+                </td>
+                <td>Burst it during the wind-up; sidestep the lunge — silhouette = stuttering after-image trail</td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Starving</td>
+                <td class="td-muted">
+                  Grows the longer it lives: +10% damage and +6% speed every 4s,
+                  uncapped until killed
+                </td>
+                <td>Priority kill; never let it age — silhouette = gaunt, widening maw</td>
+              </tr>
+              <tr>
+                <td class="td-crimson">Crowned</td>
+                <td class="td-muted">
+                  <em>Afterlight only.</em> Carries a second random mutator and
+                  one Sovereign-tier minor pattern; drops a relic-tier shard
+                </td>
+                <td>Treat as a mini-boss; focus and coordinate — silhouette = jagged crown of light or shadow</td>
+              </tr>
             </tbody>
           </table>
           <p class="td-muted" style="font-size: 12.5px">
-            Remaining six mutators (Hunter, Splitting, Veiled, Clockbound,
-            Starving, Crowned) detailed in the enemy spec appendix; Crowned
-            appears only in Afterlight.
+            All twelve mutators are listed above. Crowned appears only in
+            Afterlight, where it alone may carry a second mutator — outside
+            Afterlight no creature ever wears two, so a silhouette always reads
+            as exactly one threat.
           </p>
         </section>
 
@@ -6605,6 +6653,65 @@
             delivered as a fight.
           </p>
 
+          <h3>The Wardens — the run's two gatekeepers</h3>
+          <p>
+            Unlike Sovereigns, the Wardens are not zone-specific dreams — they
+            are the night's <em>bailiffs</em>: the same two archetypes wearing
+            each zone's dressing. They exist to gate progress, hand out a
+            chest, and check whether the build is on pace. Both are immune to
+            Freeze, Stun, and Knockback and instead fill a
+            <strong>Stagger ring</strong> (Combat &amp; Status Effects); both
+            scale with party size on the Co-op Scaling curve.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Warden</th>
+                <th>The one telegraphed mechanic</th>
+                <th>On death</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-gold">
+                  <strong>The Gatewright</strong> · Warden I · 7:00 · 3,500 HP
+                  (×party)
+                </td>
+                <td class="td-muted">
+                  <strong>The Closing Gate.</strong> Pillars of light rise and
+                  sweep the arena, leaving one rotating safe lane — the run's
+                  first real movement check. Pillar contact is a heavy,
+                  fully-telegraphed hit; a thin trickle of Murmurs never quite
+                  stops. One mechanic, learnable in a single fight.
+                </td>
+                <td class="td-muted">
+                  Drops a Warden Chest (artifact, 1 of 3); the tide stays
+                  thinned 10s — a breath before Deep Tide.
+                </td>
+              </tr>
+              <tr>
+                <td class="td-gold">
+                  <strong>The Tidewarden</strong> · Warden II · 13:00 · 8,000 HP
+                  (×party)
+                </td>
+                <td class="td-muted">
+                  <strong>The meters made flesh.</strong> A tracking beam locks
+                  the <em>highest-Radiance</em> player (the Bright are seen);
+                  add-waves erupt under the <em>highest-Curse</em> player (the
+                  Owing are fed). A periodic <strong>Highwater</strong> sweep —
+                  an arena-wide wave with run-through gaps — punctuates the
+                  fight. The party's greed is the boss design.
+                </td>
+                <td class="td-muted">
+                  Drops a Warden Chest, raises the <strong>Reliquary</strong>
+                  (party relic vote), and <strong>unlocks any held Eclipse
+                  recipes</strong> for fusion. The run's pivot point.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>The Sovereigns — one dream per zone</h3>
           <div class="grid g2b">
             <div class="boss-card">
               <div class="boss-num">I</div>
@@ -8063,6 +8170,27 @@
             </tbody>
           </table>
 
+          <h3>Afterlight — the vertical climb (where the curve breaks on purpose)</h3>
+          <p>
+            Past 20:00 the logarithmic baseline is deliberately abandoned.
+            Afterlight is a leaderboard mode, and a leaderboard wants a wall,
+            not a plateau. Every 60s survived is a <strong>Surge</strong>, and
+            each Surge compounds:
+          </p>
+          <div class="formula">
+            EnemyHP ×= 1.18 per Surge // compounding — replaces the linear slope<br />
+            SpawnBudget ×= 1.12 per Surge // compounding<br />
+            EliteRate += 2% per Surge (cap 60%) · the Undertow no longer pauses<br />
+            Crowned elites begin at Surge 3 · a Warden returns every 5th Surge as a checkpoint
+          </div>
+          <p>
+            Kill-speed falls off a cliff by design; the builds that survive
+            8–10 Surges are what the board actually measures. Death still pays
+            full Afterlight income, so every Surge climbed is banked — and the
+            v2.1 stacking caps (Tithe of Stars, Patient Glyph) exist precisely
+            so one uncapped outlier can't invalidate this ladder.
+          </p>
+
           <div class="infobox ib-crimson">
             <div class="ib-title">Why Not Exponential?</div>
             <p>
@@ -8277,6 +8405,14 @@
               <strong>Dial discipline preserved:</strong> every change above
               touches dials 1–3 (spawn/economy, meter feel, pacing) or codifies
               an existing rule — no base spell numbers were moved
+            </li>
+            <li>
+              <strong>Gaps filled:</strong> the two Wardens (the Gatewright and
+              the Tidewarden) are now fully described (§17); the remaining six
+              Elite mutators (Hunter, Splitting, Veiled, Clockbound, Starving,
+              Crowned) are specified in §14 instead of deferred to an appendix;
+              and Afterlight's "vertical" scaling now has explicit Surge math
+              (§Power Scaling)
             </li>
           </ul>
 
