@@ -34,7 +34,7 @@
         --legendary: #c9a84c;
         --void-r: #c0392b;
         --radiant: #e2c06a;
-        --umbral: #b76ef0;
+        --shadow: #b76ef0;
       }
       * {
         margin: 0;
@@ -1139,7 +1139,7 @@
           var(--card) 60%
         );
       }
-      .fc-umbral {
+      .fc-shadow {
         background: linear-gradient(
           160deg,
           rgba(157, 78, 221, 0.14),
@@ -1492,8 +1492,8 @@
         <div class="hero-sub">Sorcerers of the Shadow and the Radiant</div>
         <p class="hero-tagline">
           "You are one half of an eclipse. Alone, the Radiant burns out and the
-          Umbral is consumed. Back to back against the endless tide, light and
-          shadow interlock into something neither could be alone."
+          Shadow is consumed. Back to back against the endless tide, light and
+          dark interlock into something neither could be alone."
         </p>
         <div class="hero-meta">
           <div class="hm-item">
@@ -1540,7 +1540,7 @@
             sorcerer of one of two primordial magics — the
             <span style="color: var(--radiant)">Radiant Order</span> (living
             light of the first sunrise) or the
-            <span style="color: var(--umbral)">Umbral Covenant</span> (living
+            <span style="color: var(--shadow)">Shadow Covenant</span> (living
             shadow from the spaces between stars) — surviving endless tides of
             nightmare creatures. Like Magic Survival, the player's only direct
             control is movement (plus a class dash); all spells cast
@@ -1767,7 +1767,7 @@
             forever. Then came the <strong>First Sunrise</strong>: not a dawn,
             but an <em>arrival</em>. Light landed in the dark the way a stone
             lands in still water. The Radiant Order remembers it as salvation.
-            The Umbral Covenant remembers what it displaced.
+            The Shadow Covenant remembers what it displaced.
           </p>
           <p>
             Where light and dark met and neither yielded, the world tore. The
@@ -1781,7 +1781,7 @@
           <p>
             The <strong>Radiant Order</strong> are sorcerers of living light,
             drawing power from the first sunrise: ancient, purifying,
-            relentless. The <strong>Umbral Covenant</strong> are sorcerers of
+            relentless. The <strong>Shadow Covenant</strong> are sorcerers of
             living shadow, drawing power from the spaces between stars: patient,
             consuming, recursive. They have been rivals for a thousand years —
             and they are the only two things the Tide cannot dream its way
@@ -2055,7 +2055,7 @@
                 <td class="td-violet">Special school</td>
                 <td><span class="el-void">Void</span></td>
                 <td class="td-muted">
-                  Umbral Covenant only — carries the
+                  Shadow Covenant only — carries the
                   <strong>Curse Meter</strong>
                 </td>
               </tr>
@@ -2065,7 +2065,7 @@
             Faction identity no longer comes from <em>which</em> magic you can
             learn — it comes from the one school no one else can touch, the risk
             engine it carries, and how your half of the eclipse plays. A Radiant
-            pyromancer and an Umbral pyromancer cast the same Emberlance; only
+            pyromancer and an Shadow pyromancer cast the same Emberlance; only
             one of them can consecrate the ground it burns.
           </p>
 
@@ -2091,9 +2091,9 @@
                 "The first dawn never ended. It only went somewhere to wait."
               </div>
             </div>
-            <div class="faction-card fc-umbral">
-              <div class="fc-title" style="color: var(--umbral)">
-                ☾ The Umbral Covenant
+            <div class="faction-card fc-shadow">
+              <div class="fc-title" style="color: var(--shadow)">
+                ☾ The Shadow Covenant
               </div>
               <div class="fc-sub">
                 Sorcerers of living shadow · power drawn from the spaces between
@@ -2103,7 +2103,7 @@
                 <strong>Schools:</strong> the six shared schools +
                 <strong>Void</strong>, the Covenant's special school<br />
                 <strong>Identity:</strong> attrition, minions, control,
-                compounding debuffs. Patient, consuming, recursive magic. Umbral
+                compounding debuffs. Patient, consuming, recursive magic. Shadow
                 sorcerers hold the front, soak the tide, and grow stronger the
                 longer the night lasts.<br />
                 <strong>Risk engine:</strong> the Curse Meter (Void School) —
@@ -2126,7 +2126,7 @@
             </thead>
             <tbody>
               <tr>
-                <td class="td-violet">Umbral takes the hits</td>
+                <td class="td-violet">Shadow takes the hits</td>
                 <td class="td-muted">
                   Summons and Void zones generate threat and operate
                   close-range; the Void School literally converts damage taken
@@ -2137,7 +2137,7 @@
                 <td class="td-gold">Radiant sustains</td>
                 <td class="td-muted">
                   Holy heals, shields, and is the premier outside source of
-                  Curse cleansing — timed exactly when the Umbral player needs
+                  Curse cleansing — timed exactly when the Shadow player needs
                   it
                 </td>
               </tr>
@@ -2152,7 +2152,7 @@
                 <td class="td-gold">Solo play</td>
                 <td class="td-muted">
                   Every kit is solo-viable and tuned to clear all content; solo
-                  Umbral is the high-risk scaling fantasy, solo Radiant the
+                  Shadow is the high-risk scaling fantasy, solo Radiant the
                   cleaner control fantasy
                 </td>
               </tr>
@@ -2448,7 +2448,9 @@
               </div>
               <div class="class-price">
                 ⊙ 200 Dawnmotes
-                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
+                <span style="color: var(--text-dim)"
+                  >· or 120 Eclipse Shards</span
+                >
               </div>
             </div>
             <div class="class-card">
@@ -2458,11 +2460,11 @@
                 "Keep time, and the night keeps you."
               </div>
               <p class="class-passive">
-                <strong>Antiphon</strong> — plants a stationary bell-beacon every
-                12s; allies near it gain +12% Tempo, and rhythm spells (Judgement
-                Bell, Avalanche Echo) ring one extra toll. Radiance you spend also
-                refunds 10% of allies' cooldowns. A tempo support — Web shape and
-                meter modifier, not raw power.
+                <strong>Antiphon</strong> — plants a stationary bell-beacon
+                every 12s; allies near it gain +12% Tempo, and rhythm spells
+                (Judgement Bell, Avalanche Echo) ring one extra toll. Radiance
+                you spend also refunds 10% of allies' cooldowns. A tempo support
+                — Web shape and meter modifier, not raw power.
               </p>
               <div class="stat-row">
                 <span class="stat-label">Vitality</span>
@@ -2487,18 +2489,20 @@
               </div>
               <div class="class-start">
                 Start: <span class="el-holy">Judgement Bell</span> · Dash:
-                <span>Grace Note</span> (drops a bell-beacon at the dash origin) ·
-                Web: 6 — <em>Antiphon row</em>: rhythm spells sharing a row gain
-                an extra toll
+                <span>Grace Note</span> (drops a bell-beacon at the dash origin)
+                · Web: 6 — <em>Antiphon row</em>: rhythm spells sharing a row
+                gain an extra toll
               </div>
               <div class="class-price">
                 ⊙ 200 Dawnmotes
-                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
+                <span style="color: var(--text-dim)"
+                  >· or 120 Eclipse Shards</span
+                >
               </div>
             </div>
           </div>
 
-          <h3 style="color: var(--umbral)">☾ Umbral Covenant Classes</h3>
+          <h3 style="color: var(--shadow)">☾ Shadow Covenant Classes</h3>
           <div class="grid g2">
             <div class="class-card">
               <div class="class-badge badge-starter">Starter</div>
@@ -2659,9 +2663,10 @@
               <p class="class-passive">
                 <strong>Foreclosure</strong> — gives Curse the spend it normally
                 lacks: at Stage III+ you may dump 40 Curse to erupt a withering
-                nova that spreads your hexes to everything caught (long cooldown).
-                Curse you gain also bleeds onto nearby enemies as Blight. The only
-                Curse release valve in the game — a brand-new meter modifier.
+                nova that spreads your hexes to everything caught (long
+                cooldown). Curse you gain also bleeds onto nearby enemies as
+                Blight. The only Curse release valve in the game — a brand-new
+                meter modifier.
               </p>
               <div class="stat-row">
                 <span class="stat-label">Vitality</span>
@@ -2691,7 +2696,9 @@
               </div>
               <div class="class-price">
                 ⊙ 200 Nightdrops
-                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
+                <span style="color: var(--text-dim)"
+                  >· or 120 Eclipse Shards</span
+                >
               </div>
             </div>
             <div class="class-card">
@@ -2705,7 +2712,8 @@
                 linger 30% longer and slowly pull enemies toward their centers;
                 in dark zones you see farther. Higher Curse stages
                 <em>widen</em> your zones rather than only adding damage. An
-                area-denial controller — Web shape and meter modifier, not power.
+                area-denial controller — Web shape and meter modifier, not
+                power.
               </p>
               <div class="stat-row">
                 <span class="stat-label">Vitality</span>
@@ -2730,13 +2738,15 @@
               </div>
               <div class="class-start">
                 Start: <span class="el-void">Event Horizon</span> · Dash:
-                <span>Umbral Drift</span> (dash drops a brief slowing void pool) ·
-                Web: 6 — <em>Maelstrom spiral</em>: Zone spells beside the Heart
-                Gap gain area
+                <span>Shadow Drift</span> (dash drops a brief slowing void pool)
+                · Web: 6 — <em>Maelstrom spiral</em>: Zone spells beside the
+                Heart Gap gain area
               </div>
               <div class="class-price">
                 ⊙ 200 Nightdrops
-                <span style="color: var(--text-dim)">· or 120 Eclipse Shards</span>
+                <span style="color: var(--text-dim)"
+                  >· or 120 Eclipse Shards</span
+                >
               </div>
             </div>
           </div>
@@ -2769,7 +2779,7 @@
               </tr>
               <tr>
                 <td class="td-muted">Ashen Usurer · Voidshepherd</td>
-                <td><span style="color: var(--umbral)">☾ Umbral</span></td>
+                <td><span style="color: var(--shadow)">☾ Shadow</span></td>
                 <td class="td-muted">200 Nightdrops each</td>
                 <td class="td-muted">Athenaeum roster board</td>
               </tr>
@@ -2777,27 +2787,30 @@
                 <td class="td-muted">Any Charter class (cross-faction alt)</td>
                 <td class="td-gold">Either</td>
                 <td class="td-muted">or 120 Eclipse Shards</td>
-                <td class="td-muted">Threshold roster — skip the faction grind</td>
+                <td class="td-muted">
+                  Threshold roster — skip the faction grind
+                </td>
               </tr>
             </tbody>
           </table>
           <ul class="st">
             <li>
               <strong>One-time unlock per faction profile.</strong> Once bought,
-              the class is permanently available in that profile's pre-run select
+              the class is permanently available in that profile's pre-run
+              select
             </li>
             <li>
               <strong>A goal, not a wall.</strong> A full clear banks ~12–17 ◆,
-              so a 200 ◆ Charter class is ~15 good runs.
-              Faction currency ties the buy to playing that faction; the
-              account-wide <strong>Eclipse Shard</strong> option lets dedicated
-              co-op players unlock across factions without re-grinding
+              so a 200 ◆ Charter class is ~15 good runs. Faction currency ties
+              the buy to playing that faction; the account-wide
+              <strong>Eclipse Shard</strong> option lets dedicated co-op players
+              unlock across factions without re-grinding
             </li>
             <li>
               <strong>No class sold for Robux directly.</strong> You may speed
-              the grind by topping up faction currency with Robux (capped
-              daily, §27), but every class — and everything currency buys — is
-              also fully earnable by play, so nothing here is Robux-exclusive
+              the grind by topping up faction currency with Robux (capped daily,
+              §27), but every class — and everything currency buys — is also
+              fully earnable by play, so nothing here is Robux-exclusive
             </li>
           </ul>
 
@@ -2957,9 +2970,12 @@
             but every blocked CC effect fills a visible
             <strong>Stagger ring</strong> under their health bar. When full: a
             3-second <strong>Break</strong> (boss stunned, takes +25% damage),
-            then the ring resets and its capacity grows 25% (capped at +150% of base after repeated Breaks). If no CC is blocked for 8s the ring decays 5%/s — so Stagger rewards a real control build rather than trickling full over a long fight. Control builds stay
-            relevant in boss fights without trivializing them, and the party
-            gets a shared burst-window to coordinate around.
+            then the ring resets and its capacity grows 25% (capped at +150% of
+            base after repeated Breaks). If no CC is blocked for 8s the ring
+            decays 5%/s — so Stagger rewards a real control build rather than
+            trickling full over a long fight. Control builds stay relevant in
+            boss fights without trivializing them, and the party gets a shared
+            burst-window to coordinate around.
           </p>
 
           <h3>Threat — who the tide hunts</h3>
@@ -2968,7 +2984,7 @@
             studs) + recentDamageBonus<br />
             RadianceAggro : 0 / +10 / +25 / +50 / +100 by Radiance stage (Stage
             V: targets you regardless)<br />
-            Taunts : Umbral Colossus and Shade Hound taunts override targeting
+            Taunts : Shadow Colossus and Shade Hound taunts override targeting
             for their duration<br />
             Exceptions : Lightdrinkers ignore distance; Tidecallers never move
           </div>
@@ -2993,11 +3009,11 @@
               <strong>Revives — the shared pool:</strong> a normal run hands the
               party a <strong>Revive Pool</strong> equal to the
               <strong>number of players</strong> (solo 1 · duo 2 · trio 3 · quad
-              4) — the run's entire reserve of extra lives. <em>Every</em>
-              revive spends one charge: an ally channel (3s within 6 studs;
-              1.5s if two allies channel the same spirit → back at 40% HP), a
-              solo bleed-out auto-revive (25% HP at timer expiry), Phoenix
-              Sigil's <em>Rebirth Pact</em>, and Radiance <em>Vigil</em>
+              4) — the run's entire reserve of extra lives.
+              <em>Every</em> revive spends one charge: an ally channel (3s
+              within 6 studs; 1.5s if two allies channel the same spirit → back
+              at 40% HP), a solo bleed-out auto-revive (25% HP at timer expiry),
+              Phoenix Sigil's <em>Rebirth Pact</em>, and Radiance <em>Vigil</em>
               (instant, 50 Radiance) all draw from it. When the pool is empty,
               every down is final — no normal run has unlimited lives. (The
               Drown is the run's high-density final stretch, §17.)
@@ -3024,7 +3040,7 @@
             32 spells across 8 schools. Six schools are open to every sorcerer —
             four that study the elements (Fire, Ice, Lightning, Nature) and two
             that study magic itself (Arcane, Summoning) — plus each faction's
-            special school: Holy ☀ for the Radiant Order, Void ☾ for the Umbral
+            special school: Holy ☀ for the Radiant Order, Void ☾ for the Shadow
             Covenant. Each spell levels 1→10 with behavior milestones at Lv4 and
             Lv7. At Level 10, the player chooses one of three Talent paths that
             fundamentally reshapes the spell ("Mastery"). Inspired by Magic
@@ -3492,7 +3508,7 @@
                 <span class="tag t-minion">Minion</span
                 ><span class="tag t-void">Deep</span>
               </div>
-              <div class="spell-name">Umbral Colossus</div>
+              <div class="spell-name">Shadow Colossus</div>
               <div class="spell-meta">Max Level 10</div>
               <p class="spell-desc">
                 Slow giant of compressed night; taunts, sweeps, soaks. The
@@ -3524,9 +3540,9 @@
             </div>
           </div>
 
-          <h3 style="color: var(--umbral)">
+          <h3 style="color: var(--shadow)">
             ☾ Void School — "The art of owing what subtraction leaves" · special
-            school of the Umbral Covenant — enrolling manifests the Curse Meter
+            school of the Shadow Covenant — enrolling manifests the Curse Meter
             (§12)
           </h3>
           <div class="grid g2">
@@ -3849,7 +3865,7 @@
                 "
                 fill="#B76EF0"
               >
-                PLAYER 2 — UMBRAL
+                PLAYER 2 — SHADOW
               </text>
               <line
                 x1="129"
@@ -5583,7 +5599,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="td-muted">Shade Hound + Umbral Colossus</td>
+                <td class="td-muted">Shade Hound + Shadow Colossus</td>
                 <td class="td-violet">The Long Walk</td>
                 <td>
                   The colossus advances with the pack; a rolling siege front
@@ -5623,7 +5639,7 @@
           <p>
             The crown of the system and the literal core fantasy —
             <strong>no competitor has a cross-player build mechanic.</strong> A
-            Radiant and an Umbral player who each hold a Mastered spell from a
+            Radiant and an Shadow player who each hold a Mastered spell from a
             valid recipe, sitting <strong>adjacent across the Web seam</strong>,
             may fuse them at a Pact altar or Warden kill. Each player's source
             spell slot is <strong>replaced</strong> by their own copy of the
@@ -5681,7 +5697,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="td-muted">Glacial Bulwark + Umbral Colossus</td>
+                <td class="td-muted">Glacial Bulwark + Shadow Colossus</td>
                 <td class="td-gold">The Sentinel of Dusk</td>
                 <td>
                   Ice-armored colossus that taunts, blocks projectiles, and
@@ -5712,23 +5728,25 @@
             serving. Neither decays on its own.
           </p>
 
-          <h3 style="color: var(--umbral)">
+          <h3 style="color: var(--shadow)">
             ☾ The Curse Meter (Void School enrollees)
           </h3>
           <p>
-            Taking any Void School spell — the Umbral Covenant's special school
+            Taking any Void School spell — the Shadow Covenant's special school
             — manifests the meter (0–100). Each hit taken raises it a
             <strong>fixed +4</strong> (modified by class and relics — not damage
             size, so chip damage matters and big hits aren't doubly punished).
             Only specific actions reduce it: a Radiant ally's
             <em>Dawnbound</em> or <em>Absolution</em>, wisps from
             <em>Penitent</em> elites, one-use Cleansing Wells, specific relics,
-            and one Pact entity who buys it. Because every Curse outlet
-            except Wells and relics is ally-driven, <strong>solo Umbral
-            runs receive a third Cleansing Well and a raised <em>Penitent</em>
-            elite spawn-weight</strong> — so the meter stays a managed
-            debt rather than a one-way ratchet when no Radiant ally is
-            present to cleanse.
+            and one Pact entity who buys it. Because every Curse outlet except
+            Wells and relics is ally-driven,
+            <strong
+              >solo Shadow runs receive a third Cleansing Well and a raised
+              <em>Penitent</em> elite spawn-weight</strong
+            >
+            — so the meter stays a managed debt rather than a one-way ratchet
+            when no Radiant ally is present to cleanse.
           </p>
 
           <div class="corruption-meter">
@@ -5893,7 +5911,7 @@
             </li>
             <li>
               <strong>Absolution</strong> — spend 20: remove 40 Curse from one
-              ally. The premier cross-faction moment: the Umbral player rides
+              ally. The premier cross-faction moment: the Shadow player rides
               Stage IV, the Radiant player times the cleanse
             </li>
             <li>
@@ -5906,7 +5924,7 @@
             <thead>
               <tr>
                 <th></th>
-                <th style="color: var(--umbral)">Curse</th>
+                <th style="color: var(--shadow)">Curse</th>
                 <th style="color: var(--radiant)">Radiance</th>
               </tr>
             </thead>
@@ -6143,8 +6161,8 @@
                 <td class="td-gold">Cleansing Well</td>
                 <td>−25 Curse or +15 Radiance (one use, per player)</td>
                 <td class="td-muted">
-                  2 base +1 per two players (solo runs: 3); the map's most contested real
-                  estate
+                  2 base +1 per two players (solo runs: 3); the map's most
+                  contested real estate
                 </td>
               </tr>
               <tr>
@@ -6218,7 +6236,7 @@
               <div class="card-title">The Falling Star</div>
               <p class="card-body">
                 A star crashes nearby and screams. Defend it for 60s or devour
-                it (Umbral) / sanctify it (Radiant) instantly for a smaller
+                it (Shadow) / sanctify it (Radiant) instantly for a smaller
                 reward. <strong>Reward:</strong> Augment; faction choice flavors
                 the outcome.
               </p>
@@ -6260,7 +6278,10 @@
             XP to next level: Need(N) = 6 + 4N + 0.35N² // N = current level<br />
             Mote values: Glimmer 1 · Mote 3 · Core 12 · Heart of Night 40 (+
             full heal)<br />
-            Party XP need: ×1.0 / ×1.7 / ×2.3 / ×2.8 for 1–4 players (now tracks the spawn-budget curve in §15, so per-player level pace stays constant regardless of party size — shared motes were out-running the old need)
+            Party XP need: ×1.0 / ×1.7 / ×2.3 / ×2.8 for 1–4 players (now tracks
+            the spawn-budget curve in §15, so per-player level pace stays
+            constant regardless of party size — shared motes were out-running
+            the old need)
           </div>
           <table>
             <thead>
@@ -6404,10 +6425,13 @@
 
           <h3>End-of-Run Currency</h3>
           <div class="formula">
-            Dawnmotes / Nightdrops = ⌈ 0.6 × minutes + 1 × Wardens + 2 × Sovereign + 0.5 × Omens ⌉ × partyBonus<br />
+            Dawnmotes / Nightdrops = ⌈ 0.6 × minutes + 1 × Wardens + 2 ×
+            Sovereign + 0.5 × Omens ⌉ × partyBonus<br />
             partyBonus = 1 + 0.1 × (players − 1) // bring friends, earn more<br />
-            // full 20-min clear ≈ 17 ◆ · a 14:00 death ≈ 10 ◆ (~60%) — same scale as research-node costs (3–18 ◆)<br />
-            Eclipse Shards (◇): 5 per Eclipse fusion · 1 per cross-faction cleanse/save (cap 10/run) · 20 per mixed-party Sovereign
+            // full 20-min clear ≈ 17 ◆ · a 14:00 death ≈ 10 ◆ (~60%) — same
+            scale as research-node costs (3–18 ◆)<br />
+            Eclipse Shards (◇): 5 per Eclipse fusion · 1 per cross-faction
+            cleanse/save (cap 10/run) · 20 per mixed-party Sovereign
           </div>
           <p>
             Dying at 14:00 still pays ~60% of a full clear — pushing a doomed
@@ -6436,7 +6460,7 @@
               <tr>
                 <td>
                   <span style="color: var(--radiant)">Dawnmotes</span> /
-                  <span style="color: var(--umbral)">Nightdrops</span> (◆)
+                  <span style="color: var(--shadow)">Nightdrops</span> (◆)
                 </td>
                 <td class="td-muted">
                   ~8–17 / run; + Robux top-up (cap 250 ◆/day)
@@ -6444,7 +6468,9 @@
                 <td class="td-muted">
                   Research nodes (3–18 ea; tree ≈ 620) · Charter class (200)
                 </td>
-                <td class="td-muted">Tree ≈ 50–70 hrs; a class ≈ 15 good runs</td>
+                <td class="td-muted">
+                  Tree ≈ 50–70 hrs; a class ≈ 15 good runs
+                </td>
               </tr>
               <tr>
                 <td class="td-gold">Eclipse Shards (◇)</td>
@@ -6461,7 +6487,9 @@
                 <td class="td-muted">
                   ~6–10 / hardcore clear (+1 per Afterlight Surge)
                 </td>
-                <td class="td-muted">Hardcore-only prestige cosmetics (40–150 ea)</td>
+                <td class="td-muted">
+                  Hardcore-only prestige cosmetics (40–150 ea)
+                </td>
                 <td class="td-muted">
                   A cosmetic ≈ several Unbroken clears; never Robux
                 </td>
@@ -6680,7 +6708,7 @@
               <tr>
                 <td class="td-crimson">Penitent</td>
                 <td class="td-muted">Drops a Curse-cleansing wisp on death</td>
-                <td>A gift — if the Umbral player can claim it in the chaos</td>
+                <td>A gift — if the Shadow player can claim it in the chaos</td>
               </tr>
               <tr>
                 <td class="td-crimson">Tidecaller</td>
@@ -6693,22 +6721,32 @@
                   Locks one target and ignores distance falloff; drawn by
                   Radiance Stage IV+ and the Ledger relic
                 </td>
-                <td>Peel for the target; dash to break line, kite into ally fire — silhouette = long-limbed, low stance</td>
+                <td>
+                  Peel for the target; dash to break line, kite into ally fire —
+                  silhouette = long-limbed, low stance
+                </td>
               </tr>
               <tr>
                 <td class="td-crimson">Splitting</td>
                 <td class="td-muted">
-                  On death splits into two ~40%-HP copies (copies never re-split)
+                  On death splits into two ~40%-HP copies (copies never
+                  re-split)
                 </td>
-                <td>AoE/overkill to clear both halves at once; piercing — silhouette = bulbous, segmented</td>
+                <td>
+                  AoE/overkill to clear both halves at once; piercing —
+                  silhouette = bulbous, segmented
+                </td>
               </tr>
               <tr>
                 <td class="td-crimson">Veiled</td>
                 <td class="td-muted">
-                  Translucent and untargetable by seekers until within ~10
-                  studs or until it attacks
+                  Translucent and untargetable by seekers until within ~10 studs
+                  or until it attacks
                 </td>
-                <td>AoE flush; a Mark reveals it; don't lean on auto-aim — silhouette = heat-haze shimmer</td>
+                <td>
+                  AoE flush; a Mark reveals it; don't lean on auto-aim —
+                  silhouette = heat-haze shimmer
+                </td>
               </tr>
               <tr>
                 <td class="td-crimson">Clockbound</td>
@@ -6716,7 +6754,10 @@
                   Freezes itself ~1s (taking +50% damage), then lunges at +150%
                   speed — fully telegraphed
                 </td>
-                <td>Burst it during the wind-up; sidestep the lunge — silhouette = stuttering after-image trail</td>
+                <td>
+                  Burst it during the wind-up; sidestep the lunge — silhouette =
+                  stuttering after-image trail
+                </td>
               </tr>
               <tr>
                 <td class="td-crimson">Starving</td>
@@ -6724,7 +6765,10 @@
                   Grows the longer it lives: +10% damage and +6% speed every 4s,
                   uncapped until killed
                 </td>
-                <td>Priority kill; never let it age — silhouette = gaunt, widening maw</td>
+                <td>
+                  Priority kill; never let it age — silhouette = gaunt, widening
+                  maw
+                </td>
               </tr>
               <tr>
                 <td class="td-crimson">Crowned</td>
@@ -6732,7 +6776,10 @@
                   <em>Afterlight only.</em> Carries a second random mutator and
                   one Sovereign-tier minor pattern; drops a relic-tier shard
                 </td>
-                <td>Treat as a mini-boss; focus and coordinate — silhouette = jagged crown of light or shadow</td>
+                <td>
+                  Treat as a mini-boss; focus and coordinate — silhouette =
+                  jagged crown of light or shadow
+                </td>
               </tr>
             </tbody>
           </table>
@@ -6816,7 +6863,7 @@
               <div class="tl-desc">
                 Multi-phase zone boss with arena-wide patterns, summoning from
                 the Drown. Victory ends the night in a sunrise (Radiant dealt
-                more damage) or a perfect starfield (Umbral) — a friendly
+                more damage) or a perfect starfield (Shadow) — a friendly
                 rivalry stat on the score screen.
               </div>
             </div>
@@ -6941,7 +6988,7 @@
               <div class="zone-body">
                 Black marsh under a sky with no stars; bioluminescent reeds are
                 the only light. Darkness fog shrinks vision; light sources push
-                it back. Umbral players see slightly farther — they belong here.
+                it back. Shadow players see slightly farther — they belong here.
                 <div class="zone-hazard">
                   ⚠ Vision fog · Sovereign: Mother of Teeth, In Person — the
                   Pact entity, when you finally owe her enough.
@@ -6958,11 +7005,11 @@
               <div class="zone-body">
                 The crater where the first sunrise <em>landed</em> — a dead sun
                 half-buried, still warm. Day/night flicker every 45s: Radiant
-                schools empowered in the flash, Umbral in the gloom. The faction
+                schools empowered in the flash, Shadow in the gloom. The faction
                 theme as terrain.
                 <div class="zone-hazard">
                   ⚠ Day/night flicker · Sovereign: The Solstice Itself — a
-                  twinned boss, one radiant, one umbral, sharing a health bar.
+                  twinned boss, one radiant, one shadow, sharing a health bar.
                   They fuse for phase three. The thesis statement.
                 </div>
               </div>
@@ -6984,9 +7031,9 @@
           <p>
             Unlike Sovereigns, the Wardens are not zone-specific dreams — they
             are the night's <em>bailiffs</em>: the same two archetypes wearing
-            each zone's dressing. They exist to gate progress, hand out a
-            chest, and check whether the build is on pace. Both are immune to
-            Freeze, Stun, and Knockback and instead fill a
+            each zone's dressing. They exist to gate progress, hand out a chest,
+            and check whether the build is on pace. Both are immune to Freeze,
+            Stun, and Knockback and instead fill a
             <strong>Stagger ring</strong> (Combat &amp; Status Effects); both
             scale with party size on the Co-op Scaling curve.
           </p>
@@ -7030,9 +7077,10 @@
                   fight. The party's greed is the boss design.
                 </td>
                 <td class="td-muted">
-                  Drops a Warden Chest, raises the <strong>Reliquary</strong>
-                  (party relic vote), and <strong>unlocks any held Eclipse
-                  recipes</strong> for fusion. The run's pivot point.
+                  Drops a Warden Chest, raises the
+                  <strong>Reliquary</strong> (party relic vote), and
+                  <strong>unlocks any held Eclipse recipes</strong> for fusion.
+                  The run's pivot point.
                 </td>
               </tr>
             </tbody>
@@ -7054,7 +7102,7 @@
               <div class="boss-phases">
                 Phase 1 — Moth Tides · Phase 2 — Lantern Pull (drags
                 high-Radiance players) · Phase 3 — The Flock Descends (escort
-                your Umbral ally's Colossus through the swarm-wall)
+                your Shadow ally's Colossus through the swarm-wall)
               </div>
             </div>
             <div class="boss-card">
@@ -7130,13 +7178,13 @@
               </div>
               <div class="boss-name">The Solstice Itself</div>
               <div class="boss-epithet">
-                One radiant, one umbral, one health bar
+                One radiant, one shadow, one health bar
               </div>
               <p class="boss-desc">
                 A twinned being — a sorcerer of pure light and a sorcerer of
                 pure shadow, back to back, sharing a single health bar. Each
                 half is nearly immune to its own element: the Radiant half must
-                be brought down by shadow, the Umbral half by light. In phase
+                be brought down by shadow, the Shadow half by light. In phase
                 three they fuse into a single eclipsed figure and cast the
                 players' own Eclipse recipes back at them. The game's thesis,
                 stated as a boss fight: the two magics were always one.
@@ -7193,7 +7241,7 @@
               </p>
               <div class="pact-example">
                 "Feed me your floor." (+40% spawn rate; +60% Mote drops.) ·
-                Umbral only: "Your hounds may eat what they kill." (Minions
+                Shadow only: "Your hounds may eat what they kill." (Minions
                 self-heal; you can no longer heal them.)
               </div>
             </div>
@@ -7306,7 +7354,7 @@
           </h2>
           <p class="sec-sub">
             Magic Survival's research lab, re-themed per faction. The Radiant
-            Order studies in the Heliarium, an observatory of dawn; the Umbral
+            Order studies in the Heliarium, an observatory of dawn; the Shadow
             Covenant in the Athenaeum of Gaps, a library whose shelves hold the
             spaces between books. Same structure, different art and node names —
             reinforcing the "two games" promise.
@@ -7325,14 +7373,15 @@
               <tr>
                 <td>
                   <span style="color: var(--radiant)">Dawnmotes</span> /
-                  <span style="color: var(--umbral)">Nightdrops</span>
+                  <span style="color: var(--shadow)">Nightdrops</span>
                 </td>
                 <td class="td-muted">
                   End-of-run score: time survived, kills, Wardens, Sovereign,
                   Omens — longer survival pays more, so doomed runs are still
-                  worth pushing. Can also be <strong>topped up with Robux</strong>
-                  (cap 250 ◆/day) — catch-up convenience, never a Robux-exclusive
-                  (§27)
+                  worth pushing. Can also be
+                  <strong>topped up with Robux</strong>
+                  (cap 250 ◆/day) — catch-up convenience, never a
+                  Robux-exclusive (§27)
                 </td>
                 <td class="td-muted">Faction research nodes</td>
               </tr>
@@ -7641,7 +7690,7 @@
                     },
                     {
                       id: "c3",
-                      n: "Reroll +1",
+                      n: "1st Reroll",
                       d: "One extra Reroll per run.",
                       c: 5,
                       u: 0,
@@ -7673,7 +7722,7 @@
                     },
                     {
                       id: "c7",
-                      n: "Reroll +2",
+                      n: "2nd Reroll",
                       d: "A second extra Reroll per run.",
                       c: 9,
                       u: 0,
@@ -8071,7 +8120,7 @@
                 {
                   id: "covenant",
                   label: "Covenant",
-                  sub: "Umbral Faction",
+                  sub: "Shadow Faction",
                   cur: "Nightdrops",
                   col: "#5A2D82",
                   nodes: [
@@ -8611,11 +8660,12 @@
             <div class="ib-title">Research Philosophy</div>
             <p>
               Wide, shallow, legible: every node is a sentence a 12-year-old
-              understands; fully researching one faction ≈ 50–70 hours, and seeing all its content (every class, zone, cosmetic) ≈ 80–120 hours; no
-              combat-facing node exceeds +8%. Like Magic Survival, death is the
-              resource generator — but here the <em>second faction</em> is the
-              true endgame: a fresh tree, fresh classes, and a fresh meter
-              texture waiting on the other side.
+              understands; fully researching one faction ≈ 50–70 hours, and
+              seeing all its content (every class, zone, cosmetic) ≈ 80–120
+              hours; no combat-facing node exceeds +8%. Like Magic Survival,
+              death is the resource generator — but here the
+              <em>second faction</em> is the true endgame: a fresh tree, fresh
+              classes, and a fresh meter texture waiting on the other side.
             </p>
           </div>
         </section>
@@ -8699,7 +8749,9 @@
             </tbody>
           </table>
 
-          <h3>Afterlight — the vertical climb (where the curve breaks on purpose)</h3>
+          <h3>
+            Afterlight — the vertical climb (where the curve breaks on purpose)
+          </h3>
           <p>
             Past 20:00 the logarithmic baseline is deliberately abandoned.
             Afterlight is a leaderboard mode, and a leaderboard wants a wall,
@@ -8707,17 +8759,20 @@
             each Surge compounds:
           </p>
           <div class="formula">
-            EnemyHP ×= 1.18 per Surge // compounding — replaces the linear slope<br />
+            EnemyHP ×= 1.18 per Surge // compounding — replaces the linear
+            slope<br />
             SpawnBudget ×= 1.12 per Surge // compounding<br />
-            EliteRate += 2% per Surge (cap 60%) · the Undertow no longer pauses<br />
-            Crowned elites begin at Surge 3 · a Warden returns every 5th Surge as a checkpoint
+            EliteRate += 2% per Surge (cap 60%) · the Undertow no longer
+            pauses<br />
+            Crowned elites begin at Surge 3 · a Warden returns every 5th Surge
+            as a checkpoint
           </div>
           <p>
-            Kill-speed falls off a cliff by design; the builds that survive
-            8–10 Surges are what the board actually measures. Death still pays
-            full Afterlight income, so every Surge climbed is banked — and the
-            v2.1 stacking caps (Tithe of Stars, Patient Glyph) exist precisely
-            so one uncapped outlier can't invalidate this ladder.
+            Kill-speed falls off a cliff by design; the builds that survive 8–10
+            Surges are what the board actually measures. Death still pays full
+            Afterlight income, so every Surge climbed is banked — and the v2.1
+            stacking caps (Tithe of Stars, Patient Glyph) exist precisely so one
+            uncapped outlier can't invalidate this ladder.
           </p>
 
           <div class="infobox ib-crimson">
@@ -8886,7 +8941,9 @@
                 <td class="td-crimson">Stagger ring</td>
                 <td class="td-muted">
                   Uncapped growth, no decay →
-                  <strong>caps at +150% of base; decays 5%/s after 8s idle</strong>
+                  <strong
+                    >caps at +150% of base; decays 5%/s after 8s idle</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Keeps Stagger a reward for a real control build, not a passive
@@ -8897,11 +8954,14 @@
                 <td class="td-crimson">Solo Curse outlet</td>
                 <td class="td-muted">
                   Flat Well count →
-                  <strong>solo runs: +1 Cleansing Well, raised Penitent weight</strong>
+                  <strong
+                    >solo runs: +1 Cleansing Well, raised Penitent
+                    weight</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Every Curse outlet except Wells/relics is ally-driven. Without
-                  a Radiant ally, solo Umbral was a one-way ratchet; this keeps
+                  a Radiant ally, solo Shadow was a one-way ratchet; this keeps
                   the meter a managed debt instead
                 </td>
               </tr>
@@ -8909,7 +8969,10 @@
                 <td class="td-crimson">Revive in the Drown</td>
                 <td class="td-muted">
                   3s channel →
-                  <strong>1.5s if two allies channel; Last Light pauses Undertow 8s when one player remains</strong>
+                  <strong
+                    >1.5s if two allies channel; Last Light pauses Undertow 8s
+                    when one player remains</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Max-density revives were near-impossible, causing cascade
@@ -8921,9 +8984,11 @@
                 <td class="td-crimson">Lives &amp; revives</td>
                 <td class="td-muted">
                   Unlimited ally revives →
-                  <strong>shared Revive Pool of one charge per player (solo 1 ·
-                  quad 4); every revive source spends a charge; empty = final.
-                  Hardcore: one life, zero revives even in co-op</strong>
+                  <strong
+                    >shared Revive Pool of one charge per player (solo 1 · quad
+                    4); every revive source spends a charge; empty = final.
+                    Hardcore: one life, zero revives even in co-op</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Unlimited lives defeats the roguelite stakes; a finite,
@@ -8961,16 +9026,16 @@
               <strong>Charter classes added:</strong> two buyable classes per
               faction (Gilded Martyr, Carillon Saint · Ashen Usurer,
               Voidshepherd), purchased with in-game faction currency or Eclipse
-              Shards — never sold for Robux directly. Each is a sidegrade (new meter modifier / Web
-              shape), holding the no-pay-to-win line (§7)
+              Shards — never sold for Robux directly. Each is a sidegrade (new
+              meter modifier / Web shape), holding the no-pay-to-win line (§7)
             </li>
             <li>
               <strong>Monetization — soft-currency top-up:</strong> Dawnmotes /
               Nightdrops are now buyable with Robux (daily cap) as catch-up
               convenience. Nothing is Robux-exclusive and everything stays
-              earnable by play; research is a finite ceiling, so money buys speed
-              not power, and Hardcore / Afterlight boards stay skill-based (§7,
-              §27)
+              earnable by play; research is a finite ceiling, so money buys
+              speed not power, and Hardcore / Afterlight boards stay skill-based
+              (§7, §27)
             </li>
             <li>
               <strong>Economy balanced across systems:</strong> every sink now
@@ -8986,8 +9051,8 @@
               branches (Vessel, Codex, Loom, Fate, Order, Covenant, Penumbra)
               now total exactly 90 upgrades — new survival, drafting, Web, and
               run-shaping nodes, plus faction nodes that unlock classes and
-              discount the Charter Roster. Costs stay on the 3–18 ◆ scale; a full
-              faction tree ≈ 620 ◆ (§19)
+              discount the Charter Roster. Costs stay on the 3–18 ◆ scale; a
+              full faction tree ≈ 620 ◆ (§19)
             </li>
           </ul>
 
@@ -9019,7 +9084,7 @@
             </li>
             <li>
               <strong>Special schools:</strong> Holy ☀ (Radiant-only) and Void ☾
-              (Umbral-only) now carry the twin risk engines — Radiance and Curse
+              (Shadow-only) now carry the twin risk engines — Radiance and Curse
               respectively. Faction identity = your special school, your engine,
               your half of the eclipse
             </li>
@@ -9166,11 +9231,12 @@
             <li>
               <strong>Down / Revive</strong> — a downed player becomes a
               tethered spirit; an ally channel (3s; 1.5s if two channel
-              together) spends one charge from the party's <strong>Revive
-              Pool</strong> (one charge per player per run; see §8) and restores
-              them at 40% HP. Phoenix Rebirth Pact and Radiance Vigil also draw
-              from the pool. When only one player is left standing in the Drown,
-              the Undertow's growth pauses for 8s — a <strong>Last Light</strong>
+              together) spends one charge from the party's
+              <strong>Revive Pool</strong> (one charge per player per run; see
+              §8) and restores them at 40% HP. Phoenix Rebirth Pact and Radiance
+              Vigil also draw from the pool. When only one player is left
+              standing in the Drown, the Undertow's growth pauses for 8s — a
+              <strong>Last Light</strong>
               window for a clutch revive before the spiral resumes. When the
               pool is empty, downs are final: death is a co-op event with real
               stakes, never unlimited and never a spectator screen
@@ -9257,8 +9323,9 @@
             <li>
               <strong>Leaderboards</strong> — Afterlight minutes per zone /
               class / party size; codex completion titles ("The One Who Read").
-              Skill-based by design: the Robux currency top-up buys only catch-up
-              speed to the finite research cap, never a higher one (§27)
+              Skill-based by design: the Robux currency top-up buys only
+              catch-up speed to the finite research cap, never a higher one
+              (§27)
             </li>
             <li>
               <strong>Private servers</strong> — friend groups, custom rule
@@ -9295,7 +9362,7 @@
                 <td class="td-violet">Vitality</td>
                 <td class="td-muted">Top-left</td>
                 <td>
-                  Glass vial of light (Radiant) or ink (Umbral) that drains; no
+                  Glass vial of light (Radiant) or ink (Shadow) that drains; no
                   numbers by default
                 </td>
               </tr>
@@ -9376,7 +9443,7 @@
           <p>
             The world is rendered in <strong>deep dusk tones</strong>; the only
             saturated colors on screen are <em>magic and meaning</em>. Radiant
-            spells are warm light with long soft bloom; Umbral spells are cool
+            spells are warm light with long soft bloom; Shadow spells are cool
             violets and true blacks with thin bright edges. Enemies are matte,
             desaturated silhouettes — at full density the screen reads as dark
             mass versus living light, never soup.
@@ -9531,17 +9598,18 @@
                 <td class="td-muted">
                   <strong>Two real-money lines, no exclusives.</strong>
                   (1) Cosmetics — vestments, spell VFX palettes, halo/shadow
-                  trails, hub pets. (2) A <strong>Dawnmotes / Nightdrops top-up</strong>
-                  for Robux, <strong>capped at 250 ◆/day</strong> — pure catch-up
+                  trails, hub pets. (2) A
+                  <strong>Dawnmotes / Nightdrops top-up</strong> for Robux,
+                  <strong>capped at 250 ◆/day</strong> — pure catch-up
                   convenience. Everything currency buys (research, the Charter
                   classes) is <em>also</em> fully earnable by play, so there is
-                  <strong>no Robux-exclusive power</strong>. Research is a finite
-                  tree — a ceiling, not a ladder — so money buys <em>speed to the
-                  cap, never a higher cap</em>; at the leaderboard frontier
-                  everyone is fully researched, keeping <strong>Hardcore &amp;
-                  Afterlight skill-based</strong> (paid progression flagged on the
-                  boards). In a clone-saturated platform, that restraint is still
-                  the product
+                  <strong>no Robux-exclusive power</strong>. Research is a
+                  finite tree — a ceiling, not a ladder — so money buys
+                  <em>speed to the cap, never a higher cap</em>; at the
+                  leaderboard frontier everyone is fully researched, keeping
+                  <strong>Hardcore &amp; Afterlight skill-based</strong> (paid
+                  progression flagged on the boards). In a clone-saturated
+                  platform, that restraint is still the product
                 </td>
               </tr>
               <tr>
@@ -9636,7 +9704,7 @@
           <div class="formula">
             {<br />
             &nbsp;&nbsp;version: 3,<br />
-            &nbsp;&nbsp;faction: "umbral",<br />
+            &nbsp;&nbsp;faction: "shadow",<br />
             &nbsp;&nbsp;currency: 310, // Nightdrops<br />
             &nbsp;&nbsp;research: { "vessel_hp_2": 1, "codex_t2": 1, ... },<br />
             &nbsp;&nbsp;codex: { "riftbolt": { lvlSeen: 10, talentsSeen: [1,3],
@@ -9648,8 +9716,8 @@
             refusals: 2 } }, // drives evolving dialogue<br />
             &nbsp;&nbsp;stats: { runs: 61, sovereigns: 9, bestAfterlight: 432
             },<br />
-            &nbsp;&nbsp;hardcore: { unlocked: true, sovereigns: 2, bestSurge:
-            7, embers: 95, seals: ["umbral"] } // §28 — prestige only<br />
+            &nbsp;&nbsp;hardcore: { unlocked: true, sovereigns: 2, bestSurge: 7,
+            embers: 95, seals: ["shadow"] } // §28 — prestige only<br />
             }<br />
             // + one shared doc: { eclipseShards, cosmetics[], settings } — the
             only cross-faction data
@@ -9699,7 +9767,6 @@
               by default
             </li>
           </ul>
-
         </section>
 
         <!-- ──────────────── 28 HARDCORE ──────────────── -->
@@ -9718,13 +9785,13 @@
             wells, rerolls, the Last Light pause. Hardcore is the same night
             with the recovery removed. The twin risk meters were designed for
             exactly this — Curse that can only spiral and Radiance that paints
-            you for the whole map finally have nowhere to hide. You arm the
-            mode by lighting the <strong>Unbroken flame</strong> — interacting
-            with a black-glass brazier in the <strong>Threshold</strong>, the
-            half-lit hub sanctum where every run is prepared and launched
-            (§24). Doing so before you descend flags that run as hardcore;
-            there is no toggling it off once you drop in, and when your flame
-            goes out — your last life spent — the run is over for good.
+            you for the whole map finally have nowhere to hide. You arm the mode
+            by lighting the <strong>Unbroken flame</strong> — interacting with a
+            black-glass brazier in the <strong>Threshold</strong>, the half-lit
+            hub sanctum where every run is prepared and launched (§24). Doing so
+            before you descend flags that run as hardcore; there is no toggling
+            it off once you drop in, and when your flame goes out — your last
+            life spent — the run is over for good.
           </p>
 
           <h3>The Hardcore System — what changes</h3>
@@ -9805,8 +9872,10 @@
                 <td class="td-crimson">Enemy scaling</td>
                 <td class="td-muted">
                   Baseline curves →
-                  <strong>+25% HP and +15% spawn from minute 0; the Undertow
-                  begins at 11:00 (not 13:00)</strong>
+                  <strong
+                    >+25% HP and +15% spawn from minute 0; the Undertow begins
+                    at 11:00 (not 13:00)</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Compresses the run — the Drown comes for you sooner
@@ -9816,8 +9885,10 @@
                 <td class="td-crimson">Elites</td>
                 <td class="td-muted">
                   Standard rate, one mutator →
-                  <strong>+50% elite rate; paired mutators (Crowned-style) from
-                  Warden II onward</strong>
+                  <strong
+                    >+50% elite rate; paired mutators (Crowned-style) from
+                    Warden II onward</strong
+                  >
                 </td>
                 <td class="td-muted">
                   Reading two threats on one silhouette is the skill ceiling
@@ -9839,8 +9910,10 @@
                 <td class="td-gold">Pacts</td>
                 <td class="td-muted">
                   It That Waits at Stage V; full refusal blessings →
-                  <strong>It That Waits at Stage IV; refusal blessings halved;
-                  harsher variants weighted</strong>
+                  <strong
+                    >It That Waits at Stage IV; refusal blessings halved;
+                    harsher variants weighted</strong
+                  >
                 </td>
                 <td class="td-muted">
                   The greedy deals get louder when the stakes are absolute
@@ -9902,8 +9975,8 @@
             </li>
             <li>
               <strong>When the last player falls, the run is over</strong> — no
-              Last Light reprieve. Solo, that is your first down; in a party, the
-              moment the final survivor drops
+              Last Light reprieve. Solo, that is your first down; in a party,
+              the moment the final survivor drops
             </li>
             <li>
               <strong>Death still pays.</strong> Hardcore banks prestige at the
@@ -9915,16 +9988,16 @@
           <h3>The Seal of the Unbroken — rewards &amp; prestige</h3>
           <ul class="st">
             <li>
-              <strong>Currency:</strong> hardcore pays standard
-              Dawnmotes / Nightdrops at <strong>×1.5</strong>, plus a
-              prestige-only token — <strong>Embers of the Unbroken</strong>
+              <strong>Currency:</strong> hardcore pays standard Dawnmotes /
+              Nightdrops at <strong>×1.5</strong>, plus a prestige-only token —
+              <strong>Embers of the Unbroken</strong>
               (~6–10 per Unbroken clear, +1 per Afterlight Surge)
             </li>
             <li>
-              <strong>Embers buy cosmetics only</strong> — a black-flame
-              halo / shadow-trail, the Unbroken vestment, and a hub brazier that
-              lights one ring per zone cleared hardcore — 40–150 Embers each.
-              Never power, and <strong>never buyable with Robux</strong>: prestige
+              <strong>Embers buy cosmetics only</strong> — a black-flame halo /
+              shadow-trail, the Unbroken vestment, and a hub brazier that lights
+              one ring per zone cleared hardcore — 40–150 Embers each. Never
+              power, and <strong>never buyable with Robux</strong>: prestige
               must be earned. The same cosmetics-only line the whole economy
               holds — in a clone-saturated platform, trust is the product
             </li>
