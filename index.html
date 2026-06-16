@@ -6442,7 +6442,7 @@
           <h3>Economy at a Glance — currencies balanced across systems</h3>
           <p>
             Every sink is priced against one yardstick: a full faction research
-            tree (78 nodes) costs about <strong>~565 RP</strong>, and RP are
+            tree (79 nodes) costs about <strong>~555 RP</strong>, and RP are
             bought with the faction currency a run earns (~6 RP for a first
             clear, fewer as the RP price climbs), making full research the
             long-tail spine of progression. Class prices, prestige costs, and
@@ -6475,7 +6475,7 @@
                 <td class="td-violet">Research Points (RP)</td>
                 <td class="td-muted">~6 / first clear, declining as price climbs</td>
                 <td class="td-muted">
-                  All research nodes (3–18 RP ea; tree ≈ 565 RP)
+                  Nodes 3–18 RP (+1 per branch unlock); tree ≈ 555 RP
                 </td>
                 <td class="td-muted">Long-tail spine; bought with ◆ at the hall</td>
               </tr>
@@ -7401,7 +7401,7 @@
                   2 per RP, rising +1 every 3 RP bought. A first successful run
                   converts to ~6 RP; the rate falls as the price climbs
                 </td>
-                <td class="td-muted">All research nodes (3–18 RP each)</td>
+                <td class="td-muted">1 to unlock a branch, then 3–18 RP per node</td>
               </tr>
               <tr>
                 <td class="td-gold">Eclipse Shards</td>
@@ -7419,7 +7419,7 @@
             </tbody>
           </table>
 
-          <h3>Branches (78 nodes at launch)</h3>
+          <h3>Branches (79 nodes at launch)</h3>
           <p
             style="
               font-size: 13px;
@@ -7555,9 +7555,9 @@
                   nodes: [
                     {
                       id: "v0",
-                      n: "+Vitality I",
-                      d: "Max HP +8%. The foundation of every build.",
-                      c: 3,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -7714,9 +7714,9 @@
                   nodes: [
                     {
                       id: "c2",
-                      n: "1st Banish",
-                      d: "One extra Banish per run.",
-                      c: 5,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -7823,9 +7823,9 @@
                   nodes: [
                     {
                       id: "l0",
-                      n: "Res. hints",
-                      d: "The Web highlights possible resonances.",
-                      c: 3,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -7837,7 +7837,7 @@
                       d: "Cosmetic resonance pulse along threads.",
                       c: 4,
                       u: 1,
-                      p: "l0",
+                      p: "l13",
                       q: -2,
                       r: 0,
                     },
@@ -7951,6 +7951,16 @@
                       q: 2,
                       r: 0,
                     },
+                    {
+                      id: "l13",
+                      n: "Reweave",
+                      d: "One free Web-slot swap at any fusion altar.",
+                      c: 3,
+                      u: 0,
+                      p: "l0",
+                      q: -1,
+                      r: 0,
+                    },
                   ],
                 },
                 {
@@ -7962,9 +7972,9 @@
                   nodes: [
                     {
                       id: "f0",
-                      n: "+1 Altar",
-                      d: "A third Pact altar rises at 16:00.",
-                      c: 4,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -8111,9 +8121,9 @@
                   nodes: [
                     {
                       id: "o0",
-                      n: "Radiance +10%",
-                      d: "Radiance gain +10%.",
-                      c: 3,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -8220,12 +8230,12 @@
                   nodes: [
                     {
                       id: "k0",
-                      n: "Curse −1",
-                      d: "Curse gained per hit is +3, not +4.",
-                      c: 3,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
-                      q: -1,
+                      q: 0,
                       r: -2,
                     },
                     {
@@ -8245,8 +8255,8 @@
                       c: 7,
                       u: 1,
                       p: "k0",
-                      q: 1,
-                      r: -3,
+                      q: 0,
+                      r: -1,
                     },
                     {
                       id: "k3",
@@ -8254,9 +8264,9 @@
                       d: "Curse gained per hit is +2.",
                       c: 8,
                       u: 0,
-                      p: "k1",
-                      q: -1,
-                      r: 0,
+                      p: "k0",
+                      q: 1,
+                      r: -2,
                     },
                     {
                       id: "k7",
@@ -8264,9 +8274,9 @@
                       d: "Curse stage fragility penalties −10%.",
                       c: 9,
                       u: 0,
-                      p: "k3",
+                      p: "k1",
                       q: -2,
-                      r: 1,
+                      r: 0,
                     },
                     {
                       id: "k4",
@@ -8274,9 +8284,9 @@
                       d: "Minion cap +2.",
                       c: 10,
                       u: 0,
-                      p: "k7",
-                      q: -3,
-                      r: 1,
+                      p: "k2",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "k5",
@@ -8284,7 +8294,7 @@
                       d: "Research-unlock the Hollow Saint class.",
                       c: 11,
                       u: 0,
-                      p: "k7",
+                      p: "k4",
                       q: -1,
                       r: 1,
                     },
@@ -8294,9 +8304,9 @@
                       d: "Hexes jump to a nearby enemy on kill.",
                       c: 12,
                       u: 0,
-                      p: "k5",
-                      q: -1,
-                      r: 2,
+                      p: "k4",
+                      q: -2,
+                      r: 1,
                     },
                     {
                       id: "k6",
@@ -8304,8 +8314,8 @@
                       d: "Late-unlock the Pale Weaver class.",
                       c: 14,
                       u: 0,
-                      p: "k8",
-                      q: 0,
+                      p: "k5",
+                      q: -1,
                       r: 2,
                     },
                     {
@@ -8314,9 +8324,9 @@
                       d: "Damage +10% while at Curse Stage IV+.",
                       c: 16,
                       u: 0,
-                      p: "k8",
+                      p: "k5",
                       q: -2,
-                      r: 3,
+                      r: 2,
                     },
                   ],
                 },
@@ -8329,9 +8339,9 @@
                   nodes: [
                     {
                       id: "p3",
-                      n: "Faction emotes",
-                      d: "Cosmetic cross-faction emotes.",
-                      c: 4,
+                      n: "Branch Unlock",
+                      d: "Spend 1 point to open this branch.",
+                      c: 1,
                       u: 1,
                       p: null,
                       q: 0,
@@ -9001,6 +9011,12 @@
               spiral, Order radiating outward, Covenant a crescent moon, and
               Penumbra a hollow ring. (The widget honors explicit hex
               coordinates per node.)
+            </li>
+            <li>
+              <strong>Branch-unlock gating.</strong> Every branch now starts
+              with a 1-point <em>Branch Unlock</em> node; Covenant was rebuilt as
+              a fully-contiguous crescent moon, and a <em>Reweave</em> node was
+              added between Loom's Web pulse and its root.
             </li>
           </ul>
 
