@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SORCERER SURVIVORS — Game Design Document v3.2</title>
+    <title>SORCERER SURVIVORS — Game Design Document v3.3</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -1381,7 +1381,7 @@
     <nav class="sidebar" id="sidebar">
       <div class="sb-logo">
         <div class="sb-logo-title">SORCERER SURVIVORS</div>
-        <div class="sb-logo-sub">Game Design Document · v3.2</div>
+        <div class="sb-logo-sub">Game Design Document · v3.3</div>
       </div>
 
       <div class="sb-section">
@@ -1518,7 +1518,7 @@
           </div>
           <div class="hm-item">
             <span class="hm-label">Version</span
-            ><span class="hm-value">GDD v3.2 — June 2026</span>
+            ><span class="hm-value">GDD v3.3 — June 2026</span>
           </div>
         </div>
       </div>
@@ -6442,9 +6442,10 @@
           <h3>Economy at a Glance — currencies balanced across systems</h3>
           <p>
             Every sink is priced against one yardstick: a full faction research
-            tree (90 nodes) costs about <strong>~620 ◆</strong>, and a healthy
-            run earns <strong>~8–17 ◆</strong>, making full research a roughly
-            50–70-hour spine of progression. Class prices, prestige costs, and
+            tree (78 nodes) costs about <strong>~565 RP</strong>, and RP are
+            bought with the faction currency a run earns (~6 RP for a first
+            clear, fewer as the RP price climbs), making full research the
+            long-tail spine of progression. Class prices, prestige costs, and
             the Robux cap all read off that spine.
           </p>
           <table>
@@ -6466,11 +6467,17 @@
                   ~8–17 / run; + Robux top-up (cap 250 ◆/day)
                 </td>
                 <td class="td-muted">
-                  Research nodes (3–18 ea; tree ≈ 620) · Charter class (200)
+                  Research Points · Charter class (200)
                 </td>
+                <td class="td-muted">A class ≈ 15 good runs</td>
+              </tr>
+              <tr>
+                <td class="td-violet">Research Points (RP)</td>
+                <td class="td-muted">~6 / first clear, declining as price climbs</td>
                 <td class="td-muted">
-                  Tree ≈ 50–70 hrs; a class ≈ 15 good runs
+                  All research nodes (3–18 RP ea; tree ≈ 565 RP)
                 </td>
+                <td class="td-muted">Long-tail spine; bought with ◆ at the hall</td>
               </tr>
               <tr>
                 <td class="td-gold">Eclipse Shards (◇)</td>
@@ -7383,7 +7390,18 @@
                   (cap 250 ◆/day) — catch-up convenience, never a
                   Robux-exclusive (§27)
                 </td>
-                <td class="td-muted">Faction research nodes</td>
+                <td class="td-muted">
+                  Research Points · Charter classes (200)
+                </td>
+              </tr>
+              <tr>
+                <td class="td-violet">Research Points (RP)</td>
+                <td class="td-muted">
+                  Bought at your faction hall with Dawnmotes / Nightdrops — base
+                  2 per RP, rising +1 every 3 RP bought. A first successful run
+                  converts to ~6 RP; the rate falls as the price climbs
+                </td>
+                <td class="td-muted">All research nodes (3–18 RP each)</td>
               </tr>
               <tr>
                 <td class="td-gold">Eclipse Shards</td>
@@ -7401,7 +7419,7 @@
             </tbody>
           </table>
 
-          <h3>Branches (90 nodes at launch)</h3>
+          <h3>Branches (78 nodes at launch)</h3>
           <p
             style="
               font-size: 13px;
@@ -7532,7 +7550,7 @@
                   id: "vessel",
                   label: "Vessel",
                   sub: "Body & Survival",
-                  cur: "Dawnmotes",
+                  cur: "Research Points",
                   col: "#4A3A9A",
                   nodes: [
                     {
@@ -7542,14 +7560,8 @@
                       c: 3,
                       u: 1,
                       p: null,
-                    },
-                    {
-                      id: "v1",
-                      n: "+Vitality II",
-                      d: "Max HP +8%.",
-                      c: 5,
-                      u: 1,
-                      p: "v0",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "v2",
@@ -7558,6 +7570,8 @@
                       c: 4,
                       u: 1,
                       p: "v0",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "v3",
@@ -7565,7 +7579,19 @@
                       d: "Mote pickup radius +12%.",
                       c: 4,
                       u: 0,
-                      p: "v0",
+                      p: "v2",
+                      q: -2,
+                      r: 1,
+                    },
+                    {
+                      id: "v1",
+                      n: "+Vitality II",
+                      d: "Max HP +8%.",
+                      c: 5,
+                      u: 0,
+                      p: "v3",
+                      q: -2,
+                      r: 0,
                     },
                     {
                       id: "v4",
@@ -7574,6 +7600,8 @@
                       c: 7,
                       u: 0,
                       p: "v1",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "v5",
@@ -7581,7 +7609,9 @@
                       d: "Move speed +4%.",
                       c: 8,
                       u: 0,
-                      p: "v2",
+                      p: "v1",
+                      q: -2,
+                      r: -1,
                     },
                     {
                       id: "v6",
@@ -7589,23 +7619,9 @@
                       d: "Mote pickup radius +12%.",
                       c: 8,
                       u: 0,
-                      p: "v3",
-                    },
-                    {
-                      id: "v7",
-                      n: "Dash i-frames",
-                      d: "+0.1s invincibility on every dash.",
-                      c: 12,
-                      u: 0,
                       p: "v5",
-                    },
-                    {
-                      id: "v8",
-                      n: "Extra dash",
-                      d: "+1 dash charge before cooldown.",
-                      c: 14,
-                      u: 0,
-                      p: "v7",
+                      q: -1,
+                      r: -1,
                     },
                     {
                       id: "v9",
@@ -7614,14 +7630,8 @@
                       c: 9,
                       u: 0,
                       p: "v4",
-                    },
-                    {
-                      id: "v10",
-                      n: "Hit armor",
-                      d: "Contact damage taken −5%.",
-                      c: 11,
-                      u: 0,
-                      p: "v9",
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "v11",
@@ -7630,14 +7640,28 @@
                       c: 10,
                       u: 0,
                       p: "v6",
+                      q: 0,
+                      r: -1,
                     },
                     {
-                      id: "v12",
-                      n: "+1 pool charge",
-                      d: "Party Revive Pool +1 per run.",
-                      c: 16,
+                      id: "v10",
+                      n: "Hit armor",
+                      d: "Contact damage taken −5%.",
+                      c: 11,
                       u: 0,
-                      p: "v11",
+                      p: "v6",
+                      q: 0,
+                      r: -2,
+                    },
+                    {
+                      id: "v7",
+                      n: "Dash i-frames",
+                      d: "+0.1s invincibility on every dash.",
+                      c: 12,
+                      u: 0,
+                      p: "v9",
+                      q: 1,
+                      r: 0,
                     },
                     {
                       id: "v13",
@@ -7646,6 +7670,28 @@
                       c: 13,
                       u: 0,
                       p: "v10",
+                      q: 1,
+                      r: -2,
+                    },
+                    {
+                      id: "v8",
+                      n: "Extra dash",
+                      d: "+1 dash charge before cooldown.",
+                      c: 14,
+                      u: 0,
+                      p: "v11",
+                      q: 1,
+                      r: -1,
+                    },
+                    {
+                      id: "v12",
+                      n: "+1 pool charge",
+                      d: "Party Revive Pool +1 per run.",
+                      c: 16,
+                      u: 0,
+                      p: "v13",
+                      q: 2,
+                      r: -2,
                     },
                     {
                       id: "v14",
@@ -7653,7 +7699,9 @@
                       d: "3s i-frames the first time you fall in a run.",
                       c: 18,
                       u: 0,
-                      p: "v13",
+                      p: "v8",
+                      q: 2,
+                      r: -1,
                     },
                   ],
                 },
@@ -7661,16 +7709,28 @@
                   id: "codex",
                   label: "Codex",
                   sub: "Spells & Drafting",
-                  cur: "Dawnmotes",
+                  cur: "Research Points",
                   col: "#185FA5",
                   nodes: [
                     {
-                      id: "c0",
-                      n: "Spell tier II*",
-                      d: "(Post-launch placeholder) Will let level-up offers roll Tier-II spells once the spell-rarity system ships \u2014 not active at launch.",
-                      c: 3,
+                      id: "c2",
+                      n: "1st Banish",
+                      d: "One extra Banish per run.",
+                      c: 5,
                       u: 1,
                       p: null,
+                      q: 0,
+                      r: 0,
+                    },
+                    {
+                      id: "c3",
+                      n: "1st Reroll",
+                      d: "One extra Reroll per run.",
+                      c: 5,
+                      u: 1,
+                      p: "c2",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "c1",
@@ -7678,71 +7738,9 @@
                       d: "Level-ups show a 4th card.",
                       c: 6,
                       u: 1,
-                      p: "c0",
-                    },
-                    {
-                      id: "c2",
-                      n: "1st Banish",
-                      d: "One extra Banish per run.",
-                      c: 5,
-                      u: 0,
-                      p: "c0",
-                    },
-                    {
-                      id: "c3",
-                      n: "1st Reroll",
-                      d: "One extra Reroll per run.",
-                      c: 5,
-                      u: 0,
-                      p: "c0",
-                    },
-                    {
-                      id: "c4",
-                      n: "Spell tier III*",
-                      d: "(Post-launch placeholder) Will let level-up offers roll Tier-III spells once the spell-rarity system ships \u2014 not active at launch.",
-                      c: 7,
-                      u: 0,
-                      p: "c1",
-                    },
-                    {
-                      id: "c5",
-                      n: "School focus",
-                      d: "Start one chosen school at Level 1.",
-                      c: 8,
-                      u: 0,
-                      p: "c4",
-                    },
-                    {
-                      id: "c6",
-                      n: "2nd Banish",
-                      d: "A second extra Banish per run.",
-                      c: 9,
-                      u: 0,
                       p: "c2",
-                    },
-                    {
-                      id: "c7",
-                      n: "2nd Reroll",
-                      d: "A second extra Reroll per run.",
-                      c: 9,
-                      u: 0,
-                      p: "c3",
-                    },
-                    {
-                      id: "c8",
-                      n: "Spell tier IV*",
-                      d: "(Post-launch placeholder) Will let level-up offers roll Tier-IV spells once the spell-rarity system ships \u2014 not active at launch.",
-                      c: 10,
-                      u: 0,
-                      p: "c5",
-                    },
-                    {
-                      id: "c9",
-                      n: "5th offer",
-                      d: "Level-ups show a 5th card.",
-                      c: 12,
-                      u: 0,
-                      p: "c8",
+                      q: 1,
+                      r: 0,
                     },
                     {
                       id: "c10",
@@ -7750,23 +7748,39 @@
                       d: "Skip grants 25 motes, not 15.",
                       c: 8,
                       u: 0,
-                      p: "c7",
+                      p: "c3",
+                      q: -1,
+                      r: -1,
                     },
                     {
-                      id: "c11",
-                      n: "Spell tier V*",
-                      d: "(Post-launch placeholder) Will let level-up offers roll Tier-V spells once the spell-rarity system ships \u2014 not active at launch.",
-                      c: 13,
+                      id: "c5",
+                      n: "School focus",
+                      d: "Start one chosen school at Level 1.",
+                      c: 8,
                       u: 0,
-                      p: "c9",
+                      p: "c3",
+                      q: -2,
+                      r: 1,
                     },
                     {
-                      id: "c12",
-                      n: "Augment +1",
-                      d: "Augment cap per spell +1 (max 3).",
-                      c: 14,
+                      id: "c6",
+                      n: "2nd Banish",
+                      d: "A second extra Banish per run.",
+                      c: 9,
                       u: 0,
-                      p: "c11",
+                      p: "c10",
+                      q: 0,
+                      r: -1,
+                    },
+                    {
+                      id: "c7",
+                      n: "2nd Reroll",
+                      d: "A second extra Reroll per run.",
+                      c: 9,
+                      u: 0,
+                      p: "c5",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "c13",
@@ -7774,7 +7788,29 @@
                       d: "See a spell's Level-10 talents before you pick it.",
                       c: 11,
                       u: 0,
-                      p: "c10",
+                      p: "c6",
+                      q: 1,
+                      r: -1,
+                    },
+                    {
+                      id: "c9",
+                      n: "5th offer",
+                      d: "Level-ups show a 5th card.",
+                      c: 12,
+                      u: 0,
+                      p: "c7",
+                      q: 0,
+                      r: 1,
+                    },
+                    {
+                      id: "c12",
+                      n: "Augment +1",
+                      d: "Augment cap per spell +1 (max 3).",
+                      c: 14,
+                      u: 0,
+                      p: "c7",
+                      q: -1,
+                      r: 2,
                     },
                   ],
                 },
@@ -7782,7 +7818,7 @@
                   id: "loom",
                   label: "Loom",
                   sub: "The Web",
-                  cur: "Dawnmotes",
+                  cur: "Research Points",
                   col: "#854F0B",
                   nodes: [
                     {
@@ -7792,22 +7828,38 @@
                       c: 3,
                       u: 1,
                       p: null,
+                      q: 0,
+                      r: 0,
+                    },
+                    {
+                      id: "l7",
+                      n: "Web pulse",
+                      d: "Cosmetic resonance pulse along threads.",
+                      c: 4,
+                      u: 1,
+                      p: "l0",
+                      q: -2,
+                      r: 0,
                     },
                     {
                       id: "l1",
                       n: "Reposition +1",
                       d: "Rearrange one Web slot mid-run.",
                       c: 5,
-                      u: 1,
-                      p: "l0",
+                      u: 0,
+                      p: "l7",
+                      q: -1,
+                      r: -1,
                     },
                     {
-                      id: "l2",
-                      n: "Fusion altar",
-                      d: "Begin each run with one fusion-altar charge.",
-                      c: 8,
+                      id: "l6",
+                      n: "Seam vision",
+                      d: "Seam slots glow on the shared Web.",
+                      c: 6,
                       u: 0,
-                      p: "l0",
+                      p: "l7",
+                      q: -2,
+                      r: 1,
                     },
                     {
                       id: "l3",
@@ -7816,14 +7868,18 @@
                       c: 7,
                       u: 0,
                       p: "l1",
+                      q: 0,
+                      r: -2,
                     },
                     {
-                      id: "l4",
-                      n: "Reposition +2",
-                      d: "A second mid-run Web rearrange.",
-                      c: 9,
+                      id: "l2",
+                      n: "Fusion altar",
+                      d: "Begin each run with one fusion-altar charge.",
+                      c: 8,
                       u: 0,
-                      p: "l1",
+                      p: "l6",
+                      q: -2,
+                      r: 2,
                     },
                     {
                       id: "l5",
@@ -7832,30 +7888,18 @@
                       c: 8,
                       u: 0,
                       p: "l3",
+                      q: 1,
+                      r: -2,
                     },
                     {
-                      id: "l6",
-                      n: "Seam vision",
-                      d: "Seam slots glow on the shared Web.",
-                      c: 6,
+                      id: "l4",
+                      n: "Reposition +2",
+                      d: "A second mid-run Web rearrange.",
+                      c: 9,
                       u: 0,
                       p: "l2",
-                    },
-                    {
-                      id: "l7",
-                      n: "Web pulse",
-                      d: "Cosmetic resonance pulse along threads.",
-                      c: 4,
-                      u: 0,
-                      p: "l6",
-                    },
-                    {
-                      id: "l8",
-                      n: "Reposition +3",
-                      d: "A third mid-run Web rearrange.",
-                      c: 12,
-                      u: 0,
-                      p: "l4",
+                      q: -1,
+                      r: 2,
                     },
                     {
                       id: "l9",
@@ -7864,22 +7908,8 @@
                       c: 10,
                       u: 0,
                       p: "l5",
-                    },
-                    {
-                      id: "l10",
-                      n: "Fusion floor",
-                      d: "The Web cannot shrink below 4 slots.",
-                      c: 13,
-                      u: 0,
-                      p: "l8",
-                    },
-                    {
-                      id: "l11",
-                      n: "Heart primer",
-                      d: "Filling an ally's Heart Gap resonates +10%.",
-                      c: 14,
-                      u: 0,
-                      p: "l9",
+                      q: 2,
+                      r: -2,
                     },
                     {
                       id: "l12",
@@ -7887,7 +7917,39 @@
                       d: "One extra slot reroll at fusion altars.",
                       c: 11,
                       u: 0,
-                      p: "l7",
+                      p: "l4",
+                      q: 0,
+                      r: 2,
+                    },
+                    {
+                      id: "l8",
+                      n: "Reposition +3",
+                      d: "A third mid-run Web rearrange.",
+                      c: 12,
+                      u: 0,
+                      p: "l9",
+                      q: 2,
+                      r: -1,
+                    },
+                    {
+                      id: "l10",
+                      n: "Fusion floor",
+                      d: "The Web cannot shrink below 4 slots.",
+                      c: 13,
+                      u: 0,
+                      p: "l12",
+                      q: 1,
+                      r: 1,
+                    },
+                    {
+                      id: "l11",
+                      n: "Heart primer",
+                      d: "Filling an ally's Heart Gap resonates +10%.",
+                      c: 14,
+                      u: 0,
+                      p: "l10",
+                      q: 2,
+                      r: 0,
                     },
                   ],
                 },
@@ -7895,7 +7957,7 @@
                   id: "fate",
                   label: "Fate",
                   sub: "Run Shaping",
-                  cur: "Dawnmotes",
+                  cur: "Research Points",
                   col: "#8B2500",
                   nodes: [
                     {
@@ -7905,22 +7967,28 @@
                       c: 4,
                       u: 1,
                       p: null,
-                    },
-                    {
-                      id: "f1",
-                      n: "+1 Well",
-                      d: "One extra Cleansing Well per run.",
-                      c: 5,
-                      u: 1,
-                      p: "f0",
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "f2",
                       n: "Mutator codex",
                       d: "Elite mutators are named on sight.",
                       c: 4,
-                      u: 0,
+                      u: 1,
                       p: "f0",
+                      q: -1,
+                      r: 0,
+                    },
+                    {
+                      id: "f1",
+                      n: "+1 Well",
+                      d: "One extra Cleansing Well per run.",
+                      c: 5,
+                      u: 0,
+                      p: "f2",
+                      q: -1,
+                      r: -1,
                     },
                     {
                       id: "f3",
@@ -7928,7 +7996,9 @@
                       d: "Omens appear one more time per run.",
                       c: 7,
                       u: 0,
-                      p: "f1",
+                      p: "f2",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "f4",
@@ -7936,23 +8006,9 @@
                       d: "Unlock Mirrorwood.",
                       c: 8,
                       u: 0,
-                      p: "f0",
-                    },
-                    {
-                      id: "f5",
-                      n: "+2nd Omen",
-                      d: "A second extra Omen per run.",
-                      c: 9,
-                      u: 0,
-                      p: "f3",
-                    },
-                    {
-                      id: "f6",
-                      n: "Zone 3",
-                      d: "Unlock the Ashen Verge.",
-                      c: 10,
-                      u: 0,
-                      p: "f4",
+                      p: "f1",
+                      q: 0,
+                      r: -2,
                     },
                     {
                       id: "f7",
@@ -7960,39 +8016,9 @@
                       d: "Each Warden's mechanic icon shows before it spawns.",
                       c: 8,
                       u: 0,
-                      p: "f2",
-                    },
-                    {
-                      id: "f8",
-                      n: "Zone 4",
-                      d: "Unlock the Starless Fen.",
-                      c: 12,
-                      u: 0,
-                      p: "f6",
-                    },
-                    {
-                      id: "f9",
-                      n: "Afterlight",
-                      d: "Enable the endless overtime mode.",
-                      c: 13,
-                      u: 0,
-                      p: "f6",
-                    },
-                    {
-                      id: "f10",
-                      n: "Zone 5",
-                      d: "Unlock the Hollow Sun.",
-                      c: 15,
-                      u: 0,
-                      p: "f8",
-                    },
-                    {
-                      id: "f11",
-                      n: "Omen bounty",
-                      d: "Completed Omens grant +1 Augment.",
-                      c: 11,
-                      u: 0,
-                      p: "f9",
+                      p: "f3",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "f12",
@@ -8000,7 +8026,69 @@
                       d: "Entity dialogue evolves twice as fast.",
                       c: 9,
                       u: 0,
-                      p: "f7",
+                      p: "f4",
+                      q: 1,
+                      r: -2,
+                    },
+                    {
+                      id: "f5",
+                      n: "+2nd Omen",
+                      d: "A second extra Omen per run.",
+                      c: 9,
+                      u: 0,
+                      p: "f12",
+                      q: 2,
+                      r: -2,
+                    },
+                    {
+                      id: "f6",
+                      n: "Zone 3",
+                      d: "Unlock the Ashen Verge.",
+                      c: 10,
+                      u: 0,
+                      p: "f5",
+                      q: 3,
+                      r: -2,
+                    },
+                    {
+                      id: "f11",
+                      n: "Omen bounty",
+                      d: "Completed Omens grant +1 Augment.",
+                      c: 11,
+                      u: 0,
+                      p: "f5",
+                      q: 2,
+                      r: -1,
+                    },
+                    {
+                      id: "f8",
+                      n: "Zone 4",
+                      d: "Unlock the Starless Fen.",
+                      c: 12,
+                      u: 0,
+                      p: "f11",
+                      q: 3,
+                      r: -1,
+                    },
+                    {
+                      id: "f9",
+                      n: "Afterlight",
+                      d: "Enable the endless overtime mode.",
+                      c: 13,
+                      u: 0,
+                      p: "f11",
+                      q: 2,
+                      r: 0,
+                    },
+                    {
+                      id: "f10",
+                      n: "Zone 5",
+                      d: "Unlock the Hollow Sun.",
+                      c: 15,
+                      u: 0,
+                      p: "f9",
+                      q: 2,
+                      r: 1,
                     },
                     {
                       id: "f13",
@@ -8009,6 +8097,8 @@
                       c: 16,
                       u: 0,
                       p: "f10",
+                      q: 1,
+                      r: 2,
                     },
                   ],
                 },
@@ -8016,7 +8106,7 @@
                   id: "order",
                   label: "Order",
                   sub: "Radiant Faction",
-                  cur: "Dawnmotes",
+                  cur: "Research Points",
                   col: "#9A6B00",
                   nodes: [
                     {
@@ -8026,6 +8116,8 @@
                       c: 3,
                       u: 1,
                       p: null,
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "o1",
@@ -8034,14 +8126,18 @@
                       c: 6,
                       u: 1,
                       p: "o0",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "o2",
                       n: "Sear soft",
                       d: "Stage V sear slowed to −0.5%/s.",
                       c: 7,
-                      u: 0,
+                      u: 1,
                       p: "o0",
+                      q: 1,
+                      r: 0,
                     },
                     {
                       id: "o3",
@@ -8050,6 +8146,8 @@
                       c: 8,
                       u: 0,
                       p: "o1",
+                      q: 0,
+                      r: -1,
                     },
                     {
                       id: "o4",
@@ -8057,7 +8155,9 @@
                       d: "Spend Radiance to resurrect an ally.",
                       c: 9,
                       u: 0,
-                      p: "o1",
+                      p: "o2",
+                      q: 2,
+                      r: 0,
                     },
                     {
                       id: "o5",
@@ -8065,23 +8165,9 @@
                       d: "Vigil costs 40 Radiance, not 50.",
                       c: 10,
                       u: 0,
-                      p: "o4",
-                    },
-                    {
-                      id: "o6",
-                      n: "Unlock Oracle",
-                      d: "Research-unlock the Oracle of Dawn class.",
-                      c: 11,
-                      u: 0,
-                      p: "o2",
-                    },
-                    {
-                      id: "o7",
-                      n: "Lantern-Bearer",
-                      d: "Late-unlock the Lantern-Bearer class.",
-                      c: 14,
-                      u: 0,
-                      p: "o6",
+                      p: "o1",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "o8",
@@ -8090,22 +8176,28 @@
                       c: 10,
                       u: 0,
                       p: "o3",
+                      q: 0,
+                      r: -2,
                     },
                     {
-                      id: "o9",
-                      n: "Martyr −20%",
-                      d: "Gilded Martyr Charter price −20%.",
-                      c: 12,
+                      id: "o6",
+                      n: "Unlock Oracle",
+                      d: "Research-unlock the Oracle of Dawn class.",
+                      c: 11,
                       u: 0,
-                      p: "o8",
+                      p: "o3",
+                      q: 1,
+                      r: -1,
                     },
                     {
-                      id: "o10",
-                      n: "Carillon −20%",
-                      d: "Carillon Saint Charter price −20%.",
-                      c: 12,
+                      id: "o7",
+                      n: "Lantern-Bearer",
+                      d: "Late-unlock the Lantern-Bearer class.",
+                      c: 14,
                       u: 0,
                       p: "o5",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "o11",
@@ -8113,7 +8205,9 @@
                       d: "Radiance spends are 10% more effective.",
                       c: 16,
                       u: 0,
-                      p: "o9",
+                      p: "o5",
+                      q: -2,
+                      r: 2,
                     },
                   ],
                 },
@@ -8121,7 +8215,7 @@
                   id: "covenant",
                   label: "Covenant",
                   sub: "Shadow Faction",
-                  cur: "Nightdrops",
+                  cur: "Research Points",
                   col: "#5A2D82",
                   nodes: [
                     {
@@ -8131,6 +8225,8 @@
                       c: 3,
                       u: 1,
                       p: null,
+                      q: -1,
+                      r: -2,
                     },
                     {
                       id: "k1",
@@ -8139,14 +8235,18 @@
                       c: 6,
                       u: 1,
                       p: "k0",
+                      q: -1,
+                      r: -1,
                     },
                     {
                       id: "k2",
                       n: "Final Pay +",
                       d: "Stage V death-nova damage +25%.",
                       c: 7,
-                      u: 0,
+                      u: 1,
                       p: "k0",
+                      q: 1,
+                      r: -3,
                     },
                     {
                       id: "k3",
@@ -8154,31 +8254,9 @@
                       d: "Curse gained per hit is +2.",
                       c: 8,
                       u: 0,
-                      p: "k0",
-                    },
-                    {
-                      id: "k4",
-                      n: "Minion +2",
-                      d: "Minion cap +2.",
-                      c: 10,
-                      u: 0,
                       p: "k1",
-                    },
-                    {
-                      id: "k5",
-                      n: "Hollow Saint",
-                      d: "Research-unlock the Hollow Saint class.",
-                      c: 11,
-                      u: 0,
-                      p: "k2",
-                    },
-                    {
-                      id: "k6",
-                      n: "Pale Weaver",
-                      d: "Late-unlock the Pale Weaver class.",
-                      c: 14,
-                      u: 0,
-                      p: "k5",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "k7",
@@ -8187,6 +8265,28 @@
                       c: 9,
                       u: 0,
                       p: "k3",
+                      q: -2,
+                      r: 1,
+                    },
+                    {
+                      id: "k4",
+                      n: "Minion +2",
+                      d: "Minion cap +2.",
+                      c: 10,
+                      u: 0,
+                      p: "k7",
+                      q: -3,
+                      r: 1,
+                    },
+                    {
+                      id: "k5",
+                      n: "Hollow Saint",
+                      d: "Research-unlock the Hollow Saint class.",
+                      c: 11,
+                      u: 0,
+                      p: "k7",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "k8",
@@ -8194,23 +8294,19 @@
                       d: "Hexes jump to a nearby enemy on kill.",
                       c: 12,
                       u: 0,
-                      p: "k7",
+                      p: "k5",
+                      q: -1,
+                      r: 2,
                     },
                     {
-                      id: "k9",
-                      n: "Usurer −20%",
-                      d: "Ashen Usurer Charter price −20%.",
-                      c: 12,
+                      id: "k6",
+                      n: "Pale Weaver",
+                      d: "Late-unlock the Pale Weaver class.",
+                      c: 14,
                       u: 0,
                       p: "k8",
-                    },
-                    {
-                      id: "k10",
-                      n: "Shepherd −20%",
-                      d: "Voidshepherd Charter price −20%.",
-                      c: 12,
-                      u: 0,
-                      p: "k4",
+                      q: 0,
+                      r: 2,
                     },
                     {
                       id: "k11",
@@ -8218,7 +8314,9 @@
                       d: "Damage +10% while at Curse Stage IV+.",
                       c: 16,
                       u: 0,
-                      p: "k9",
+                      p: "k8",
+                      q: -2,
+                      r: 3,
                     },
                   ],
                 },
@@ -8230,36 +8328,34 @@
                   col: "#6A5FCC",
                   nodes: [
                     {
-                      id: "p0",
-                      n: "Eclipse 5–8",
-                      d: "Unlock Eclipse recipes 5 through 8.",
-                      c: 3,
+                      id: "p3",
+                      n: "Faction emotes",
+                      d: "Cosmetic cross-faction emotes.",
+                      c: 4,
                       u: 1,
                       p: null,
+                      q: 0,
+                      r: -1,
                     },
                     {
                       id: "p1",
                       n: "Shared rev +1",
                       d: "Mixed parties: Revive Pool +1.",
                       c: 6,
-                      u: 0,
-                      p: "p0",
+                      u: 1,
+                      p: "p3",
+                      q: -1,
+                      r: 0,
                     },
                     {
-                      id: "p2",
-                      n: "Eclipse 9–12",
-                      d: "Unlock Eclipse recipes 9 through 12.",
-                      c: 8,
-                      u: 0,
-                      p: "p0",
-                    },
-                    {
-                      id: "p3",
-                      n: "Faction emotes",
-                      d: "Cosmetic cross-faction emotes.",
-                      c: 4,
-                      u: 0,
-                      p: "p1",
+                      id: "p9",
+                      n: "Penumbra crown",
+                      d: "Cosmetic prestige crown for both profiles.",
+                      c: 9,
+                      u: 1,
+                      p: "p3",
+                      q: 1,
+                      r: -1,
                     },
                     {
                       id: "p4",
@@ -8267,15 +8363,9 @@
                       d: "Mixed parties: a second Revive Pool charge.",
                       c: 10,
                       u: 0,
-                      p: "p2",
-                    },
-                    {
-                      id: "p5",
-                      n: "Eclipse 13–16",
-                      d: "Unlock Eclipse recipes 13 through 16.",
-                      c: 12,
-                      u: 0,
-                      p: "p2",
+                      p: "p1",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "p6",
@@ -8284,14 +8374,8 @@
                       c: 11,
                       u: 0,
                       p: "p4",
-                    },
-                    {
-                      id: "p7",
-                      n: "Charter −15◇",
-                      d: "Charter cross-faction price −15 Eclipse Shards.",
-                      c: 10,
-                      u: 0,
-                      p: "p3",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "p8",
@@ -8299,15 +8383,9 @@
                       d: "Eclipse double-dip second hit deals 60%, not 50%.",
                       c: 14,
                       u: 0,
-                      p: "p5",
-                    },
-                    {
-                      id: "p9",
-                      n: "Penumbra crown",
-                      d: "Cosmetic prestige crown for both profiles.",
-                      c: 9,
-                      u: 0,
                       p: "p6",
+                      q: 1,
+                      r: 0,
                     },
                   ],
                 },
@@ -8355,6 +8433,17 @@
               }
 
               function layoutTree(nodes) {
+                var allExplicit = nodes.every(function (n) {
+                  return typeof n.q === "number" && typeof n.r === "number";
+                });
+                if (allExplicit) {
+                  var pixE = {};
+                  nodes.forEach(function (n) {
+                    var xy = axialToPixel(n.q, n.r);
+                    pixE[n.id] = { cx: xy.x, cy: xy.y };
+                  });
+                  return pixE;
+                }
                 var children = {};
                 nodes.forEach(function (n) {
                   if (n.p) {
@@ -8656,14 +8745,6 @@
             })();
           </script>
 
-          <p class="td-muted" style="font-size: 12.5px; margin-top: 10px">
-            * <strong>Spell-tier nodes are post-launch placeholders.</strong> The
-            spell-rarity system — sorting the 32 spells into Tiers I–V and gating
-            the higher tiers into your level-up draft — is planned for a later
-            version and is <em>not active at launch</em>. These four Codex nodes
-            simply reserve its place in the tree.
-          </p>
-
           <div class="infobox ib-gold" style="margin-top: 18px">
             <div class="ib-title">Research Philosophy</div>
             <p>
@@ -8899,7 +8980,31 @@
             </li>
           </ul>
 
-          <h3>Balance & Improvements Changelog — v3.2 (this revision)</h3>
+          <h3>Design Changelog — v3.3 Research Overhaul (this revision)</h3>
+          <ul class="st">
+            <li>
+              <strong>Research Points (RP) — new upgrade currency.</strong>
+              Bought at the faction hall with Dawnmotes / Nightdrops (base 2 per
+              RP, +1 every 3 RP bought, so a first successful run ≈ 6 RP). Every
+              research node now costs RP; Eclipse Shards still fund the Penumbra
+              branch.
+            </li>
+            <li>
+              <strong>Trimmed 90 → 78 nodes.</strong> Removed the four Spell-tier
+              placeholders, the three Eclipse-spell-unlock nodes, and every
+              charter-discount node (the four −20% plus Penumbra's −15◇) — none
+              needed at launch.
+            </li>
+            <li>
+              <strong>Branch silhouettes.</strong> Each honeycomb now forms a
+              unique shape: Vessel a heart, Codex &amp; Loom hexagons, Fate a
+              spiral, Order radiating outward, Covenant a crescent moon, and
+              Penumbra a hollow ring. (The widget honors explicit hex
+              coordinates per node.)
+            </li>
+          </ul>
+
+          <h3>Balance & Improvements Changelog — v3.2</h3>
           <table>
             <thead>
               <tr>
@@ -10057,7 +10162,7 @@
             "
           >
             SORCERER SURVIVORS · SORCERERS OF THE SHADOW AND THE RADIANT · GDD
-            v3.2 · JUNE 2026<br />ALL CONTENT ORIGINAL · INSPIRED BY MAGIC
+            v3.3 · JUNE 2026<br />ALL CONTENT ORIGINAL · INSPIRED BY MAGIC
             SURVIVAL (LEME) AND THE BULLET-HEAVEN GENRE<br /><span
               style="letter-spacing: 1px"
               >"Stand together. Be the eclipse."</span
@@ -10089,4 +10194,5 @@
     </script>
   </body>
 </html>
-<!-- v3.2 -->
+<!-- v3.3 -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
