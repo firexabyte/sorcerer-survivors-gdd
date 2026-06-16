@@ -7419,6 +7419,89 @@
             </tbody>
           </table>
 
+          <h3>Research Points — how the tree is funded</h3>
+          <p>
+            Every node in the seven branches is paid for in
+            <strong>Research Points (RP)</strong> — a per-faction currency you
+            never find in a run but <em>convert</em> for. At your faction hall
+            (the Heliarium for the Radiant Order, the Athenaeum for the Shadow
+            Covenant) you trade the
+            <span style="color: var(--radiant)">Dawnmotes</span> /
+            <span style="color: var(--shadow)">Nightdrops</span> a run pays out
+            into RP. Keeping research on its own currency lets run rewards and
+            research prices be tuned independently, and turns the tree into a
+            deliberate, escalating sink rather than something a few lucky runs
+            clear.
+          </p>
+          <div class="formula">
+            Price of the next point = 2 + ⌊ points already bought ÷ 3 ⌋ // in ◆<br />
+            → every 3 points bought, the next point costs 1 ◆ more<br />
+            A first successful run (~15–17 ◆) buys ~6 RP · a fully-researched
+            faction ≈ 550 RP
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Points bought</th>
+                <th>Price each (◆)</th>
+                <th>Running total (◆)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-violet">1–3</td>
+                <td class="td-muted">2</td>
+                <td class="td-muted">6</td>
+              </tr>
+              <tr>
+                <td class="td-violet">4–6</td>
+                <td class="td-muted">3</td>
+                <td class="td-muted">15</td>
+              </tr>
+              <tr>
+                <td class="td-violet">7–9</td>
+                <td class="td-muted">4</td>
+                <td class="td-muted">27</td>
+              </tr>
+              <tr>
+                <td class="td-violet">10–12</td>
+                <td class="td-muted">5</td>
+                <td class="td-muted">42</td>
+              </tr>
+              <tr>
+                <td class="td-violet">13–15</td>
+                <td class="td-muted">6</td>
+                <td class="td-muted">60</td>
+              </tr>
+              <tr>
+                <td class="td-muted">… +1 ◆ every 3 points …</td>
+                <td class="td-muted">climbs</td>
+                <td class="td-muted">steeply</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <strong>Spending.</strong> 1 RP unlocks a branch; each node then
+            costs <strong>3–18 RP</strong> by depth, shown on the node's face
+            (hover for the exact amount). RP are permanent and per-faction — your
+            Radiant and Shadow profiles each keep a separate pool. The one
+            research currency they <em>share</em> is Eclipse Shards, which still
+            buy the Penumbra branch directly, so Penumbra nodes are priced in ◇
+            rather than RP.
+          </p>
+          <div class="infobox ib-violet">
+            <div class="ib-title">Why a separate currency</div>
+            <p>
+              Decoupling RP from run payouts means runs can feel generous
+              without making research trivial, and either can be retuned without
+              disturbing the other. The rising price is the long-tail engine:
+              early points are cheap catch-up, the deepest nodes a real
+              commitment. It also keeps monetization honest — the Robux top-up
+              (§27) only feeds the ◆ you spend to buy RP, so it buys
+              <em>speed</em> toward the same finite ceiling, never a higher one.
+            </p>
+          </div>
+
           <h3>Branches (78 nodes at launch)</h3>
           <p
             style="
@@ -8671,7 +8754,8 @@
                       : "rgba(255,255,255,0.75)",
                   );
                   ct.setAttribute("font-family", "var(--font-body,sans-serif)");
-                  ct.textContent = n.c + "◆";
+                  ct.textContent =
+                    n.c + (b.cur === "Eclipse Shards" ? "◇" : " RP");
                   g.appendChild(ct);
 
                   g.addEventListener("mouseenter", function () {
