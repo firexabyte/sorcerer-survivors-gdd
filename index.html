@@ -6442,7 +6442,7 @@
           <h3>Economy at a Glance — currencies balanced across systems</h3>
           <p>
             Every sink is priced against one yardstick: a full faction research
-            tree (116 nodes) costs about <strong>~610 RP</strong>, and RP are
+            tree (115 nodes) costs about <strong>~600 RP</strong>, and RP are
             bought with the faction currency a run earns (~6 RP for a first
             clear, fewer as the RP price climbs), making full research the
             long-tail spine of progression. Class prices, prestige costs, and
@@ -6475,7 +6475,7 @@
                 <td class="td-violet">Research Points (RP)</td>
                 <td class="td-muted">~6 / first clear, declining as price climbs</td>
                 <td class="td-muted">
-                  Nodes 3–18 RP (+1 per branch unlock); tree ≈ 610 RP
+                  Nodes 3–18 RP (+1 per branch unlock); tree ≈ 600 RP
                 </td>
                 <td class="td-muted">Long-tail spine; bought with ◆ at the hall</td>
               </tr>
@@ -7437,7 +7437,7 @@
             Price of the next point = 2 + ⌊ points already bought ÷ 3 ⌋ // in ◆<br />
             → every 3 points bought, the next point costs 1 ◆ more<br />
             A first successful run (~15–17 ◆) buys ~6 RP · a fully-researched
-            faction ≈ 610 RP
+            faction ≈ 600 RP
           </div>
           <table>
             <thead>
@@ -7502,7 +7502,7 @@
             </p>
           </div>
 
-          <h3>Branches (116 nodes at launch)</h3>
+          <h3>Branches (115 nodes at launch)</h3>
           <p
             style="
               font-size: 13px;
@@ -7510,9 +7510,12 @@
               margin-bottom: 14px;
             "
           >
-            Each branch grows as a honeycomb from its first node. Unlocking a
-            node makes all its direct children available. Hover any node to see
-            its effect, cost, and dependency.
+            Each branch grows as a honeycomb from its 1-point Branch Unlock.
+            Unlocking a node makes its direct children available — except the
+            Codex, which unlocks by <strong>adjacency</strong>: any node touching
+            an unlocked one opens, so it fills outward in every direction rather
+            than down fixed chains. Hover any node to see its effect, cost, and
+            dependency.
           </p>
 
           <!-- Research Tree Legend -->
@@ -7644,7 +7647,7 @@
                       u: 1,
                       p: null,
                       q: 0,
-                      r: 5,
+                      r: 2,
                     },
                     {
                       id: "ar0",
@@ -7653,8 +7656,8 @@
                       c: 3,
                       u: 1,
                       p: "vessel_u",
-                      q: 0,
-                      r: 4,
+                      q: -1,
+                      r: 2,
                     },
                     {
                       id: "fo0",
@@ -7663,8 +7666,8 @@
                       c: 3,
                       u: 0,
                       p: "ar0",
-                      q: 1,
-                      r: 3,
+                      q: -2,
+                      r: 2,
                     },
                     {
                       id: "gr0",
@@ -7672,9 +7675,9 @@
                       d: "Every 5 levels: ATK & Max HP +2%.",
                       c: 3,
                       u: 0,
-                      p: "ar0",
-                      q: -1,
-                      r: 4,
+                      p: "fo0",
+                      q: -3,
+                      r: 2,
                     },
                     {
                       id: "mp0",
@@ -7682,9 +7685,9 @@
                       d: "XP per mote +5%.",
                       c: 3,
                       u: 0,
-                      p: "fo0",
-                      q: 2,
-                      r: 2,
+                      p: "gr0",
+                      q: -3,
+                      r: 1,
                     },
                     {
                       id: "pw0",
@@ -7692,9 +7695,9 @@
                       d: "All attack damage +5%.",
                       c: 3,
                       u: 0,
-                      p: "gr0",
+                      p: "mp0",
                       q: -2,
-                      r: 4,
+                      r: 0,
                     },
                     {
                       id: "re0",
@@ -7703,7 +7706,7 @@
                       c: 3,
                       u: 0,
                       p: "mp0",
-                      q: 3,
+                      q: -2,
                       r: 1,
                     },
                     {
@@ -7713,8 +7716,8 @@
                       c: 3,
                       u: 0,
                       p: "pw0",
-                      q: -3,
-                      r: 4,
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "sw0",
@@ -7722,9 +7725,9 @@
                       d: "Move speed +5%.",
                       c: 3,
                       u: 0,
-                      p: "re0",
-                      q: 3,
-                      r: 0,
+                      p: "pw0",
+                      q: -2,
+                      r: -1,
                     },
                     {
                       id: "vi0",
@@ -7732,9 +7735,9 @@
                       d: "Max HP +20%; HP recovery +2%.",
                       c: 3,
                       u: 0,
-                      p: "rg0",
-                      q: -4,
-                      r: 4,
+                      p: "re0",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "ar1",
@@ -7743,8 +7746,8 @@
                       c: 4,
                       u: 0,
                       p: "sw0",
-                      q: 4,
-                      r: -1,
+                      q: -2,
+                      r: -2,
                     },
                     {
                       id: "fo1",
@@ -7753,8 +7756,8 @@
                       c: 4,
                       u: 0,
                       p: "sw0",
-                      q: 4,
-                      r: 0,
+                      q: -1,
+                      r: -1,
                     },
                     {
                       id: "gr1",
@@ -7762,9 +7765,9 @@
                       d: "Every 5 levels: ATK & Max HP +2%.",
                       c: 4,
                       u: 0,
-                      p: "vi0",
-                      q: -4,
-                      r: 3,
+                      p: "rg0",
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "mp1",
@@ -7772,9 +7775,9 @@
                       d: "XP per mote +5%.",
                       c: 4,
                       u: 0,
-                      p: "ar1",
-                      q: 5,
-                      r: -2,
+                      p: "vi0",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "pw1",
@@ -7782,9 +7785,9 @@
                       d: "All attack damage +5%.",
                       c: 4,
                       u: 0,
-                      p: "gr1",
-                      q: -3,
-                      r: 3,
+                      p: "ar1",
+                      q: -1,
+                      r: -2,
                     },
                     {
                       id: "re1",
@@ -7792,9 +7795,9 @@
                       d: "Leveling up restores 5% HP.",
                       c: 4,
                       u: 0,
-                      p: "gr1",
-                      q: -5,
-                      r: 3,
+                      p: "ar1",
+                      q: -1,
+                      r: -3,
                     },
                     {
                       id: "rg1",
@@ -7802,9 +7805,9 @@
                       d: "HP regen +0.05%/s.",
                       c: 4,
                       u: 0,
-                      p: "re1",
-                      q: -5,
-                      r: 2,
+                      p: "fo1",
+                      q: 0,
+                      r: -1,
                     },
                     {
                       id: "sw1",
@@ -7812,9 +7815,9 @@
                       d: "Move speed +10%.",
                       c: 4,
                       u: 0,
-                      p: "rg1",
-                      q: -6,
-                      r: 2,
+                      p: "gr1",
+                      q: 1,
+                      r: 0,
                     },
                     {
                       id: "vi1",
@@ -7822,8 +7825,8 @@
                       d: "Max HP +10%; HP recovery +2%.",
                       c: 4,
                       u: 0,
-                      p: "sw1",
-                      q: -5,
+                      p: "mp1",
+                      q: 1,
                       r: 1,
                     },
                     {
@@ -7832,9 +7835,9 @@
                       d: "Damage taken −3%.",
                       c: 6,
                       u: 0,
-                      p: "vi1",
-                      q: -5,
-                      r: 0,
+                      p: "re1",
+                      q: 0,
+                      r: -3,
                     },
                     {
                       id: "fo2",
@@ -7842,9 +7845,9 @@
                       d: "Pickup range +20%.",
                       c: 6,
                       u: 0,
-                      p: "ar2",
-                      q: -4,
-                      r: -1,
+                      p: "pw1",
+                      q: 0,
+                      r: -2,
                     },
                     {
                       id: "gr2",
@@ -7852,9 +7855,9 @@
                       d: "Every 5 levels: ATK & Max HP +2%.",
                       c: 6,
                       u: 0,
-                      p: "fo2",
-                      q: -3,
-                      r: -2,
+                      p: "rg1",
+                      q: 1,
+                      r: -1,
                     },
                     {
                       id: "mp2",
@@ -7862,9 +7865,9 @@
                       d: "XP per mote +5%.",
                       c: 6,
                       u: 0,
-                      p: "gr2",
-                      q: -2,
-                      r: -2,
+                      p: "sw1",
+                      q: 2,
+                      r: 0,
                     },
                     {
                       id: "pw2",
@@ -7872,9 +7875,9 @@
                       d: "All attack damage +3%.",
                       c: 6,
                       u: 0,
-                      p: "gr2",
-                      q: -2,
-                      r: -3,
+                      p: "ar2",
+                      q: 1,
+                      r: -4,
                     },
                     {
                       id: "re2",
@@ -7882,9 +7885,9 @@
                       d: "Leveling up restores 5% HP.",
                       c: 6,
                       u: 0,
-                      p: "mp2",
-                      q: -1,
-                      r: -2,
+                      p: "ar2",
+                      q: 1,
+                      r: -3,
                     },
                     {
                       id: "rg2",
@@ -7892,9 +7895,9 @@
                       d: "HP regen +0.05%/s.",
                       c: 6,
                       u: 0,
-                      p: "pw2",
-                      q: -1,
-                      r: -3,
+                      p: "fo2",
+                      q: 1,
+                      r: -2,
                     },
                     {
                       id: "sw2",
@@ -7902,9 +7905,9 @@
                       d: "Move speed +15%.",
                       c: 6,
                       u: 0,
-                      p: "re2",
-                      q: 0,
-                      r: -2,
+                      p: "gr2",
+                      q: 2,
+                      r: -1,
                     },
                     {
                       id: "vi2",
@@ -7912,9 +7915,9 @@
                       d: "Max HP +10%; HP recovery +2%.",
                       c: 6,
                       u: 0,
-                      p: "sw2",
-                      q: 1,
-                      r: -3,
+                      p: "pw2",
+                      q: 2,
+                      r: -4,
                     },
                     {
                       id: "ar3",
@@ -7922,9 +7925,9 @@
                       d: "Damage taken −2%.",
                       c: 8,
                       u: 0,
-                      p: "vi2",
+                      p: "re2",
                       q: 2,
-                      r: -4,
+                      r: -3,
                     },
                     {
                       id: "pw3",
@@ -7932,19 +7935,9 @@
                       d: "All attack damage +3%.",
                       c: 8,
                       u: 0,
-                      p: "ar3",
-                      q: 3,
-                      r: -5,
-                    },
-                    {
-                      id: "rg3",
-                      n: "Regeneration IV",
-                      d: "HP regen +0.5%/s.",
-                      c: 8,
-                      u: 0,
-                      p: "pw3",
-                      q: 4,
-                      r: -5,
+                      p: "rg2",
+                      q: 2,
+                      r: -2,
                     },
                     {
                       id: "vi3",
@@ -7952,9 +7945,9 @@
                       d: "Max HP +10%; HP recovery +1%.",
                       c: 8,
                       u: 0,
-                      p: "rg3",
-                      q: 5,
-                      r: -5,
+                      p: "sw2",
+                      q: 3,
+                      r: -1,
                     },
                     {
                       id: "ar4",
@@ -7962,8 +7955,8 @@
                       d: "Damage taken −2%.",
                       c: 10,
                       u: 0,
-                      p: "vi3",
-                      q: 5,
+                      p: "vi2",
+                      q: 3,
                       r: -4,
                     },
                     {
@@ -7972,9 +7965,9 @@
                       d: "All attack damage +2%.",
                       c: 10,
                       u: 0,
-                      p: "ar4",
-                      q: 6,
-                      r: -4,
+                      p: "ar3",
+                      q: 3,
+                      r: -3,
                     },
                     {
                       id: "vi4",
@@ -7982,9 +7975,9 @@
                       d: "Max HP +10%; HP recovery +1%.",
                       c: 10,
                       u: 0,
-                      p: "ar4",
-                      q: 5,
-                      r: -3,
+                      p: "pw3",
+                      q: 3,
+                      r: -2,
                     },
                   ],
                 },
@@ -7994,6 +7987,7 @@
                   sub: "Spells & Drafting",
                   cur: "Research Points",
                   col: "#185FA5",
+                  adj: true,
                   nodes: [
                     {
                       id: "codex_u",
@@ -8880,11 +8874,37 @@
                 return p.join(" ");
               }
 
-              function computeStates(nodes) {
+              var DIRS6 = [
+                [0, -1], [1, -1], [1, 0], [0, 1], [-1, 1], [-1, 0],
+              ];
+              function computeStates(b) {
+                var nodes = b.nodes;
                 var byId = {};
                 nodes.forEach(function (n) {
                   byId[n.id] = n;
                 });
+                if (b.adj) {
+                  var at = {};
+                  nodes.forEach(function (n) {
+                    at[n.q + "," + n.r] = n;
+                  });
+                  nodes.forEach(function (n) {
+                    if (n.u === 1) {
+                      n.s = "unlocked";
+                      return;
+                    }
+                    var avail = false;
+                    for (var i = 0; i < 6; i++) {
+                      var nb = at[n.q + DIRS6[i][0] + "," + (n.r + DIRS6[i][1])];
+                      if (nb && nb.u === 1) {
+                        avail = true;
+                        break;
+                      }
+                    }
+                    n.s = avail ? "available" : "locked";
+                  });
+                  return;
+                }
                 nodes.forEach(function (n) {
                   if (n.u === 1) {
                     n.s = "unlocked";
@@ -9000,7 +9020,7 @@
               }
 
               function build(b) {
-                computeStates(b.nodes);
+                computeStates(b);
                 var svg = document.getElementById("rtree");
                 svg.innerHTML = "";
                 var ns = "http://www.w3.org/2000/svg";
@@ -9040,22 +9060,49 @@
                 ti.textContent = b.label + " — " + b.sub;
                 svg.appendChild(ti);
 
-                b.nodes.forEach(function (n) {
-                  if (!n.p) return;
-                  var pp = pix[n.p],
-                    cp = pix[n.id];
-                  if (!pp || !cp) return;
-                  var l = document.createElementNS(ns, "line");
-                  l.setAttribute("x1", pp.cx);
-                  l.setAttribute("y1", pp.cy);
-                  l.setAttribute("x2", cp.cx);
-                  l.setAttribute("y2", cp.cy);
-                  var active = n.s === "unlocked" || n.s === "available";
-                  l.setAttribute("stroke", active ? b.col : "var(--border)");
-                  l.setAttribute("stroke-width", active ? "1.5" : "0.5");
-                  l.setAttribute("stroke-opacity", "0.5");
-                  svg.appendChild(l);
-                });
+                if (b.adj) {
+                  var atE = {};
+                  b.nodes.forEach(function (n) {
+                    atE[n.q + "," + n.r] = n;
+                  });
+                  b.nodes.forEach(function (n) {
+                    for (var i = 0; i < 6; i++) {
+                      var nb = atE[n.q + DIRS6[i][0] + "," + (n.r + DIRS6[i][1])];
+                      if (!nb) continue;
+                      if (nb.q < n.q || (nb.q === n.q && nb.r < n.r)) continue;
+                      var pa = pix[n.id],
+                        pb = pix[nb.id];
+                      if (!pa || !pb) continue;
+                      var le = document.createElementNS(ns, "line");
+                      le.setAttribute("x1", pa.cx);
+                      le.setAttribute("y1", pa.cy);
+                      le.setAttribute("x2", pb.cx);
+                      le.setAttribute("y2", pb.cy);
+                      var act = n.s !== "locked" && nb.s !== "locked";
+                      le.setAttribute("stroke", act ? b.col : "var(--border)");
+                      le.setAttribute("stroke-width", act ? "1.5" : "0.5");
+                      le.setAttribute("stroke-opacity", "0.4");
+                      svg.appendChild(le);
+                    }
+                  });
+                } else {
+                  b.nodes.forEach(function (n) {
+                    if (!n.p) return;
+                    var pp = pix[n.p],
+                      cp = pix[n.id];
+                    if (!pp || !cp) return;
+                    var l = document.createElementNS(ns, "line");
+                    l.setAttribute("x1", pp.cx);
+                    l.setAttribute("y1", pp.cy);
+                    l.setAttribute("x2", cp.cx);
+                    l.setAttribute("y2", cp.cy);
+                    var active = n.s === "unlocked" || n.s === "available";
+                    l.setAttribute("stroke", active ? b.col : "var(--border)");
+                    l.setAttribute("stroke-width", active ? "1.5" : "0.5");
+                    l.setAttribute("stroke-opacity", "0.5");
+                    svg.appendChild(l);
+                  });
+                }
 
                 b.nodes.forEach(function (n) {
                   var p = pix[n.id];
@@ -9141,7 +9188,9 @@
                   g.addEventListener("mouseenter", function () {
                     var tip = document.getElementById("rttip");
                     var depName = n.p ? byId[n.p].n : null;
-                    var depHtml = depName
+                    var depHtml = b.adj
+                      ? '<div style="font-size:11px;color:var(--text-muted);margin-top:4px;border-top:0.5px solid var(--border);padding-top:4px">Opens when adjacent to an unlocked node</div>'
+                      : depName
                       ? '<div style="font-size:11px;color:var(--text-muted);margin-top:4px;border-top:0.5px solid var(--border);padding-top:4px">Requires: ' +
                         depName +
                         "</div>"
@@ -9465,7 +9514,13 @@
               Growth, Restoration, Regeneration, Swiftness, Forage, Mana Power
               (Vessel); Quick Casting, Crit Rate, Expansion, Focus, Compensation,
               Learner (Codex); Wealth, Field Luck, Treasure (Fate). The tree is
-              now 116 nodes; Vessel reshaped to a hollow heart outline.
+              now 115 nodes; Vessel is a full heart, Codex a hexagon, Fate a spiral.
+            </li>
+            <li>
+              <strong>Codex adjacency unlock.</strong> Codex nodes open whenever
+              they touch an unlocked node — omnidirectional, smooth progression
+              instead of fixed prerequisite chains. (Regeneration trimmed to
+              three tiers.)
             </li>
             <li>
               <strong>Branch silhouettes.</strong> Each honeycomb now forms a
