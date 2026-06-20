@@ -7512,9 +7512,9 @@
           >
             Each branch grows as a honeycomb from its 1-point Branch Unlock.
             Unlocking a node makes its direct children available — except the
-            Codex, which unlocks by <strong>adjacency</strong>: any node touching
-            an unlocked one opens, so it fills outward in every direction rather
-            than down fixed chains. Hover any node to see its effect, cost, and
+            Codex and Vessel, which unlock by <strong>adjacency</strong>: any
+            node touching an unlocked one opens, so they fill outward in every
+            direction rather than down fixed chains. Hover any node to see its effect, cost, and
             dependency.
           </p>
 
@@ -7638,6 +7638,7 @@
                   sub: "Body & Survival",
                   cur: "Research Points",
                   col: "#4A3A9A",
+                  adj: true,
                   nodes: [
                     {
                       id: "vessel_u",
@@ -7647,7 +7648,7 @@
                       u: 1,
                       p: null,
                       q: 0,
-                      r: 2,
+                      r: 3,
                     },
                     {
                       id: "ar0",
@@ -7656,7 +7657,7 @@
                       c: 3,
                       u: 1,
                       p: "vessel_u",
-                      q: -1,
+                      q: 0,
                       r: 2,
                     },
                     {
@@ -7666,7 +7667,7 @@
                       c: 3,
                       u: 0,
                       p: "ar0",
-                      q: -2,
+                      q: -1,
                       r: 2,
                     },
                     {
@@ -7676,7 +7677,7 @@
                       c: 3,
                       u: 0,
                       p: "fo0",
-                      q: -3,
+                      q: -2,
                       r: 2,
                     },
                     {
@@ -7686,7 +7687,7 @@
                       c: 3,
                       u: 0,
                       p: "gr0",
-                      q: -3,
+                      q: -2,
                       r: 1,
                     },
                     {
@@ -7696,8 +7697,8 @@
                       c: 3,
                       u: 0,
                       p: "mp0",
-                      q: -2,
-                      r: 0,
+                      q: -3,
+                      r: 1,
                     },
                     {
                       id: "re0",
@@ -7706,7 +7707,7 @@
                       c: 3,
                       u: 0,
                       p: "mp0",
-                      q: -2,
+                      q: -1,
                       r: 1,
                     },
                     {
@@ -7716,7 +7717,7 @@
                       c: 3,
                       u: 0,
                       p: "pw0",
-                      q: -1,
+                      q: -3,
                       r: 0,
                     },
                     {
@@ -7725,9 +7726,9 @@
                       d: "Move speed +5%.",
                       c: 3,
                       u: 0,
-                      p: "pw0",
-                      q: -2,
-                      r: -1,
+                      p: "re0",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "vi0",
@@ -7735,9 +7736,9 @@
                       d: "Max HP +20%; HP recovery +2%.",
                       c: 3,
                       u: 0,
-                      p: "re0",
-                      q: -1,
-                      r: 1,
+                      p: "rg0",
+                      q: -2,
+                      r: 0,
                     },
                     {
                       id: "ar1",
@@ -7745,9 +7746,9 @@
                       d: "Damage taken −3%.",
                       c: 4,
                       u: 0,
-                      p: "sw0",
-                      q: -2,
-                      r: -2,
+                      p: "rg0",
+                      q: -3,
+                      r: -1,
                     },
                     {
                       id: "fo1",
@@ -7756,8 +7757,8 @@
                       c: 4,
                       u: 0,
                       p: "sw0",
-                      q: -1,
-                      r: -1,
+                      q: 1,
+                      r: 1,
                     },
                     {
                       id: "gr1",
@@ -7765,8 +7766,8 @@
                       d: "Every 5 levels: ATK & Max HP +2%.",
                       c: 4,
                       u: 0,
-                      p: "rg0",
-                      q: 0,
+                      p: "vi0",
+                      q: -1,
                       r: 0,
                     },
                     {
@@ -7775,9 +7776,9 @@
                       d: "XP per mote +5%.",
                       c: 4,
                       u: 0,
-                      p: "vi0",
-                      q: 0,
-                      r: 1,
+                      p: "ar1",
+                      q: -2,
+                      r: -1,
                     },
                     {
                       id: "pw1",
@@ -7786,7 +7787,7 @@
                       c: 4,
                       u: 0,
                       p: "ar1",
-                      q: -1,
+                      q: -2,
                       r: -2,
                     },
                     {
@@ -7795,9 +7796,9 @@
                       d: "Leveling up restores 5% HP.",
                       c: 4,
                       u: 0,
-                      p: "ar1",
+                      p: "mp1",
                       q: -1,
-                      r: -3,
+                      r: -1,
                     },
                     {
                       id: "rg1",
@@ -7805,9 +7806,9 @@
                       d: "HP regen +0.05%/s.",
                       c: 4,
                       u: 0,
-                      p: "fo1",
-                      q: 0,
-                      r: -1,
+                      p: "pw1",
+                      q: -1,
+                      r: -2,
                     },
                     {
                       id: "sw1",
@@ -7815,9 +7816,9 @@
                       d: "Move speed +10%.",
                       c: 4,
                       u: 0,
-                      p: "gr1",
-                      q: 1,
-                      r: 0,
+                      p: "pw1",
+                      q: -1,
+                      r: -3,
                     },
                     {
                       id: "vi1",
@@ -7825,9 +7826,9 @@
                       d: "Max HP +10%; HP recovery +2%.",
                       c: 4,
                       u: 0,
-                      p: "mp1",
-                      q: 1,
-                      r: 1,
+                      p: "gr1",
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "ar2",
@@ -7835,9 +7836,9 @@
                       d: "Damage taken −3%.",
                       c: 6,
                       u: 0,
-                      p: "re1",
+                      p: "rg1",
                       q: 0,
-                      r: -3,
+                      r: -2,
                     },
                     {
                       id: "fo2",
@@ -7845,9 +7846,9 @@
                       d: "Pickup range +20%.",
                       c: 6,
                       u: 0,
-                      p: "pw1",
+                      p: "re1",
                       q: 0,
-                      r: -2,
+                      r: -1,
                     },
                     {
                       id: "gr2",
@@ -7855,9 +7856,9 @@
                       d: "Every 5 levels: ATK & Max HP +2%.",
                       c: 6,
                       u: 0,
-                      p: "rg1",
+                      p: "vi1",
                       q: 1,
-                      r: -1,
+                      r: 0,
                     },
                     {
                       id: "mp2",
@@ -7865,9 +7866,9 @@
                       d: "XP per mote +5%.",
                       c: 6,
                       u: 0,
-                      p: "sw1",
-                      q: 2,
-                      r: 0,
+                      p: "ar2",
+                      q: 1,
+                      r: -3,
                     },
                     {
                       id: "pw2",
@@ -7877,7 +7878,7 @@
                       u: 0,
                       p: "ar2",
                       q: 1,
-                      r: -4,
+                      r: -2,
                     },
                     {
                       id: "re2",
@@ -7885,9 +7886,9 @@
                       d: "Leveling up restores 5% HP.",
                       c: 6,
                       u: 0,
-                      p: "ar2",
+                      p: "fo2",
                       q: 1,
-                      r: -3,
+                      r: -1,
                     },
                     {
                       id: "rg2",
@@ -7895,9 +7896,9 @@
                       d: "HP regen +0.05%/s.",
                       c: 6,
                       u: 0,
-                      p: "fo2",
-                      q: 1,
-                      r: -2,
+                      p: "gr2",
+                      q: 2,
+                      r: 0,
                     },
                     {
                       id: "sw2",
@@ -7905,9 +7906,9 @@
                       d: "Move speed +15%.",
                       c: 6,
                       u: 0,
-                      p: "gr2",
-                      q: 2,
-                      r: -1,
+                      p: "mp2",
+                      q: 1,
+                      r: -4,
                     },
                     {
                       id: "vi2",
@@ -7915,9 +7916,9 @@
                       d: "Max HP +10%; HP recovery +2%.",
                       c: 6,
                       u: 0,
-                      p: "pw2",
+                      p: "mp2",
                       q: 2,
-                      r: -4,
+                      r: -3,
                     },
                     {
                       id: "ar3",
@@ -7925,9 +7926,9 @@
                       d: "Damage taken −2%.",
                       c: 8,
                       u: 0,
-                      p: "re2",
+                      p: "pw2",
                       q: 2,
-                      r: -3,
+                      r: -2,
                     },
                     {
                       id: "pw3",
@@ -7935,9 +7936,9 @@
                       d: "All attack damage +3%.",
                       c: 8,
                       u: 0,
-                      p: "rg2",
+                      p: "re2",
                       q: 2,
-                      r: -2,
+                      r: -1,
                     },
                     {
                       id: "vi3",
@@ -7946,8 +7947,8 @@
                       c: 8,
                       u: 0,
                       p: "sw2",
-                      q: 3,
-                      r: -1,
+                      q: 2,
+                      r: -4,
                     },
                     {
                       id: "ar4",
@@ -7957,7 +7958,7 @@
                       u: 0,
                       p: "vi2",
                       q: 3,
-                      r: -4,
+                      r: -3,
                     },
                     {
                       id: "pw4",
@@ -7967,7 +7968,7 @@
                       u: 0,
                       p: "ar3",
                       q: 3,
-                      r: -3,
+                      r: -2,
                     },
                     {
                       id: "vi4",
@@ -7975,9 +7976,9 @@
                       d: "Max HP +10%; HP recovery +1%.",
                       c: 10,
                       u: 0,
-                      p: "pw3",
+                      p: "vi3",
                       q: 3,
-                      r: -2,
+                      r: -4,
                     },
                   ],
                 },
@@ -7997,7 +7998,7 @@
                       u: 1,
                       p: null,
                       q: 0,
-                      r: 0,
+                      r: 2,
                     },
                     {
                       id: "cp0",
@@ -8006,8 +8007,8 @@
                       c: 3,
                       u: 1,
                       p: "codex_u",
-                      q: -1,
-                      r: 0,
+                      q: 1,
+                      r: 2,
                     },
                     {
                       id: "cr0",
@@ -8016,8 +8017,8 @@
                       c: 3,
                       u: 1,
                       p: "codex_u",
-                      q: 1,
-                      r: 0,
+                      q: -1,
+                      r: 2,
                     },
                     {
                       id: "ex0",
@@ -8025,9 +8026,9 @@
                       d: "Spell size +3%.",
                       c: 3,
                       u: 0,
-                      p: "cp0",
-                      q: -2,
-                      r: 0,
+                      p: "cr0",
+                      q: -1,
+                      r: 3,
                     },
                     {
                       id: "fc0",
@@ -8036,8 +8037,8 @@
                       c: 3,
                       u: 0,
                       p: "cr0",
-                      q: 2,
-                      r: 0,
+                      q: -2,
+                      r: 2,
                     },
                     {
                       id: "le0",
@@ -8045,9 +8046,9 @@
                       d: "4-choice level-up chance +5%.",
                       c: 3,
                       u: 0,
-                      p: "ex0",
+                      p: "fc0",
                       q: -3,
-                      r: 1,
+                      r: 2,
                     },
                     {
                       id: "qc0",
@@ -8055,9 +8056,9 @@
                       d: "All cooldowns −2%.",
                       c: 3,
                       u: 0,
-                      p: "ex0",
-                      q: -2,
-                      r: -1,
+                      p: "le0",
+                      q: -3,
+                      r: 1,
                     },
                     {
                       id: "cp1",
@@ -8066,8 +8067,8 @@
                       c: 4,
                       u: 0,
                       p: "qc0",
-                      q: -1,
-                      r: -1,
+                      q: -2,
+                      r: 0,
                     },
                     {
                       id: "cr1",
@@ -8076,8 +8077,8 @@
                       c: 4,
                       u: 0,
                       p: "qc0",
-                      q: -1,
-                      r: -2,
+                      q: -2,
+                      r: 1,
                     },
                     {
                       id: "ex1",
@@ -8085,9 +8086,9 @@
                       d: "Spell size +3%.",
                       c: 4,
                       u: 0,
-                      p: "le0",
-                      q: -3,
-                      r: 2,
+                      p: "cp1",
+                      q: -1,
+                      r: 0,
                     },
                     {
                       id: "fc1",
@@ -8095,9 +8096,9 @@
                       d: "Spell duration +5%.",
                       c: 4,
                       u: 0,
-                      p: "le0",
+                      p: "cp1",
                       q: -2,
-                      r: 1,
+                      r: -1,
                     },
                     {
                       id: "le1",
@@ -8105,9 +8106,9 @@
                       d: "4-choice level-up chance +5%.",
                       c: 4,
                       u: 0,
-                      p: "cp1",
-                      q: 0,
-                      r: -1,
+                      p: "cr1",
+                      q: -1,
+                      r: 1,
                     },
                     {
                       id: "qc1",
@@ -8115,9 +8116,9 @@
                       d: "All cooldowns −2%.",
                       c: 4,
                       u: 0,
-                      p: "cr1",
-                      q: 0,
-                      r: -2,
+                      p: "fc1",
+                      q: -1,
+                      r: -1,
                     },
                     {
                       id: "cp2",
@@ -8127,7 +8128,7 @@
                       u: 0,
                       p: "fc1",
                       q: -1,
-                      r: 1,
+                      r: -2,
                     },
                     {
                       id: "cr2",
@@ -8136,8 +8137,8 @@
                       c: 6,
                       u: 0,
                       p: "ex1",
-                      q: -2,
-                      r: 2,
+                      q: 0,
+                      r: 0,
                     },
                     {
                       id: "ex2",
@@ -8145,9 +8146,9 @@
                       d: "Spell size +3%.",
                       c: 6,
                       u: 0,
-                      p: "qc1",
-                      q: 1,
-                      r: -3,
+                      p: "le1",
+                      q: 0,
+                      r: 1,
                     },
                     {
                       id: "fc2",
@@ -8156,8 +8157,8 @@
                       c: 6,
                       u: 0,
                       p: "qc1",
-                      q: 1,
-                      r: -2,
+                      q: 0,
+                      r: -1,
                     },
                     {
                       id: "le2",
@@ -8165,9 +8166,9 @@
                       d: "4-choice level-up chance +5%.",
                       c: 6,
                       u: 0,
-                      p: "le1",
-                      q: 1,
-                      r: -1,
+                      p: "cp2",
+                      q: 0,
+                      r: -2,
                     },
                     {
                       id: "qc2",
@@ -8175,9 +8176,9 @@
                       d: "All cooldowns −3%.",
                       c: 6,
                       u: 0,
-                      p: "cp2",
-                      q: 0,
-                      r: 1,
+                      p: "cr2",
+                      q: 1,
+                      r: 0,
                     },
                     {
                       id: "cp3",
@@ -8185,9 +8186,9 @@
                       d: "+5% XP from motes collected after a level-up.",
                       c: 8,
                       u: 0,
-                      p: "cr2",
-                      q: -1,
-                      r: 2,
+                      p: "ex2",
+                      q: 1,
+                      r: 1,
                     },
                     {
                       id: "ex3",
@@ -8195,9 +8196,9 @@
                       d: "Spell size +3%.",
                       c: 8,
                       u: 0,
-                      p: "fc2",
-                      q: 2,
-                      r: -2,
+                      p: "le2",
+                      q: 1,
+                      r: -3,
                     },
                     {
                       id: "fc3",
@@ -8206,8 +8207,8 @@
                       c: 8,
                       u: 0,
                       p: "le2",
-                      q: 2,
-                      r: -1,
+                      q: 1,
+                      r: -2,
                     },
                     {
                       id: "le3",
@@ -8215,9 +8216,9 @@
                       d: "4-choice level-up chance +5%.",
                       c: 8,
                       u: 0,
-                      p: "qc2",
+                      p: "fc2",
                       q: 1,
-                      r: 1,
+                      r: -1,
                     },
                     {
                       id: "qc3",
@@ -8225,9 +8226,9 @@
                       d: "All cooldowns −5%.",
                       c: 8,
                       u: 0,
-                      p: "cp3",
-                      q: 0,
-                      r: 2,
+                      p: "qc2",
+                      q: 2,
+                      r: 0,
                     },
                     {
                       id: "le4",
@@ -8235,9 +8236,9 @@
                       d: "4-choice level-up chance +5%.",
                       c: 10,
                       u: 0,
-                      p: "cp3",
-                      q: -1,
-                      r: 3,
+                      p: "fc3",
+                      q: 2,
+                      r: -2,
                     },
                     {
                       id: "qc4",
@@ -8245,9 +8246,9 @@
                       d: "All cooldowns −5%.",
                       c: 10,
                       u: 0,
-                      p: "qc3",
-                      q: 1,
-                      r: 2,
+                      p: "le3",
+                      q: 2,
+                      r: -1,
                     },
                   ],
                 },
@@ -9517,10 +9518,11 @@
               now 115 nodes; Vessel is a full heart, Codex a hexagon, Fate a spiral.
             </li>
             <li>
-              <strong>Codex adjacency unlock.</strong> Codex nodes open whenever
-              they touch an unlocked node — omnidirectional, smooth progression
-              instead of fixed prerequisite chains. (Regeneration trimmed to
-              three tiers.)
+              <strong>Adjacency unlock — Codex &amp; Vessel.</strong> Both
+              branches open any node that touches an unlocked one — omnidirectional,
+              smooth progression instead of fixed chains. Vessel is a clear filled
+              heart and Codex a hexagon, each entered from a bottom node.
+              (Regeneration trimmed to three tiers.)
             </li>
             <li>
               <strong>Branch silhouettes.</strong> Each honeycomb now forms a
