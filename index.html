@@ -3512,14 +3512,18 @@
               <div class="spell-name">Effigy</div>
               <div class="spell-meta">Max Level 10</div>
               <p class="spell-desc">
-                Plant a straw effigy; a share of every hit you land echoes onto
-                enemies near it. Lv4: +radius. Lv7: the effigy bursts when it
-                expires.
+                Plant a straw effigy that drives spectral pins into every enemy
+                around it on a steady beat — and the longer it stands, the more
+                pins each beat throws. A stationary engine that rewards holding
+                ground. Lv4: +radius. Lv7: on expiry it detonates in a
+                needle-burst.
               </p>
               <div class="spell-talent">
-                <strong>Talents:</strong> Pin Doll (links one elite — it suffers
-                whatever you deal to anything) · Bonfire Effigy (also sets the
-                ground alight) · Twin Effigies (raise two at once)
+                <strong>Talents:</strong> Pin Doll (binds the nearest Elite or
+                boss — every beat its pins strike that one target wherever it
+                roams, ramping into a stake) · Bonfire Effigy (the effigy also
+                ignites the ground it stands on, a burning ring) · Twin Effigies
+                (raise two smaller effigies, each ramping on its own)
               </div>
             </div>
             <div class="spell-card bg-summon">
@@ -9675,6 +9679,15 @@
               examples were repointed to the new spells.
             </li>
             <li>
+              <strong>Effigy reworked into an active damage-dealer.</strong> It
+              no longer passively echoes a share of the damage you deal; it now
+              drives spectral pins into nearby enemies on a beat that
+              <em>ramps the longer the effigy stands</em> — a unique
+              hold-the-ground damage engine. Pin Doll becomes a single-target
+              stake on the nearest Elite/boss; Bonfire Effigy and Twin Effigies
+              are retuned to match.
+            </li>
+            <li>
               <strong>Research Points (RP) — new upgrade currency.</strong>
               Bought at the faction hall with Dawnmotes / Nightdrops (base 2 per
               RP, +1 every 3 RP bought, so a first successful run ≈ 6 RP). Every
@@ -10901,4 +10914,14 @@
           const top = sec.offsetTop - 120;
           if (scroller.scrollTop >= top) current = sec.id;
         });
-        links.f
+        links.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current)
+            link.classList.add("active");
+        });
+      }
+      scroller.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    </script>
+  </body>
+</html>
