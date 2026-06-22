@@ -1664,7 +1664,7 @@
                 </td>
                 <td>
                   Actual systemic depth (no Roblox survivor has a build system
-                  beyond stat upgrades); cosmetics-only monetization builds
+                  beyond stat upgrades); no-pay-to-win monetization builds
                   trust the clones burned
                 </td>
               </tr>
@@ -2065,7 +2065,7 @@
             Faction identity no longer comes from <em>which</em> magic you can
             learn — it comes from the one school no one else can touch, the risk
             engine it carries, and how your half of the eclipse plays. A Radiant
-            pyromancer and an Shadow pyromancer cast the same Emberlance; only
+            pyromancer and a Shadow pyromancer cast the same Emberlance; only
             one of them can consecrate the ground it burns.
           </p>
 
@@ -2145,7 +2145,7 @@
                 <td class="td-violet">Eclipse moments</td>
                 <td class="td-muted">
                   One mastered spell from each side fuses into a shared Eclipse
-                  spell — the co-op centerpiece (§10)
+                  spell — the co-op centerpiece (§11)
                 </td>
               </tr>
               <tr>
@@ -2840,7 +2840,7 @@
           <div class="formula">
             FinalDamage = Base(L) × (1 + Potency) × MeterMult × (1 + Resonance)
             × (1 + Amps) × Crit<br /><br />
-            Base(L) : the spell's level-scaled damage (§20 curve)<br />
+            Base(L) : the spell's level-scaled damage (§22 curve)<br />
             Potency : sum of all artifact/research/pact % bonuses (additive
             within category)<br />
             MeterMult : Curse or Radiance stage multiplier (1.0 if not
@@ -3050,7 +3050,7 @@
           <div class="infobox ib-gold">
             <div class="ib-title">Spell Anatomy</div>
             <p>
-              <strong>Lv 1–9:</strong> logarithmic numeric growth (§20) plus a
+              <strong>Lv 1–9:</strong> logarithmic numeric growth (§22) plus a
               felt behavior jump at Lv4 and Lv7 (+projectile, pierce, larger
               zone). <strong>Lv 10:</strong> choose 1 of 3 Talents — the spell
               is renamed, re-skinned, re-shaped, and becomes
@@ -5346,7 +5346,7 @@
             read your entire build, your fusion plan, and where they should
             place next — no text required. Screen contexts (pause = full board,
             level-up = your region + touching seams, fusion ceremony zoom) are
-            specified in §23.
+            specified in §25.
           </p>
 
           <h3>Resonance Tiers</h3>
@@ -5633,6 +5633,10 @@
               </tr>
             </tbody>
           </table>
+          <p class="td-muted" style="font-size: 12.5px">
+            Twelve of the 24 launch Attunements shown; the rest reveal as you
+            master their spells.
+          </p>
 
           <h3>
             Eclipse Spells — cross-faction, cross-player (co-op only, 8 at
@@ -5641,7 +5645,7 @@
           <p>
             The crown of the system and the literal core fantasy —
             <strong>no competitor has a cross-player build mechanic.</strong> A
-            Radiant and an Shadow player who each hold a Mastered spell from a
+            Radiant and a Shadow player who each hold a Mastered spell from a
             valid recipe, sitting <strong>adjacent across the Web seam</strong>,
             may fuse them at a Pact altar or Warden kill. Each player's source
             spell slot is <strong>replaced</strong> by their own copy of the
@@ -5708,6 +5712,10 @@
               </tr>
             </tbody>
           </table>
+          <p class="td-muted" style="font-size: 12.5px">
+            Six of the eight launch Eclipses shown — the full set unlocks in-game
+            as cross-faction recipes are discovered.
+          </p>
           <div class="infobox ib-gold">
             <div class="ib-title">Eclipse Ceremony</div>
             <p>
@@ -5968,7 +5976,7 @@
               meters create the same risk-reward arc with opposite emotional
               textures — so switching factions genuinely feels like a new game.
               And because Warden II targets the highest-Radiance player while
-              spawning adds on the highest-Curse player (§15), the party's greed
+              spawning adds on the highest-Curse player (§17), the party's greed
               becomes boss strategy.
             </p>
           </div>
@@ -6281,7 +6289,7 @@
             Mote values: Glimmer 1 · Mote 3 · Core 12 · Heart of Night 40 (+
             full heal)<br />
             Party XP need: ×1.0 / ×1.7 / ×2.3 / ×2.8 for 1–4 players (now tracks
-            the spawn-budget curve in §15, so per-player level pace stays
+            the spawn-budget curve in §17, so per-player level pace stays
             constant regardless of party size — shared motes were out-running
             the old need)
           </div>
@@ -6587,9 +6595,31 @@
                 own build, auditing you.
               </p>
             </div>
+            <div class="card">
+              <div class="card-stripe" style="background: #9e9e9e"></div>
+              <div class="card-icon">🫧</div>
+              <div class="card-title">Gloomspitter</div>
+              <p class="card-body">
+                <strong>Behavior:</strong> Hangs back and lobs arcing globs of
+                congealed dark; each glob bursts into a brief slowing puddle.
+                <strong>Danger:</strong> zoning — punishes standing still and
+                herds you off your safe ground.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-stripe" style="background: #9e9e9e"></div>
+              <div class="card-icon">🦋</div>
+              <div class="card-title">Wraithmoth</div>
+              <p class="card-body">
+                <strong>Behavior:</strong> Drifts in slow straight lines,
+                passing through walls, wards, and void discs as if they weren't
+                there. <strong>Danger:</strong> the answer to turtling — no
+                barrier keeps it out, so pure-wall builds must still aim.
+              </p>
+            </div>
           </div>
 
-          <h3>Baseline Stats (minute 0 — grown by the §20 curves)</h3>
+          <h3>Baseline Stats (minute 0 — grown by the §22 curves)</h3>
           <table>
             <thead>
               <tr>
@@ -6646,6 +6676,22 @@
                   10 (ranged, weakened copy of a player spell)
                 </td>
                 <td class="td-muted">Mirrorwood / 14:00 elsewhere</td>
+              </tr>
+              <tr>
+                <td>Gloomspitter</td>
+                <td class="td-muted">22</td>
+                <td class="td-muted">65%</td>
+                <td class="td-muted">
+                  9 (ranged glob, 0.9s telegraph, leaves a 2s slow puddle)
+                </td>
+                <td class="td-muted">5:00</td>
+              </tr>
+              <tr>
+                <td>Wraithmoth</td>
+                <td class="td-muted">28</td>
+                <td class="td-muted">60% (ignores walls &amp; wards)</td>
+                <td class="td-muted">11</td>
+                <td class="td-muted">10:00</td>
               </tr>
               <tr>
                 <td class="td-gold">Elite (any)</td>
@@ -7110,8 +7156,8 @@
               </p>
               <div class="boss-phases">
                 Phase 1 — Moth Tides · Phase 2 — Lantern Pull (drags
-                high-Radiance players) · Phase 3 — The Flock Descends (escort
-                your Shadow ally's Colossus through the swarm-wall)
+                high-Radiance players) · Phase 3 — The Flock Descends (push through
+                the swarm-wall together, sturdiest summons and wards leading)
               </div>
             </div>
             <div class="boss-card">
@@ -7161,7 +7207,7 @@
                 The Pact entity herself — the only boss players have already
                 met. Every deal the party took from her this run becomes a
                 mechanic in the fight: fed floors spawn her tide; minion deals
-                turn the hounds.
+                turn your own spirits against you.
               </p>
               <div class="boss-phases">
                 Phase 1 — Hunger Tides · Phase 2 — The Debts Come Home (your
@@ -9541,7 +9587,7 @@
               </tr>
               <tr>
                 <td class="td-violet">Step-event cadence</td>
-                <td class="td-muted">≥1 power-step per 90–120s (§20 ladder)</td>
+                <td class="td-muted">≥1 power-step per 90–120s (§22 ladder)</td>
                 <td class="td-muted">
                   Tune milestone levels & resonance discovery rates
                 </td>
@@ -10783,7 +10829,7 @@
               shadow-trail, the Unbroken vestment, and a hub brazier that lights
               one ring per zone cleared hardcore — 40–150 Embers each. Never
               power, and <strong>never buyable with Robux</strong>: prestige
-              must be earned. The same cosmetics-only line the whole economy
+              must be earned. The same no-pay-to-win line the whole economy
               holds — in a clone-saturated platform, trust is the product
             </li>
             <li>
@@ -10855,16 +10901,4 @@
           const top = sec.offsetTop - 120;
           if (scroller.scrollTop >= top) current = sec.id;
         });
-        links.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current)
-            link.classList.add("active");
-        });
-      }
-      scroller.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-    </script>
-  </body>
-</html>
-<!-- v3.3 -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        links.f
