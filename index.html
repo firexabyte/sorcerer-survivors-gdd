@@ -2039,7 +2039,7 @@
                 <td class="td-teal">Arts of magic (2)</td>
                 <td>
                   <span class="el-arcane">Arcane</span> ·
-                  <span class="el-summon">Summoning</span>
+                  <span class="el-summon">Occult</span>
                 </td>
                 <td class="td-muted">Everyone — both factions</td>
               </tr>
@@ -2570,7 +2570,7 @@
                 <span class="stat-val">★★</span>
               </div>
               <div class="class-start">
-                Start: <span class="el-summon">Shade Hound</span> · Dash:
+                Start: <span class="el-summon">Spirit</span> · Dash:
                 <span>Scatter Step</span> (minions intercept enemies along your
                 dash line) · Web: 6
               </div>
@@ -2984,7 +2984,7 @@
             studs) + recentDamageBonus<br />
             RadianceAggro : 0 / +10 / +25 / +50 / +100 by Radiance stage (Stage
             V: targets you regardless)<br />
-            Taunts : Shadow Colossus and Shade Hound taunts override targeting
+            Taunts : a Spirit set to Warding (Spirit talent) overrides targeting
             for their duration<br />
             Exceptions : Lightdrinkers ignore distance; Tidecallers never move
           </div>
@@ -3039,7 +3039,7 @@
           <p class="sec-sub">
             32 spells across 8 schools. Six schools are open to every sorcerer —
             four that study the elements (Fire, Ice, Lightning, Nature) and two
-            that study magic itself (Arcane, Summoning) — plus each faction's
+            that study magic itself (Arcane, Occult) — plus each faction's
             special school: Holy ☀ for the Radiant Order, Void ☾ for the Shadow
             Covenant. Each spell levels 1→10 with behavior milestones at Lv4 and
             Lv7. At Level 10, the player chooses one of three Talent paths that
@@ -3459,87 +3459,89 @@
           </div>
 
           <h3>
-            Summoning School — "Borrowed citizens of the night" · shared art of
+            Occult School — "Borrowed citizens of the night" · shared art of
             magic
           </h3>
           <div class="grid g2">
             <div class="spell-card bg-summon">
-              <div class="spell-school el-summon">🐺 Summoning</div>
+              <div class="spell-school el-summon">🔮 Occult</div>
               <div class="spell-tags">
                 <span class="tag t-minion">Minion</span
-                ><span class="tag t-summon">Dead</span>
+                ><span class="tag t-summon">Spirit</span>
               </div>
-              <div class="spell-name">Shade Hound</div>
+              <div class="spell-name">Spirit</div>
               <div class="spell-meta">
                 Max Level 10 · Starter (Whisper-Binder)
               </div>
               <p class="spell-desc">
-                Loyal shadow-beast that lunges at whatever threatens the caster.
-                Lv4: lunge knockdown. Lv7: +1 hound.
+                Binds a restless spirit that drifts to the nearest enemy and
+                strikes — the whole summoning art distilled into one familiar.
+                Lv4: +1 spirit. Lv7: spirits pass through walls.
               </p>
               <div class="spell-talent">
-                <strong>Talents:</strong> Alpha of the Long Night (one huge
-                hound with fear-howl) · The Pack (three lesser hounds) ·
-                Gravewarden (guards the most injured player instead)
+                <strong>Talents:</strong> Legion (many small, fast spirits) ·
+                Vengeful Dead (each spirit detonates as it fades) · Warding
+                Spirits (spirits orbit and guard you, taunting what they touch)
               </div>
             </div>
             <div class="spell-card bg-summon">
-              <div class="spell-school el-summon">🐺 Summoning</div>
+              <div class="spell-school el-summon">🔮 Occult</div>
               <div class="spell-tags">
-                <span class="tag t-minion">Minion</span
-                ><span class="tag t-summon">Ranged</span>
+                <span class="tag t-summon">Gaze</span
+                ><span class="tag t-void">Curse</span>
               </div>
-              <div class="spell-name">Bone Choir</div>
+              <div class="spell-name">Evil Eye</div>
               <div class="spell-meta">Max Level 10</div>
               <p class="spell-desc">
-                Hovering skull chorus firing bone darts in volleys. Lv4/7:
-                +choristers.
+                A floating eye fixes the nearest enemy and burns it with a slow,
+                piercing gaze. Lv4: +1 eye. Lv7: the gaze briefly blinds —
+                struck enemies miss.
               </p>
               <div class="spell-talent">
-                <strong>Talents:</strong> Dirge (one droning channel beam) ·
-                Cantata (volleys sync to ally cast timings; +damage in chorus
-                windows) · Ossuary (slain enemies 10% chance to join the choir,
-                capped)
+                <strong>Talents:</strong> Unblinking (one great eye, an unbroken
+                beam) · Many Eyes (a slow-turning ring of small eyes) · Cursed
+                Sight (anything gazed takes +15% from every source)
               </div>
             </div>
             <div class="spell-card bg-summon">
-              <div class="spell-school el-summon">🐺 Summoning</div>
+              <div class="spell-school el-summon">🔮 Occult</div>
               <div class="spell-tags">
-                <span class="tag t-minion">Minion</span
-                ><span class="tag t-void">Deep</span>
+                <span class="tag t-aoe">Totem</span
+                ><span class="tag t-summon">Voodoo</span>
               </div>
-              <div class="spell-name">Shadow Colossus</div>
+              <div class="spell-name">Effigy</div>
               <div class="spell-meta">Max Level 10</div>
               <p class="spell-desc">
-                Slow giant of compressed night; taunts, sweeps, soaks. The
-                party's portable wall. Lv7: taunt radius doubles.
+                Plant a straw effigy; a share of every hit you land echoes onto
+                enemies near it. Lv4: +radius. Lv7: the effigy bursts when it
+                expires.
               </p>
               <div class="spell-talent">
-                <strong>Talents:</strong> Bulwark Engine (carries allies' Ward
-                spells on its body) · Avalanche of Night (periodic line-charge)
-                · Hollow Vessel (on death: 6s safe-zone dome)
+                <strong>Talents:</strong> Pin Doll (links one elite — it suffers
+                whatever you deal to anything) · Bonfire Effigy (also sets the
+                ground alight) · Twin Effigies (raise two at once)
               </div>
             </div>
             <div class="spell-card bg-summon">
-              <div class="spell-school el-summon">🐺 Summoning</div>
+              <div class="spell-school el-summon">🔮 Occult</div>
               <div class="spell-tags">
-                <span class="tag t-minion">Swarm</span
-                ><span class="tag t-dot">DoT</span>
+                <span class="tag t-aoe">Zone</span
+                ><span class="tag t-dot">Drain</span>
               </div>
-              <div class="spell-name">Swarm of Teeth</div>
+              <div class="spell-name">Séance</div>
               <div class="spell-meta">Max Level 10</div>
               <p class="spell-desc">
-                Skittering swarm that washes over the horde, shredding the weak.
-                Lv7: swarm splits to two fronts.
+                Open a circle of whispering dead; enemies inside wither, and a
+                sliver of the drain returns to the caster. Lv4: +radius. Lv7:
+                the circle drifts toward the nearest enemy.
               </p>
               <div class="spell-talent">
-                <strong>Talents:</strong> Locust Logic (grows per kill, decays
-                out of combat) · Carrion Tide (kills heal the caster slightly) ·
-                Teeth of the Covenant (swarm carries your Hexes on bite)
+                <strong>Talents:</strong> Open the Veil (wider circle, gentler
+                drain) · Toll the Dead (the circle pulses damage on a slow beat)
+                · Communion (allies inside are healed too)
               </div>
             </div>
           </div>
-
           <h3 style="color: var(--shadow)">
             ☾ Void School — "The art of owing what subtraction leaves" · special
             school of the Shadow Covenant — enrolling manifests the Curse Meter
@@ -5439,13 +5441,13 @@
               <div class="res-spells">
                 <span class="el-arcane">Singularity</span
                 ><span class="res-plus">◇</span
-                ><span class="el-summon">Bone Choir</span
+                ><span class="el-summon">Spirit</span
                 ><span class="res-arrow">→</span>
               </div>
-              <div class="res-name">Orbital Choir</div>
+              <div class="res-name">Bound Orbit</div>
               <div class="res-effect">
-                The choir orbits the singularity, becoming a mobile
-                turret-station (Transformative)
+                Spirits caught in the singularity orbit it as a mobile
+                turret-ring (Transformative)
               </div>
             </div>
             <div class="res-row">
@@ -5469,7 +5471,7 @@
               A hex slot has up to 6 neighbors; seam slots touch two players'
               builds at once. Real dilemmas emerge immediately:
               <em
-                >Sporebloom next to my Swarm of Teeth for Plaguebearers, or out
+                >Sporebloom next to my Spirit for Plaguebearers, or out
                 on the seam where your Judgement Bell can reach it? Who gives up
                 a seam slot for the Eclipse we're planning?</em
               >
@@ -5599,18 +5601,18 @@
                 </td>
               </tr>
               <tr>
-                <td class="td-muted">Shade Hound + Shadow Colossus</td>
-                <td class="td-violet">The Long Walk</td>
+                <td class="td-muted">Spirit + Effigy</td>
+                <td class="td-violet">The Effigy Walks</td>
                 <td>
-                  The colossus advances with the pack; a rolling siege front
+                  The effigy rises bound with spirits — a roaming siege guardian
                 </td>
               </tr>
               <tr>
-                <td class="td-muted">Swarm of Teeth + Sporebloom</td>
-                <td class="td-violet">Carrion Bloom</td>
+                <td class="td-muted">Evil Eye + Sporebloom</td>
+                <td class="td-violet">Blightgaze</td>
                 <td>
-                  The swarm carries Blight; everything blighted feeds the swarm
-                  — compounding decay
+                  The gaze spreads Blight to every enemy it sees — compounding
+                  decay
                 </td>
               </tr>
               <tr>
@@ -5697,11 +5699,11 @@
                 </td>
               </tr>
               <tr>
-                <td class="td-muted">Glacial Bulwark + Shadow Colossus</td>
+                <td class="td-muted">Glacial Bulwark + Spirit</td>
                 <td class="td-gold">The Sentinel of Dusk</td>
                 <td>
-                  Ice-armored colossus that taunts, blocks projectiles, and
-                  shatter-novas on a timer
+                  Ice-armored spirits that taunt, block projectiles, and
+                  shatter-nova on a timer
                 </td>
               </tr>
             </tbody>
@@ -7248,7 +7250,7 @@
               </p>
               <div class="pact-example">
                 "Feed me your floor." (+40% spawn rate; +60% Mote drops.) ·
-                Shadow only: "Your hounds may eat what they kill." (Minions
+                Shadow only: "Your spirits may eat what they kill." (Minions
                 self-heal; you can no longer heal them.)
               </div>
             </div>
@@ -9615,6 +9617,18 @@
           <h3>Design Changelog — v3.3 Research Overhaul (this revision)</h3>
           <ul class="st">
             <li>
+              <strong>Summoning → Occult school.</strong> The shared Summoning
+              school is now the Occult school. Its four summon spells (Shade
+              Hound, Bone Choir, Shadow Colossus, Swarm of Teeth) are replaced
+              by four simpler, more distinct occult spells: <em>Spirit</em> —
+              one familiar that consolidates the whole summoning fantasy — plus
+              <em>Evil Eye</em>, <em>Effigy</em>, and <em>Séance</em>. The minion
+              system carries over unchanged (spirits are minions), so the
+              Whisper-Binder, Inkwell of Gaps, minion-cap nodes, and
+              Plaguebearers resonance still apply; resonance and Eclipse
+              examples were repointed to the new spells.
+            </li>
+            <li>
               <strong>Research Points (RP) — new upgrade currency.</strong>
               Bought at the faction hall with Dawnmotes / Nightdrops (base 2 per
               RP, +1 every 3 RP bought, so a first successful run ≈ 6 RP). Every
@@ -9851,7 +9865,7 @@
             <li>
               <strong>Shared schools:</strong> six schools open to both factions
               — four elemental (Fire, Ice, Lightning, <em>Nature — new</em>) +
-              two arts of magic (Arcane, Summoning)
+              two arts of magic (Arcane, Occult)
             </li>
             <li>
               <strong>Special schools:</strong> Holy ☀ (Radiant-only) and Void ☾
@@ -10240,7 +10254,7 @@
                   <span class="el-holy">Warm white-gold</span> — Holy, Radiance
                 </li>
                 <li><span class="el-arcane">Violet</span> — Arcane</li>
-                <li><span class="el-summon">Bone grey</span> — Summoning</li>
+                <li><span class="el-summon">Bone grey</span> — Occult</li>
                 <li>
                   <span class="el-void">Deep red-black</span> — Void, the Curse
                   meter
